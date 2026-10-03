@@ -12,7 +12,9 @@ dados que o próprio estudante controla.
 
 > **Estágio: rascunho.** Nasceu como o planejamento pessoal de um curso de Direito e está sendo
 > separado dos dados de quem o criou para virar ferramenta de qualquer estudante, de qualquer curso.
-> O código chega a este repositório em seguida, já com uma matriz de exemplo fictícia.
+> O código já está aqui, com uma matriz de exemplo fictícia publicada em
+> [luccas-amorim.github.io/akademos](https://luccas-amorim.github.io/akademos/); para usar com o
+> seu curso, veja [Como usar](#como-usar).
 
 ---
 
