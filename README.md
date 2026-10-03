@@ -34,6 +34,48 @@ A partir deles, o site monta:
 - **Validadores** que conferem a matriz (créditos, cargas, códigos) e impedem que uma página seja
   publicada por acidente.
 
+## Como usar
+
+O repositório vem com um curso **fictício** de exemplo ("Curso de Exemplo", 6 séries, 24
+disciplinas). Para modelar o seu, só se editam dados — nenhum componente precisa mudar.
+
+**1. Edite os três arquivos em `src/data/`.**
+
+- `curriculo.json`
+  - `meta`: nome do curso, número de séries, semestre atual e totais exigidos (créditos e CH).
+  - `config`: as regras da sua universidade e da sua rotina — dias de aula, faixas de horário por
+    dia, créditos por faixa, horas por crédito, quantos dias livres você quer manter e como chamá-los
+    ("noite", "manhã", "dia").
+  - `disciplinas`: código, nome, série, créditos, área e `status` (`cursada`, `aproveitada`,
+    `cursando`, `adiada` ou `pendente`). O que ainda falta cursar leva `plano`: o semestre previsto
+    em cada rota.
+  - `cenarios`: uma ou mais rotas até a formatura. Com uma rota só, deixe `troncoComum` vazio.
+  - `eletivas` e `calendario`: as vagas de eletiva e o ordinal de cada semestre letivo.
+- `horario.json`: as faixas do dia e, por semestre, as aulas (código, dia, faixas, sala, docente).
+- `notas.json`: a regra de aprovação (`config`) e as notas, pelo código da disciplina.
+
+**2. Rode localmente** (Node 24 ou mais recente):
+
+```bash
+npm ci
+npm run validate   # confere se os três arquivos concordam entre si
+npm start          # abre o site em http://localhost:3000/akademos/
+```
+
+`npm run validate` aponta choque de horário, créditos que não fecham, nota fora da escala, rota
+que não integraliza o curso e página publicada sem link.
+
+**3. Publique no GitHub Pages.**
+
+1. Faça um fork e, em `docusaurus.config.ts`, troque `url`, `baseUrl`, `organizationName` e
+   `projectName` pelo seu usuário e pelo nome do seu repositório.
+2. Em *Settings → Pages*, escolha **GitHub Actions** como fonte.
+3. Cada push em `main` valida, compila e publica o site pelo workflow
+   `.github/workflows/deploy.yml`.
+
+> Notas e histórico são dados pessoais, e o site publicado é público mesmo que o repositório seja
+> privado. Publique só o que você aceitaria mostrar.
+
 ## Para onde vai, com apoio
 
 O rascunho funciona para quem sabe editar um JSON. Para servir a qualquer estudante, precisa de:
