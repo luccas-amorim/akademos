@@ -1,5 +1,7 @@
 # Akademos
 
+<sub>O nome vem de Akademos, o herói do bosque onde Platão fundou a Academia. [Por quê?](MITO.md)</sub>
+
 **Gestão acadêmica aberta: grade curricular, horário, notas, integralização e progresso do curso, num
 site que se adapta à matriz da sua universidade.**
 
