@@ -1,0 +1,123 @@
+{
+  "$comment": "FONTE da matriz curricular. Os dados abaixo são FICTÍCIOS: um curso de exemplo para mostrar todos os componentes. Para modelar o seu curso, edite este arquivo, horario.json e notas.json, e rode `npm run validate`.",
+  "meta": {
+    "instituicao": "Universidade de Exemplo",
+    "curso": "Curso de Exemplo",
+    "curriculo": "EX-2025",
+    "series": 6,
+    "semestreAtual": "2026/2",
+    "chExigida": 1600,
+    "creditosExigidos": 80,
+    "creditosObrigatorios": 78,
+    "creditosEletivos": 2
+  },
+  "config": {
+    "$comment": "Regras do curso e da sua rotina. 'faixa' é um bloco de aula na grade (o curso de exemplo tem duas por noite). Uma disciplina ocupa min(faixasPorDia, créditos ÷ creditosPorFaixa) faixas, salvo se declarar 'faixas' ou 'ocupaGrade: false'. O teto de faixas por semestre é o que mantém 'diasLivresDesejados' dias inteiros livres na semana. 'coresDasAreas' é opcional.",
+    "horasPorCredito": 20,
+    "dias": ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"],
+    "faixasPorDia": 2,
+    "creditosPorFaixa": 2,
+    "diasLivresDesejados": 1,
+    "rotuloDia": {"singular": "noite", "plural": "noites"},
+    "coresDasAreas": {
+      "Fundamentos": "#2563eb",
+      "Métodos": "#7c3aed",
+      "Linguagens": "#059669",
+      "Pesquisa": "#d97706",
+      "Prática Profissional": "#0d9488"
+    }
+  },
+  "calendario": {
+    "1": "2025/2",
+    "2": "2026/1",
+    "3": "2026/2",
+    "4": "2027/1",
+    "5": "2027/2",
+    "6": "2028/1"
+  },
+  "cenarios": {
+    "$comment": "Rotas possíveis até a formatura. O tronco comum é idêntico em todas; cada rota declara os semestres em que tem disciplina. Com uma rota só, deixe 'rotas' com um item e 'troncoComum' vazio.",
+    "padrao": "A",
+    "notaDaDecisao": "As duas rotas só se separam no semestre em que o estágio supervisionado pode começar. Até lá, o percurso é o mesmo e nenhuma escolha precisa ser feita.",
+    "troncoComum": [
+      {
+        "semestre": "2026/2",
+        "nota": "Semestre em curso: terça e sexta livres."
+      }
+    ],
+    "rotas": [
+      {
+        "id": "A",
+        "titulo": "Plano A — base",
+        "subtitulo": "estágio cursado na grade",
+        "resumo": "Segue a matriz série a série e mantém uma noite livre em todos os semestres.",
+        "nota": "É o plano mais leve por semestre, ao custo de um semestre a mais.",
+        "semestres": [
+          {"semestre": "2027/1"},
+          {"semestre": "2027/2", "estagio": "Estágio I"},
+          {"semestre": "2028/1", "estagio": "Estágio II", "marco": "Defesa do trabalho final"}
+        ]
+      },
+      {
+        "id": "B",
+        "titulo": "Plano B — meta",
+        "subtitulo": "estágio cumprido fora da grade, em empresa conveniada",
+        "resumo": "O estágio externo libera quatro faixas da grade, o que permite antecipar a formatura em um semestre, com uma semana cheia no caminho.",
+        "nota": "Depende de a universidade aceitar o estágio externo; confirme antes de se matricular.",
+        "semestres": [
+          {"semestre": "2027/1", "estagio": "Estágio I (externo)"},
+          {"semestre": "2027/2", "estagio": "Estágio II (externo)", "marco": "Defesa do trabalho final"}
+        ]
+      }
+    ]
+  },
+  "eletivas": {
+    "$comment": "'escolhas' registra o que você pretende cursar; 'alocacao' reserva as vagas de eletiva no plano, uma por rota. As vagas seguem a mesma regra de faixas das disciplinas.",
+    "escolhas": [
+      {
+        "nome": "Tópicos em Inovação",
+        "motivo": "Complementa o Projeto Integrador e é ofertada no noturno."
+      }
+    ],
+    "notaDasEscolhas": "O semestre de cada eletiva depende da oferta: a lista registra a escolha, não a data.",
+    "alocacao": [
+      {
+        "rotulo": "Eletiva I",
+        "creditos": 2,
+        "serie": 6,
+        "plano": {"A": "2028/1", "B": "2027/2"}
+      }
+    ]
+  },
+  "disciplinas": [
+    {"codigo": "EX101", "nome": "Introdução aos Estudos do Curso", "serie": 1, "creditos": 4, "area": "Fundamentos", "status": "cursada", "plano": null},
+    {"codigo": "EX102", "nome": "Leitura e Produção de Textos", "serie": 1, "creditos": 4, "area": "Linguagens", "status": "cursada", "plano": null},
+    {"codigo": "EX103", "nome": "Lógica e Argumentação", "serie": 1, "creditos": 4, "area": "Métodos", "status": "cursada", "plano": null},
+    {"codigo": "EX104", "nome": "Matemática Básica", "serie": 1, "creditos": 2, "area": "Métodos", "status": "aproveitada", "plano": null},
+
+    {"codigo": "EX201", "nome": "Teoria Geral I", "serie": 2, "creditos": 4, "area": "Fundamentos", "status": "cursada", "plano": null},
+    {"codigo": "EX202", "nome": "Estatística Aplicada", "serie": 2, "creditos": 4, "area": "Métodos", "status": "cursada", "plano": null},
+    {"codigo": "EX203", "nome": "Metodologia da Pesquisa", "serie": 2, "creditos": 2, "area": "Pesquisa", "status": "cursada", "plano": null},
+    {"codigo": "EX204", "nome": "Ética Profissional", "serie": 2, "creditos": 2, "area": "Fundamentos", "status": "adiada", "plano": {"A": "2027/1", "B": "2027/1"}},
+
+    {"codigo": "EX301", "nome": "Teoria Geral II", "serie": 3, "creditos": 4, "area": "Fundamentos", "status": "cursando", "plano": {"A": "2026/2", "B": "2026/2"}},
+    {"codigo": "EX302", "nome": "Análise de Dados", "serie": 3, "creditos": 4, "area": "Métodos", "status": "cursando", "plano": {"A": "2026/2", "B": "2026/2"}},
+    {"codigo": "EX303", "nome": "Comunicação Oral", "serie": 3, "creditos": 2, "area": "Linguagens", "status": "cursando", "plano": {"A": "2026/2", "B": "2026/2"}},
+    {"codigo": "EX304", "nome": "Seminário Temático I", "serie": 3, "creditos": 2, "area": "Pesquisa", "status": "cursando", "plano": {"A": "2026/2", "B": "2026/2"}},
+
+    {"codigo": "EX401", "nome": "Tópicos Avançados I", "serie": 4, "creditos": 4, "area": "Fundamentos", "status": "pendente", "plano": {"A": "2027/1", "B": "2027/1"}},
+    {"codigo": "EX402", "nome": "Modelagem e Simulação", "serie": 4, "creditos": 4, "area": "Métodos", "status": "pendente", "plano": {"A": "2027/1", "B": "2027/1"}},
+    {"codigo": "EX403", "nome": "Projeto Integrador I", "serie": 4, "creditos": 2, "area": "Prática Profissional", "status": "pendente", "plano": {"A": "2027/1", "B": "2027/1"}},
+    {"codigo": "EX404", "nome": "Seminário Temático II", "serie": 4, "creditos": 2, "area": "Pesquisa", "status": "pendente", "plano": {"A": "2027/1", "B": "2027/1"}},
+
+    {"codigo": "EX501", "nome": "Tópicos Avançados II", "serie": 5, "creditos": 4, "area": "Fundamentos", "status": "pendente", "plano": {"A": "2027/2", "B": "2027/2"}},
+    {"codigo": "EX502", "nome": "Gestão de Projetos", "serie": 5, "creditos": 4, "area": "Prática Profissional", "status": "pendente", "plano": {"A": "2027/2", "B": "2027/2"}},
+    {"codigo": "EX503", "nome": "Trabalho de Conclusão I", "serie": 5, "creditos": 2, "area": "Pesquisa", "status": "pendente", "plano": {"A": "2027/2", "B": "2027/1"}},
+    {"codigo": "EX504", "nome": "Estágio Supervisionado I", "serie": 5, "creditos": 4, "area": "Prática Profissional", "status": "pendente", "plano": {"A": "2027/2", "B": "2027/1"}, "foraDaGradeEm": {"B": "estágio externo"}},
+
+    {"codigo": "EX601", "nome": "Tópicos Avançados III", "serie": 6, "creditos": 4, "area": "Fundamentos", "status": "pendente", "plano": {"A": "2028/1", "B": "2027/2"}},
+    {"codigo": "EX602", "nome": "Projeto Integrador II", "serie": 6, "creditos": 4, "area": "Prática Profissional", "status": "pendente", "plano": {"A": "2028/1", "B": "2027/2"}},
+    {"codigo": "EX603", "nome": "Trabalho de Conclusão II", "serie": 6, "creditos": 2, "area": "Pesquisa", "status": "pendente", "plano": {"A": "2028/1", "B": "2027/2"}, "ocupaGrade": false},
+    {"codigo": "EX604", "nome": "Estágio Supervisionado II", "serie": 6, "creditos": 4, "area": "Prática Profissional", "status": "pendente", "plano": {"A": "2028/1", "B": "2027/2"}, "foraDaGradeEm": {"B": "estágio externo"}}
+  ]
+}

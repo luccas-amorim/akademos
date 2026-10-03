@@ -1,0 +1,33 @@
+---
+sidebar_position: 6
+title: Integralização
+---
+
+import Integralizacao from '@site/src/components/Integralizacao';
+import {EletivasEscolhidas} from '@site/src/components/PlanejamentoBlocos';
+
+# Planejamento de integralização
+
+O que falta cumprir até a formatura, agrupado **por semestre letivo** — sem entrar em dia da
+semana, que é assunto do [Horário](/horario).
+
+:::info[Atualizar a cada semestre]
+Projeção, não compromisso: a cada grade horária publicada, a distribuição dos semestres seguintes
+pode mudar. Para atualizar, edite `cenarios`, `plano` e `status` em `src/data/curriculo.json` e
+rode `npm run validate`.
+
+A unidade é a **faixa** de horário, não o crédito. Agrupar as faixas em dias cheios é o que
+preserva dias inteiros livres na semana.
+:::
+
+---
+
+## Eletivas escolhidas
+
+<EletivasEscolhidas />
+
+---
+
+## Semestre a semestre
+
+<Integralizacao />

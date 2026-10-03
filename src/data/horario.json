@@ -1,0 +1,18 @@
+{
+  "$comment": "Aulas por semestre letivo (dados FICTÍCIOS). 'faixas' dá o rótulo de cada bloco de aula do dia; o número de faixas tem de bater com config.faixasPorDia em curriculo.json. Cada aula aponta para um código de curriculo.json, um dia de config.dias e as faixas que ocupa.",
+  "faixas": {
+    "1": "19h00 – 20h40",
+    "2": "20h50 – 22h30"
+  },
+  "semestres": {
+    "2026/2": {
+      "observacao": "Terça e sexta livres.",
+      "aulas": [
+        {"codigo": "EX301", "dia": "Segunda-feira", "faixas": [1, 2], "docente": "Prof. Exemplo A", "sala": "101", "modalidade": "Presencial"},
+        {"codigo": "EX302", "dia": "Quarta-feira", "faixas": [1, 2], "docente": "Profa. Exemplo B", "sala": "Lab 2", "modalidade": "Presencial"},
+        {"codigo": "EX303", "dia": "Quinta-feira", "faixas": [1], "docente": "Prof. Exemplo C", "sala": "204", "modalidade": "Presencial"},
+        {"codigo": "EX304", "dia": "Quinta-feira", "faixas": [2], "docente": "Profa. Exemplo D", "sala": "204", "modalidade": "Híbrida"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+---
+sidebar_position: 4
+title: Horário
+---
+
+import HorarioSemana from '@site/src/components/HorarioSemana';
+import curriculo from '@site/src/data/curriculo.json';
+
+# Horário do semestre — {curriculo.meta.semestreAtual}
+
+A semana do semestre atual, montada a partir de `src/data/horario.json`. Os dias sem nenhuma aula
+aparecem como livres.
+
+<HorarioSemana />
+
+:::tip[Como registrar o horário]
+Em `src/data/horario.json`, cada aula aponta para o **código** de uma disciplina de
+`curriculo.json`, um dia da semana e as faixas que ocupa. `npm run validate` acusa choque de
+horário, faixa inexistente e disciplina "cursando" que ficou fora da grade.
+:::
