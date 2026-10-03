@@ -1,0 +1,34 @@
+# Dependências
+/node_modules
+.pnp
+.pnp.js
+
+# Build e cache do Docusaurus
+/build
+/.docusaurus
+.cache-loader
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editores e SO
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Documentos institucionais — NUNCA commitar.
+# Histórico escolar, RG, comprovantes e afins contêm dados pessoais que ficariam
+# recuperáveis no histórico do Git para sempre, mesmo depois de apagados.
+Histórico*.pdf
+Historico*.pdf
+/documentos/
+*.rg.pdf

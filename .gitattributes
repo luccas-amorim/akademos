@@ -1,0 +1,15 @@
+# Normaliza fim de linha: LF no repositório, sempre.
+# Sem isto, o Git converte LF→CRLF no checkout em Windows e os scripts .mjs
+# passam a gerar arquivos com fim de linha misto — o que produz diffs enormes
+# em arquivos que ninguém editou.
+* text=auto eol=lf
+
+# Binários: nunca converter.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
