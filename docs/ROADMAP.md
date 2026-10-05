@@ -18,7 +18,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 - [x] 1.3 Tela **Percurso**: matriz por semestre, seleção destaca pré-requisitos (verde-oliva) e o que destrava (âmbar); painel lateral.
 - [x] 1.4 Tela **Desempenho**: média por semestre, por área, risco, correlações.
 - [x] 1.5 Tela **Importar** — entrada manual + parser de PDF com tela de revisão. [importa um histórico SIGAA real anonimizado em `__fixtures__`]
-- [ ] 1.6 Modo **Ocultar notas** global (substitui valores por `•,•`).
+- [x] 1.6 Modo **Ocultar notas** global (substitui valores por `•,•`).
 - [ ] 1.7 Exportar/apagar dados locais.
 - [ ] 1.8 PWA instalável e offline. [Lighthouse PWA ok]
 
