@@ -40,7 +40,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 
 ## Fase 4 — Conectores e comunidade (semana 15–20)
 
-- [ ] 4.1 `apps/desktop` Tauri 2.
+- [x] 4.1 `apps/desktop` Tauri 2.
 - [ ] 4.2 Conector SIGAA (histórico + oferta + pré-matrícula). Fixtures gravadas.
 - [ ] 4.3 Conector JúpiterWeb (USP).
 - [ ] 4.4 Consentimento opt-in + envio de agregados anônimos; `/stats` com k ≥ 10.
