@@ -8,7 +8,7 @@ const Env = z.object({
   BETTER_AUTH_URL: z.string().url().default('http://localhost:8787'),
   BETTER_AUTH_SECRET: z.string().min(32).default('dev-somente-local-troque-em-producao-0123456789'),
   /** Origens do app que podem chamar a API (vírgula). */
-  ORIGENS: z.string().default('http://localhost:5173,http://localhost:4173'),
+  ORIGENS: z.string().default('http://localhost:5173,http://localhost:5174,http://localhost:4173'),
   /** Domínio do relying party do passkey (ex.: luccas-amorim.github.io). */
   PASSKEY_RP_ID: z.string().default('localhost'),
   GOOGLE_CLIENT_ID: z.string().optional(),

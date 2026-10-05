@@ -1,7 +1,7 @@
 import { passkey } from '@better-auth/passkey';
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
-import { bearer, magicLink } from 'better-auth/plugins';
+import { bearer, magicLink, oauthPopup } from 'better-auth/plugins';
 import type { BancoServidor } from './db';
 import * as schema from './db/schema';
 import type { Env } from './env';
@@ -18,6 +18,23 @@ async function enviarEmail(env: Env, para: string, assunto: string, texto: strin
     body: JSON.stringify({ from: env.EMAIL_REMETENTE, to: para, subject: assunto, text: texto }),
   });
   if (!r.ok) throw new Error(`Falha ao enviar e-mail (${r.status})`);
+}
+
+/**
+ * O link do e-mail abre o app (não a API): o app confirma o token e recebe
+ * a sessão como Bearer. Só para origens confiáveis; senão, o link padrão.
+ */
+export function linkParaOApp(url: string, token: string, origens: string[]): string {
+  const destino = new URL(url).searchParams.get('callbackURL');
+  if (!destino) return url;
+  try {
+    const app = new URL(destino);
+    if (!origens.includes(app.origin)) return url;
+    app.searchParams.set('link', token);
+    return app.toString();
+  } catch {
+    return url;
+  }
 }
 
 /**
@@ -53,14 +70,16 @@ export function criarAuth(db: BancoServidor, env: Env) {
     plugins: [
       passkey({ rpID: env.PASSKEY_RP_ID, rpName: 'Akademos', origin: origens }),
       magicLink({
-        sendMagicLink: ({ email, url }) =>
+        sendMagicLink: ({ email, url, token }) =>
           enviarEmail(
             env,
             email,
             'Seu link de acesso ao Akademos',
-            `Use este link para entrar (vale por 5 minutos):\n\n${url}\n\nSe não foi você, ignore este e-mail.`,
+            `Use este link para entrar (vale por 5 minutos):\n\n${linkParaOApp(url, token, origens)}\n\nSe não foi você, ignore este e-mail.`,
           ),
       }),
+      // Google e outros provedores por popup: o token volta para a janela do app.
+      oauthPopup(),
       bearer(),
     ],
   });

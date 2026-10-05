@@ -35,6 +35,7 @@ class StoreDeDados {
   #banco: Banco | null = null;
   #driver: DriverWeb | null = null;
   #inicio: Promise<void> | null = null;
+  #aposEscrita = new Set<() => void>();
   readonly relogio = new Hlc(idDoAparelho());
 
   subscribe = (ouvinte: () => void) => {
@@ -86,6 +87,13 @@ class StoreDeDados {
   async escrever(fn: (repos: Repositorios) => Promise<void>): Promise<void> {
     await fn(this.banco.repos);
     await this.recarregar();
+    for (const o of this.#aposEscrita) o();
+  }
+
+  /** Avisa depois de cada escrita local (a sincronização agenda um envio). */
+  aoEscrever(ouvinte: () => void): () => void {
+    this.#aposEscrita.add(ouvinte);
+    return () => this.#aposEscrita.delete(ouvinte);
   }
 
   /** Apaga o arquivo do banco e recomeça vazio. */

@@ -4,7 +4,7 @@ import { drizzle as drizzlePglite } from 'drizzle-orm/pglite';
 import { migrate as migratePglite } from 'drizzle-orm/pglite/migrator';
 import { drizzle as drizzlePostgres } from 'drizzle-orm/postgres-js';
 import { migrate as migratePostgres } from 'drizzle-orm/postgres-js/migrator';
-import { existsSync } from 'node:fs';
+import { existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import postgres from 'postgres';
@@ -37,6 +37,7 @@ export async function abrirBancoServidor(url: string): Promise<ConexaoBanco> {
   const migrationsFolder = process.env.AKADEMOS_MIGRACOES ?? pastaDeMigracoes();
   if (url.startsWith('pglite:')) {
     const caminho = url.slice('pglite:'.length);
+    if (caminho !== 'memoria') mkdirSync(caminho, { recursive: true });
     const cliente = new PGlite(caminho === 'memoria' ? undefined : caminho);
     const db = drizzlePglite(cliente, { schema });
     await migratePglite(db, { migrationsFolder });

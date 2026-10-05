@@ -194,3 +194,16 @@ describe('estatísticas da comunidade', () => {
     expect(r.status).toBe(400);
   });
 });
+
+describe('link mágico', () => {
+  it('aponta para o app quando a origem é confiável', async () => {
+    const { linkParaOApp } = await import('./auth');
+    const api =
+      'http://localhost:8787/api/auth/magic-link/verify?token=abc&callbackURL=' +
+      encodeURIComponent('http://localhost:5173/entrar');
+    expect(linkParaOApp(api, 'abc', ['http://localhost:5173'])).toBe(
+      'http://localhost:5173/entrar?link=abc',
+    );
+    expect(linkParaOApp(api, 'abc', ['https://outro.app'])).toBe(api);
+  });
+});

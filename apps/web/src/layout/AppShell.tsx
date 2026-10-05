@@ -1,10 +1,17 @@
-import { deslocarSemestre, ordinalDoSemestre, semestreDaData } from '@akademos/core';
+import {
+  deslocarSemestre,
+  ordinalDoSemestre,
+  semestreDaData,
+  tempoDecorrido,
+} from '@akademos/core';
 import { LogoMark } from '@akademos/ui';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { Link, Outlet, useLocation, useNavigate } from '@tanstack/react-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAnalise } from '../dados/analise';
-import { gravarPreferencia, useOcultarNotas, useSessao } from '../dados/preferencias';
+import { sairDaConta } from '../conta/sair';
+import { servicoSync, useEstadoSync } from '../conta/sincronizacao';
+import { lerSessao, gravarPreferencia, useOcultarNotas, useSessao } from '../dados/preferencias';
 import { store, useEstadoDados } from '../dados/store';
 import { TelaDeEstado } from './TelaDeEstado';
 import s from './AppShell.module.css';
@@ -23,7 +30,7 @@ export function AppShell() {
   const precisaImportar = semDados && !publica && pathname !== '/importar';
 
   useEffect(() => {
-    void store.iniciar();
+    void store.iniciar().then(() => servicoSync.iniciar());
   }, []);
 
   // Sem dados ainda: o primeiro passo é escolher o curso e trazer o histórico.
@@ -98,7 +105,8 @@ function BarraLateral() {
   const proximo = deslocarSemestre(atual, 1);
 
   const sair = () => {
-    // Sair não apaga dados locais (docs/DESIGN.md › Interações).
+    // Sair não apaga dados locais (docs/DESIGN.md › Interações); só a sessão e a chave.
+    if (lerSessao() === 'conta') void sairDaConta();
     gravarPreferencia('sessao', null);
     void navigate({ to: '/entrar' });
   };
@@ -132,7 +140,7 @@ function BarraLateral() {
             {estado.fase === 'pronto' && estado.armazenamento === 'memoria' ? (
               <Trans>Armazenamento indisponível: nada será guardado</Trans>
             ) : (
-              <Trans>Sem conta · nada sai daqui</Trans>
+              <IndicadorSync />
             )}
           </div>
         </Link>
@@ -191,5 +199,32 @@ function Navegacao({ proximo }: { proximo: string }) {
         </Link>
       ))}
     </nav>
+  );
+}
+
+/** "sincronizado há 3 h", como na barra lateral do protótipo. */
+function IndicadorSync() {
+  const sync = useEstadoSync();
+  const [agora, setAgora] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setAgora(new Date()), 30_000);
+    return () => clearInterval(id);
+  }, []);
+  if (sync.fase === 'desligada') return <Trans>Sem conta · nada sai daqui</Trans>;
+  if (sync.fase === 'sincronizando') return <Trans>Sincronizando…</Trans>;
+  const quando = sync.ultima ? tempoDecorrido(new Date(sync.ultima), agora) : null;
+  if (sync.fase === 'erro') {
+    return quando ? (
+      <Trans>
+        Sincronizado {quando} · {sync.mensagem}
+      </Trans>
+    ) : (
+      <Trans>Sem sincronizar · {sync.mensagem}</Trans>
+    );
+  }
+  return quando ? (
+    <Trans>Cifrado · sincronizado {quando}</Trans>
+  ) : (
+    <Trans>Cifrado · aguardando</Trans>
   );
 }

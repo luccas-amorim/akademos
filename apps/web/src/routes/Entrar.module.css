@@ -1,0 +1,153 @@
+.tela {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+}
+.painel {
+  background: var(--primary);
+  color: var(--bg);
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+}
+.proposta {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 460px;
+}
+.proposta h1 {
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+.proposta p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--primary-on-dark);
+  text-wrap: pretty;
+}
+.pilares {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--primary-on-dark);
+}
+.pilar {
+  display: flex;
+  gap: 10px;
+}
+.numero {
+  font-family: var(--font-mono);
+  color: var(--olive-on-dark);
+}
+.lado {
+  background: var(--bg);
+  padding: 48px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formulario {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.titulo {
+  font-size: 28px;
+}
+.sub {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin-top: 4px;
+  text-wrap: pretty;
+}
+.linha {
+  display: flex;
+  gap: 10px;
+}
+.linha > * {
+  flex: 1;
+}
+.campos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.local {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.localBotao {
+  all: unset;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--olive-ink);
+}
+.localBotao:hover {
+  text-decoration: underline;
+}
+.localBotao:focus-visible {
+  outline: 2px solid var(--primary);
+}
+.rodape {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+}
+.rodape a {
+  color: var(--ink-2);
+}
+.palavras {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  counter-reset: palavra;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.palavras li {
+  counter-increment: palavra;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-chip);
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.palavras li::before {
+  content: counter(palavra) '. ';
+  color: var(--ink-3);
+}
+.erro {
+  color: var(--danger);
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .painel {
+    padding: 32px 20px;
+  }
+  .proposta h1 {
+    font-size: 34px;
+  }
+}
