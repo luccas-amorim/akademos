@@ -2,3 +2,5 @@ export * from './repos';
 export * from './semestre';
 export * from './tipos';
 export * from './planner/grafo';
+export * from './percurso';
+export * from './formato';
