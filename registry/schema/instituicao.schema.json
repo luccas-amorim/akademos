@@ -73,6 +73,28 @@
         "faixas"
       ]
     },
+    "conector": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "string",
+          "format": "uri",
+          "description": "endereço do sistema acadêmico (ex.: https://sigaa.ufx.br)"
+        },
+        "departamentos": {
+          "default": [],
+          "description": "ids da consulta pública de turmas que interessam aos cursos",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "base"
+      ],
+      "additionalProperties": false
+    },
     "ficticia": {
       "description": "dados de demonstração, sem relação com instituição real",
       "type": "boolean"

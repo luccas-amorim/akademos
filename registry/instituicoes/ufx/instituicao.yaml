@@ -6,6 +6,10 @@ sistema: sigaa
 escala: ufx-0-10
 creditos_max_semestre: 24
 ficticia: true
+# Endereço fictício: o conector só funciona com uma instituição real configurada.
+conector:
+  base: https://sigaa.ufx.example
+  departamentos: ['1234']
 grade:
   dias: [seg, ter, qua, qui, sex]
   faixas:

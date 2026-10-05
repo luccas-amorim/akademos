@@ -24,10 +24,18 @@ export interface Problema {
   grave: boolean;
 }
 
+export interface ConfigConector {
+  sistema: 'sigaa' | 'jupiter' | 'outro';
+  base: string;
+  departamentos: string[];
+}
+
 export interface EntradaCatalogo {
   pacote: PacoteInstituicao;
   ficticia: boolean;
   modeloHistorico: ModeloHistoricoYaml | null;
+  /** Onde o conector do aparelho deve se conectar (só no desktop/celular). */
+  conector: ConfigConector | null;
 }
 
 /**
@@ -132,6 +140,9 @@ export function montarPacotes(arq: ArquivosInstituicao): {
     entradas.push({
       ficticia: i.ficticia ?? false,
       modeloHistorico,
+      conector: i.conector
+        ? { sistema: i.sistema, base: i.conector.base, departamentos: i.conector.departamentos }
+        : null,
       pacote: {
         instituicao: {
           id: instituicaoId,

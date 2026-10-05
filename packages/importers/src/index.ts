@@ -1,4 +1,7 @@
+export * from './conectores/sigaa/horarios';
+export * from './conectores/sigaa/sigaa';
 export * from './connector';
+export * from './http';
 export * from './correspondencia';
 export * from './pdf/extrair';
 export * from './pdf/modelo';

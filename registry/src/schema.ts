@@ -23,6 +23,19 @@ export const InstituicaoSchema = z
       dias: z.array(DiaSchema).min(1),
       faixas: z.array(z.object({ inicio: hora, fim: hora })).min(1),
     }),
+    conector: z
+      .object({
+        base: z
+          .string()
+          .url()
+          .describe('endereço do sistema acadêmico (ex.: https://sigaa.ufx.br)'),
+        departamentos: z
+          .array(z.string())
+          .default([])
+          .describe('ids da consulta pública de turmas que interessam aos cursos'),
+      })
+      .strict()
+      .optional(),
     ficticia: z
       .boolean()
       .optional()

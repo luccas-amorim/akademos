@@ -136,3 +136,12 @@ export async function registrarNoDiario(
 export async function apagarDoDiario(id: string): Promise<void> {
   await store.escrever((repos) => repos.diario.apagar(id));
 }
+
+/** Grava turmas lidas por um conector (substitui as do mesmo id). */
+export async function importarOfertas(ofertas: Oferta[]): Promise<void> {
+  await store.escrever((repos) =>
+    repos.transacao(async (tx) => {
+      for (const o of ofertas) await tx.ofertas.salvar(o);
+    }),
+  );
+}

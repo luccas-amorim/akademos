@@ -25,6 +25,8 @@
     "@lingui/core": "^6.9.0",
     "@lingui/react": "^6.9.0",
     "@tanstack/react-router": "^1.170.41",
+    "@tauri-apps/api": "^2.12.1",
+    "@tauri-apps/plugin-http": "^2.8.0",
     "better-auth": "^1.7.7",
     "pdfjs-dist": "^6.4.299",
     "react": "^19.3.0",

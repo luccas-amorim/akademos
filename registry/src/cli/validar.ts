@@ -3,12 +3,14 @@
  * usam) e regras de coerência (pré-requisitos, ciclos, créditos).
  */
 import { Ajv2020, type ValidateFunction } from 'ajv/dist/2020.js';
+import addFormats from 'ajv-formats';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { lerInstituicoes, RAIZ_REGISTRO } from '../node';
 import { montarPacotes, type Problema } from '../pacote';
 
 const ajv = new Ajv2020({ allErrors: true, strict: false });
+addFormats.default(ajv);
 const compilar = (nome: string) =>
   ajv.compile(
     JSON.parse(readFileSync(join(RAIZ_REGISTRO, 'schema', `${nome}.schema.json`), 'utf8')),
