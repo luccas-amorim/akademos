@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f6f5f1;color:#1b1d22;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1e3a8a;text-decoration:none}a:hover{color:#13265e;text-decoration:underline}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<sc-if value="{{ showLogin }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="Entrar" style="min-height:100vh;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))">
+  <section style="background:#1e3a8a;color:#f6f5f1;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="static/img/favicon.svg" alt="" style="width:30px;height:30px;background:#f6f5f1;border-radius:6px;padding:3px">
+      <div style="font-family:'Source Serif 4',serif;font-size:22px;font-weight:600">Akademos</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;max-width:460px">
+      <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:44px;line-height:1.08;letter-spacing:-0.02em;text-wrap:pretty">Seu percurso acadêmico, do primeiro semestre à formatura.</h1>
+      <p style="margin:0;font-size:16px;line-height:1.55;color:#dfe5f3;text-wrap:pretty">Histórico, planejamento de matrícula e previsões calculadas no seu aparelho. Seus dados não saem dele sem você pedir.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;color:#dfe5f3">
+      <div style="display:flex;gap:10px"><span style="font-family:'IBM Plex Mono',monospace;color:#c9d38f">01</span><span>Local primeiro — funciona offline</span></div>
+      <div style="display:flex;gap:10px"><span style="font-family:'IBM Plex Mono',monospace;color:#c9d38f">02</span><span>Sincronização opcional e criptografada</span></div>
+      <div style="display:flex;gap:10px"><span style="font-family:'IBM Plex Mono',monospace;color:#c9d38f">03</span><span>Código aberto · qualquer universidade</span></div>
+    </div>
+  </section>
+  <section style="background:#f6f5f1;padding:48px 24px;display:flex;align-items:center;justify-content:center">
+    <div style="width:100%;max-width:380px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;background:#ecebe5;border-radius:8px;padding:3px">
+        <button onClick="{{ modeEntrar }}" style="all:unset;cursor:pointer;flex:1;text-align:center;padding:8px;border-radius:6px;font-size:14px;font-weight:500;background:{{ tabE.bg }};color:{{ tabE.c }}">Entrar</button>
+        <button onClick="{{ modeCriar }}" style="all:unset;cursor:pointer;flex:1;text-align:center;padding:8px;border-radius:6px;font-size:14px;font-weight:500;background:{{ tabC.bg }};color:{{ tabC.c }}">Criar conta</button>
+      </div>
+      <div>
+        <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:28px;font-weight:600">{{ loginTitle }}</h2>
+        <div style="font-size:14px;color:#5d6068;margin-top:4px;text-wrap:pretty">{{ loginSub }}</div>
+      </div>
+      <button onClick="{{ enter }}" style="all:unset;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:8px;padding:12px;border-radius:8px;background:#1b1d22;color:#fff;font-size:14.5px;font-weight:500;min-height:24px">Continuar com chave de acesso</button>
+      <div style="display:flex;gap:10px">
+        <button onClick="{{ enter }}" style="all:unset;cursor:pointer;flex:1;text-align:center;padding:11px;border-radius:8px;border:1px solid #d6d3c8;background:#fffefb;font-size:14px">Google</button>
+        <button onClick="{{ enter }}" style="all:unset;cursor:pointer;flex:1;text-align:center;padding:11px;border-radius:8px;border:1px solid #d6d3c8;background:#fffefb;font-size:14px">E-mail institucional</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:#8a8c92"><div style="flex:1;height:1px;background:#e4e1d8"></div>ou com e-mail<div style="flex:1;height:1px;background:#e4e1d8"></div></div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-if value="{{ isCriar }}" hint-placeholder-val="{{ false }}">
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500">Nome<input placeholder="Como quer ser chamada(o)" style="font:inherit;font-weight:400;font-size:14.5px;padding:11px 12px;border:1px solid #d6d3c8;border-radius:8px;background:#fffefb;outline-color:#1e3a8a"></label>
+        </sc-if>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500">E-mail<input type="email" placeholder="voce@exemplo.com" style="font:inherit;font-weight:400;font-size:14.5px;padding:11px 12px;border:1px solid #d6d3c8;border-radius:8px;background:#fffefb;outline-color:#1e3a8a"></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500"><span style="display:flex;justify-content:space-between">Senha<a href="#" style="font-weight:400;font-size:12.5px">Esqueci</a></span><input type="password" placeholder="••••••••" style="font:inherit;font-weight:400;font-size:14.5px;padding:11px 12px;border:1px solid #d6d3c8;border-radius:8px;background:#fffefb;outline-color:#1e3a8a"></label>
+        <button onClick="{{ enter }}" style="all:unset;cursor:pointer;text-align:center;padding:12px;border-radius:8px;background:#1e3a8a;color:#fff;font-size:14.5px;font-weight:500;margin-top:4px">{{ loginCta }}</button>
+      </div>
+      <div style="border-top:1px solid #e4e1d8;padding-top:18px;display:flex;flex-direction:column;gap:6px">
+        <button onClick="{{ enterLocal }}" style="all:unset;cursor:pointer;font-size:14px;font-weight:500;color:#4f6428">Usar sem conta, só neste aparelho →</button>
+        <div style="font-size:12.5px;color:#5d6068;text-wrap:pretty">Tudo funciona offline. Você pode criar uma conta depois para sincronizar.</div>
+      </div>
+      <div style="display:flex;gap:14px;font-size:12px;color:#8a8c92"><a href="#" style="color:#5d6068">Privacidade</a><a href="#" style="color:#5d6068">Termos</a><a href="#" style="color:#5d6068">Código-fonte</a></div>
+    </div>
+  </section>
+</div>
+</sc-if>
+<sc-if value="{{ showApp }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;min-height:100vh">
+  <aside style="flex:0 0 232px;background:#fffefb;border-right:1px solid #e4e1d8;padding:20px 12px;display:flex;flex-direction:column;gap:22px;position:sticky;top:0;height:100vh">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px">
+      <img src="static/img/favicon.svg" alt="" style="width:28px;height:28px">
+      <div style="font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;letter-spacing:-0.01em">Akademos</div>
+    </div>
+    <div style="padding:10px;border:1px solid #e4e1d8;border-radius:8px;display:flex;flex-direction:column;gap:2px">
+      <div style="font-size:13px;font-weight:600">Ana Ribeiro</div>
+      <div style="font-size:12px;color:#5d6068">Eng. de Computação · UFX</div>
+      <div style="font-size:12px;color:#5d6068">5º semestre · 2026/2</div>
+    </div>
+    <nav style="display:flex;flex-direction:column;gap:2px">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6">
+        <button onClick="{{ n.go }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:6px;font-size:14px;background:{{ n.bg }};color:{{ n.c }};font-weight:{{ n.fw }}">
+          <span>{{ n.label }}</span><span style="font-size:11px;font-family:'IBM Plex Mono',monospace;color:#8f5309">{{ n.badge }}</span>
+        </button>
+      </sc-for>
+    </nav>
+    <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+      <div style="padding:10px;border-radius:8px;background:#eef1e2;display:flex;flex-direction:column;gap:3px">
+        <div style="font-size:12px;font-weight:600;color:#3f5120">Dados neste aparelho</div>
+        <div style="font-size:12px;color:#3f5120">SIGAA UFX · sincronizado há 3 h</div>
+      </div>
+      <button onClick="{{ togglePriv }}" style="all:unset;cursor:pointer;font-size:13px;padding:6px 10px;border:1px solid #e4e1d8;border-radius:6px;text-align:center">{{ privLabel }}</button>
+      <div style="display:flex;gap:12px;padding:0 6px;font-size:12px">
+        <button onClick="{{ goImport }}" style="all:unset;cursor:pointer;color:#5d6068">Importar</button>
+        <button onClick="{{ logout }}" style="all:unset;cursor:pointer;color:#5d6068">Sair</button>
+        <button onClick="{{ goSobre }}" style="all:unset;cursor:pointer;color:#5d6068">Sobre e apoio</button>
+      </div>
+    </div>
+  </aside>
+
+  <main style="flex:1 1 auto;min-width:0;padding:32px 40px 64px">
+  <div style="max-width:1200px;margin:0 auto">
+
+  <sc-if value="{{ is.painel }}" hint-placeholder-val="{{ true }}">
+    <div data-screen-label="Painel" style="display:flex;flex-direction:column;gap:28px">
+      <header style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="font-size:13px;color:#5d6068;margin-bottom:4px">Domingo, 4 de outubro</div>
+          <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:34px;letter-spacing:-0.015em">Boa noite, Ana.</h1>
+        </div>
+        <div style="font-size:14px;color:#5d6068;text-wrap:pretty;max-width:440px">Você está na metade do curso. Duas decisões de 2027/1 definem se a formatura fica em 2028/1.</div>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+        <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+          <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+            <div style="font-size:12px;color:#5d6068;text-transform:uppercase;letter-spacing:0.06em">{{ k.t }}</div>
+            <div style="font-family:'Source Serif 4',serif;font-size:32px;font-weight:600;line-height:1.1">{{ k.v }}</div>
+            <div style="height:4px;background:#ecebe5;border-radius:2px;overflow:hidden"><div style="height:100%;width:{{ k.w }};background:#1e3a8a"></div></div>
+            <div style="font-size:13px;color:#5d6068">{{ k.s }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;align-items:start">
+        <section style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">O que merece atenção</h2>
+            <button onClick="{{ goInsights }}" style="all:unset;cursor:pointer;font-size:13px;color:#1e3a8a">Todos os insights</button>
+          </div>
+          <sc-for list="{{ topInsights }}" as="i" hint-placeholder-count="3">
+            <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;gap:8px;align-items:center">
+                <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:{{ i.c }}">{{ i.tipo }}</span>
+              </div>
+              <div style="font-weight:600;font-size:15px">{{ i.t }}</div>
+              <div style="font-size:14px;color:#41444b;line-height:1.5;text-wrap:pretty">{{ i.b }}</div>
+              <button onClick="{{ i.go }}" style="all:unset;cursor:pointer;font-size:13px;color:#1e3a8a;font-weight:500">{{ i.a }} →</button>
+            </div>
+          </sc-for>
+        </section>
+        <section style="display:flex;flex-direction:column;gap:10px">
+          <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">Este semestre</h2>
+          <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px">
+            <sc-for list="{{ cursando }}" as="c" hint-placeholder-count="4">
+              <div style="padding:12px 16px;border-bottom:1px solid #ecebe5;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px">
+                <div style="font-weight:500;font-size:14px">{{ c.name }}</div>
+                <div style="font-size:12px;font-weight:600;color:{{ c.rc }}">{{ c.risco }}</div>
+                <div style="font-size:12px;color:#5d6068"><span style="font-family:'IBM Plex Mono',monospace">{{ c.code }}</span> · {{ c.hor }}</div>
+                <div style="font-size:12px;color:#5d6068">prevista {{ c.prev }}</div>
+              </div>
+            </sc-for>
+            <div style="padding:10px 16px;font-size:12px;color:#5d6068">Previsão a partir das suas notas e de históricos anônimos da comunidade desta matriz.</div>
+          </div>
+          <h2 style="margin:12px 0 0;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">Por área</h2>
+          <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ areas }}" as="a" hint-placeholder-count="5">
+              <div style="display:grid;grid-template-columns:130px minmax(0,1fr) 60px;gap:10px;align-items:center;font-size:13px">
+                <span>{{ a.n }}</span>
+                <div style="height:6px;background:#ecebe5;border-radius:3px;overflow:hidden"><div style="height:100%;width:{{ a.w }};background:#5a6e2e"></div></div>
+                <span style="text-align:right;color:#5d6068;font-family:'IBM Plex Mono',monospace;font-size:12px">{{ a.f }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ is.percurso }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Percurso" style="display:flex;flex-direction:column;gap:20px">
+      <header style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px">
+        <div>
+          <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:30px">Percurso</h1>
+          <div style="font-size:14px;color:#5d6068;margin-top:4px">Matriz 2019 · 128 créditos · clique numa disciplina para ver o que ela exige e o que destrava</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:12px">
+          <sc-for list="{{ legend }}" as="l" hint-placeholder-count="5">
+            <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:{{ l.bg }};border:1px solid {{ l.c }}"></span>{{ l.l }}</span>
+          </sc-for>
+        </div>
+      </header>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">
+        <div style="flex:1 1 560px;min-width:0;overflow-x:auto;padding-bottom:8px">
+          <div style="display:grid;grid-template-columns:repeat(8,150px);gap:10px">
+            <sc-for list="{{ cols }}" as="col" hint-placeholder-count="8">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="padding:0 2px 4px;border-bottom:1px solid #e4e1d8">
+                  <div style="font-size:13px;font-weight:600">{{ col.n }}º · {{ col.sem }}</div>
+                  <div style="font-size:11px;color:#5d6068">{{ col.cr }} cr {{ col.now }}</div>
+                </div>
+                <sc-for list="{{ col.items }}" as="d" hint-placeholder-count="4">
+                  <button onClick="{{ d.pick }}" style="all:unset;cursor:pointer;background:{{ d.bg }};border:1px {{ d.bs }} {{ d.c }};box-shadow:{{ d.ring }};border-radius:7px;padding:8px 9px;display:flex;flex-direction:column;gap:3px;min-height:74px">
+                    <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:{{ d.c }}"><span>{{ d.code }}</span><span>{{ d.nota }}</span></div>
+                    <div style="font-size:12.5px;line-height:1.3;font-weight:500;color:#1b1d22">{{ d.name }}</div>
+                    <div style="font-size:10.5px;color:{{ d.tagc }};font-weight:600;margin-top:auto">{{ d.tag }}</div>
+                  </button>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <aside style="flex:1 1 300px;max-width:380px;background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:14px;position:sticky;top:24px">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6068">{{ sel.code }} · {{ sel.area }}</div>
+            <div style="font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;margin-top:2px">{{ sel.name }}</div>
+            <div style="display:flex;gap:8px;margin-top:8px;font-size:12px;flex-wrap:wrap">
+              <span style="padding:2px 8px;border-radius:10px;background:{{ sel.bg }};color:{{ sel.c }};font-weight:600">{{ sel.st }}</span>
+              <span style="padding:2px 8px;border-radius:10px;border:1px solid #e4e1d8">{{ sel.cr }} cr · {{ sel.ch }} h</span>
+              <span style="padding:2px 8px;border-radius:10px;border:1px solid #e4e1d8">{{ sel.nota }}</span>
+            </div>
+          </div>
+          <div style="padding:12px;border-radius:8px;background:#f6f5f1;font-size:13.5px;line-height:1.5;text-wrap:pretty">{{ sel.ins }}</div>
+          <div>
+            <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#5a6e2e;font-weight:600;margin-bottom:6px">Exige</div>
+            <sc-for list="{{ sel.pre }}" as="p" hint-placeholder-count="1">
+              <button onClick="{{ p.pick }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;width:100%;font-size:13px;padding:5px 0;border-bottom:1px solid #ecebe5"><span>{{ p.name }}</span><span style="color:{{ p.c }};font-size:12px">{{ p.st }}</span></button>
+            </sc-for>
+            <div style="font-size:13px;color:#5d6068">{{ sel.preEmpty }}</div>
+          </div>
+          <div>
+            <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#8f5309;font-weight:600;margin-bottom:6px">Destrava</div>
+            <sc-for list="{{ sel.unl }}" as="u" hint-placeholder-count="1">
+              <button onClick="{{ u.pick }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;width:100%;font-size:13px;padding:5px 0;border-bottom:1px solid #ecebe5"><span>{{ u.name }}</span><span style="color:{{ u.c }};font-size:12px">{{ u.st }}</span></button>
+            </sc-for>
+            <div style="font-size:13px;color:#5d6068">{{ sel.unlEmpty }}</div>
+          </div>
+          <button onClick="{{ goPlan }}" style="all:unset;cursor:pointer;text-align:center;padding:9px;border-radius:7px;background:#1e3a8a;color:#fff;font-size:14px;font-weight:500">Ver turmas em 2027/1</button>
+        </aside>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ is.plan }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Planejar" style="display:flex;flex-direction:column;gap:20px">
+      <header style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px">
+        <div>
+          <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:30px">Planejar 2027/1</h1>
+          <div style="font-size:14px;color:#5d6068;margin-top:4px">Oferta e pré-matrícula lidas do SIGAA UFX há 3 h · sua prioridade: 3ª faixa (regular, ≥ 40% integralizado)</div>
+        </div>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px">
+        <sc-for list="{{ planKpis }}" as="k" hint-placeholder-count="4">
+          <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:12px 14px">
+            <div style="font-size:12px;color:#5d6068">{{ k.t }}</div>
+            <div style="font-family:'Source Serif 4',serif;font-size:24px;font-weight:600;color:{{ k.c }}">{{ k.v }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">
+        <section style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px">
+          <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:19px;font-weight:600">Disponíveis para você</h2>
+          <sc-for list="{{ offer }}" as="o" hint-placeholder-count="4">
+            <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;overflow:hidden">
+              <div style="padding:12px 14px;display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap">
+                <div><span style="font-weight:600">{{ o.name }}</span> <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5d6068">{{ o.code }} · {{ o.cr }} cr</span></div>
+                <span style="font-size:12px;color:#8f5309">{{ o.note }}</span>
+              </div>
+              <sc-for list="{{ o.turmas }}" as="t" hint-placeholder-count="2">
+                <div style="padding:10px 14px;border-top:1px solid #ecebe5;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) auto;gap:12px;align-items:center;background:{{ t.rowbg }}">
+                  <div>
+                    <div style="font-size:13px;font-weight:500">{{ t.t }} · {{ t.hor }}</div>
+                    <div style="font-size:12px;color:#5d6068">{{ t.prof }}</div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="height:6px;background:#ecebe5;border-radius:3px;overflow:hidden"><div style="height:100%;width:{{ t.w }};background:{{ t.fc }}"></div></div>
+                    <div style="font-size:11.5px;color:#5d6068">{{ t.lot }} · <span style="color:{{ t.cc }};font-weight:600">{{ t.chance }}% de vaga</span></div>
+                  </div>
+                  <button onClick="{{ t.toggle }}" style="all:unset;cursor:pointer;font-size:12.5px;font-weight:500;padding:6px 10px;border-radius:6px;border:1px solid {{ t.bc }};background:{{ t.bbg }};color:{{ t.btc }};white-space:nowrap">{{ t.bl }}</button>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+          <div style="font-size:13px;color:#5d6068;padding:4px 2px">Bloqueadas neste semestre: Teoria de Controle (exige Sinais e Sistemas), Aprendizado de Máquina (exige IA).</div>
+        </section>
+        <section style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px;position:sticky;top:24px">
+          <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:19px;font-weight:600">Sua semana</h2>
+          <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:10px;overflow-x:auto">
+            <div style="display:grid;grid-template-columns:52px repeat(5,minmax(70px,1fr));gap:4px;font-size:12px">
+              <div></div>
+              <sc-for list="{{ dias }}" as="dd" hint-placeholder-count="5"><div style="text-align:center;font-weight:600;padding:4px 0">{{ dd }}</div></sc-for>
+            </div>
+            <sc-for list="{{ grid }}" as="row" hint-placeholder-count="5">
+              <div style="display:grid;grid-template-columns:52px repeat(5,minmax(70px,1fr));gap:4px;margin-top:4px">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5d6068;padding-top:8px">{{ row.h }}</div>
+                <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="5">
+                  <div style="min-height:52px;border-radius:6px;padding:6px;background:{{ cell.bg }};border:1px solid {{ cell.bd }};display:flex;flex-direction:column;gap:2px">
+                    <div style="font-size:11.5px;font-weight:600;line-height:1.2;color:{{ cell.c }}">{{ cell.t }}</div>
+                    <div style="font-size:10.5px;color:{{ cell.c }}">{{ cell.s }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+          <sc-for list="{{ planNotes }}" as="pn" hint-placeholder-count="2">
+            <div style="padding:10px 12px;border-radius:8px;background:{{ pn.bg }};color:{{ pn.c }};font-size:13px;line-height:1.45">{{ pn.t }}</div>
+          </sc-for>
+        </section>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ is.insights }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Insights" style="display:flex;flex-direction:column;gap:20px;max-width:820px">
+      <header>
+        <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:30px">Insights</h1>
+        <div style="font-size:14px;color:#5d6068;margin-top:4px;text-wrap:pretty">Calculados no seu aparelho. Comparações com a comunidade usam só históricos anônimos de quem optou por compartilhar.</div>
+      </header>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+          <button onClick="{{ f.go }}" style="all:unset;cursor:pointer;font-size:13px;padding:5px 12px;border-radius:14px;border:1px solid {{ f.bd }};background:{{ f.bg }};color:{{ f.c }}">{{ f.l }}</button>
+        </sc-for>
+      </div>
+      <sc-for list="{{ insightList }}" as="i" hint-placeholder-count="4">
+        <article style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:110px minmax(0,1fr);gap:4px 18px">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:{{ i.c }};padding-top:3px">{{ i.tipo }}</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="font-weight:600;font-size:16px">{{ i.t }}</div>
+            <div style="font-size:14px;color:#41444b;line-height:1.55;text-wrap:pretty">{{ i.b }}</div>
+            <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+              <button onClick="{{ i.go }}" style="all:unset;cursor:pointer;font-size:13px;color:#1e3a8a;font-weight:500">{{ i.a }} →</button>
+              <span style="font-size:12px;color:#8b8d93">{{ i.src }}</span>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ is.desemp }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Desempenho" style="display:flex;flex-direction:column;gap:24px">
+      <header>
+        <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:30px">Desempenho</h1>
+        <div style="font-size:14px;color:#5d6068;margin-top:4px">Média ponderada por créditos · escala 0–10 · aprovação ≥ 6,0</div>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;align-items:start">
+        <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:18px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:19px;font-weight:600">Média por semestre</h2>
+            <span style="font-size:13px;color:#5d6068">geral <strong style="color:#1b1d22">{{ mediaGeral }}</strong></span>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-end;height:190px;margin-top:16px;border-bottom:1px solid #e4e1d8;position:relative">
+            <sc-for list="{{ semBars }}" as="b" hint-placeholder-count="5">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%">
+                <div style="font-size:12px;font-weight:600">{{ b.v }}</div>
+                <div style="width:100%;max-width:44px;height:{{ b.h }};background:{{ b.c }};border-radius:4px 4px 0 0;border:1px {{ b.bs }} #1e3a8a"></div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:14px;margin-top:6px">
+            <sc-for list="{{ semBars }}" as="b" hint-placeholder-count="5"><div style="flex:1;text-align:center;font-size:11px;color:#5d6068">{{ b.l }}</div></sc-for>
+          </div>
+        </section>
+        <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:12px">
+          <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:19px;font-weight:600">Por área</h2>
+          <sc-for list="{{ areaAvg }}" as="a" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:130px minmax(0,1fr) 40px;gap:10px;align-items:center;font-size:13px">
+              <span>{{ a.n }}</span>
+              <div style="height:8px;background:#ecebe5;border-radius:4px;position:relative;overflow:hidden"><div style="height:100%;width:{{ a.w }};background:{{ a.c }}"></div></div>
+              <span style="text-align:right;font-weight:600">{{ a.v }}</span>
+            </div>
+          </sc-for>
+          <div style="font-size:13px;color:#5d6068;line-height:1.5;text-wrap:pretty">Você rende cerca de dois pontos a mais em Computação do que em Matemática. Aprendizado de Máquina exige as duas.</div>
+        </section>
+      </div>
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">Risco neste semestre</h2>
+        <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;overflow-x:auto">
+          <div style="display:grid;grid-template-columns:minmax(180px,2fr) minmax(110px,1fr) minmax(110px,1fr) minmax(200px,2fr);font-size:12px;color:#5d6068;padding:10px 16px;border-bottom:1px solid #e4e1d8;gap:12px"><span>Disciplina</span><span>Nota prevista</span><span>Risco</span><span>Por quê</span></div>
+          <sc-for list="{{ cursando }}" as="c" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:minmax(180px,2fr) minmax(110px,1fr) minmax(110px,1fr) minmax(200px,2fr);font-size:13.5px;padding:11px 16px;border-bottom:1px solid #ecebe5;gap:12px;align-items:center">
+              <span style="font-weight:500">{{ c.name }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px">{{ c.prev }}</span><span style="color:{{ c.rc }};font-weight:600">{{ c.risco }}</span><span style="color:#41444b;font-size:13px">{{ c.why }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">Correlações na sua matriz</h2>
+        <div style="font-size:13px;color:#5d6068">Quanto a nota numa disciplina antecipa a nota em outra, em históricos anônimos de Eng. de Computação · UFX.</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px">
+          <sc-for list="{{ corrs }}" as="r" hint-placeholder-count="4">
+            <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+              <div style="font-size:14px;font-weight:500;line-height:1.35">{{ r.a }} <span style="color:#8b8d93">→</span> {{ r.b }}</div>
+              <div style="display:flex;gap:16px;font-size:12px;color:#5d6068">
+                <span>r = <strong style="color:#1b1d22">{{ r.r }}</strong></span><span>{{ r.n }} históricos</span>
+              </div>
+              <div style="font-size:13px;padding-top:8px;border-top:1px solid #ecebe5">Sua nota {{ r.sua }} → prevista <strong>{{ r.prev }}</strong></div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ is.carreira }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Carreira" style="display:flex;flex-direction:column;gap:24px">
+      <header>
+        <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:30px">Carreira</h1>
+        <div style="font-size:14px;color:#5d6068;margin-top:4px">O que você quer fazer depois, e quanto do percurso já aponta para lá</div>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;align-items:start">
+        <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+            <div>
+              <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:#5d6068">Objetivo principal</div>
+              <div style="font-family:'Source Serif 4',serif;font-size:24px;font-weight:600;margin-top:2px">Ciência de dados em saúde</div>
+              <div style="font-size:13px;color:#5d6068;margin-top:2px">Alternativa: engenharia de software</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-family:'Source Serif 4',serif;font-size:36px;font-weight:600;color:#1e3a8a;line-height:1">{{ aderencia }}</div>
+              <div style="font-size:12px;color:#5d6068">aderência</div>
+            </div>
+          </div>
+          <sc-for list="{{ comps }}" as="cp" hint-placeholder-count="6">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="display:flex;justify-content:space-between;font-size:13.5px"><span style="font-weight:500">{{ cp.n }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">{{ cp.p }}%</span></div>
+              <div style="height:6px;background:#ecebe5;border-radius:3px;overflow:hidden"><div style="height:100%;width:{{ cp.w }};background:{{ cp.c }}"></div></div>
+              <div style="font-size:12px;color:#5d6068">{{ cp.de }}</div>
+            </div>
+          </sc-for>
+        </section>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:20px">
+            <h2 style="margin:0 0 14px;font-family:'Source Serif 4',serif;font-size:19px;font-weight:600">Marcos até a formatura</h2>
+            <sc-for list="{{ marcos }}" as="m" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:62px 14px minmax(0,1fr);gap:10px;padding-bottom:14px">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5d6068;padding-top:1px">{{ m.s }}</span>
+                <span style="width:10px;height:10px;border-radius:50%;margin-top:4px;background:{{ m.bg }};border:2px solid #1e3a8a"></span>
+                <div><div style="font-size:14px;font-weight:500">{{ m.t }}</div><div style="font-size:12.5px;color:#5d6068">{{ m.d }}</div></div>
+              </div>
+            </sc-for>
+          </section>
+          <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px">
+            <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:19px;font-weight:600">Diário de expectativas</h2>
+            <div style="font-size:13px;color:#5d6068">Escreva o que você espera a cada semestre. O Akademos mostra como isso mudou.</div>
+            <textarea placeholder="O que você espera do próximo semestre?" style="font:inherit;font-size:14px;padding:10px;border:1px solid #e4e1d8;border-radius:7px;min-height:64px;resize:vertical;background:#f6f5f1"></textarea>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="border-left:2px solid #e4e1d8;padding-left:12px"><div style="font-size:12px;color:#5d6068">Mar 2026 · 4º semestre</div><div style="font-size:14px;font-family:'Source Serif 4',serif">Entrei na iniciação científica de dados em saúde. É isso que quero seguir.</div></div>
+              <div style="border-left:2px solid #e4e1d8;padding-left:12px"><div style="font-size:12px;color:#5d6068">Ago 2025 · 3º semestre</div><div style="font-size:14px;font-family:'Source Serif 4',serif">Gostei mais de Probabilidade do que esperava. Talvez dados.</div></div>
+              <div style="border-left:2px solid #e4e1d8;padding-left:12px"><div style="font-size:12px;color:#5d6068">Mar 2025 · 2º semestre</div><div style="font-size:14px;font-family:'Source Serif 4',serif">Quero trabalhar com desenvolvimento de jogos.</div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ is.importar }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Importar" style="display:flex;flex-direction:column;gap:24px;max-width:860px">
+      <header>
+        <div style="font-size:13px;color:#5d6068">Passo 2 de 3</div>
+        <h1 style="margin:4px 0 0;font-family:'Source Serif 4',serif;font-weight:600;font-size:30px">Traga seu histórico</h1>
+        <div style="font-size:14px;color:#5d6068;margin-top:4px">Universidade Federal de Exemplo · Engenharia de Computação · matriz 2019 <a href="#">trocar</a></div>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <sc-for list="{{ methods }}" as="me" hint-placeholder-count="3">
+          <button onClick="{{ me.go }}" style="all:unset;cursor:pointer;background:#fffefb;border:1px solid {{ me.bd }};box-shadow:{{ me.ring }};border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px">
+            <div style="font-weight:600;font-size:15px">{{ me.t }}</div>
+            <div style="font-size:13px;color:#5d6068;line-height:1.45">{{ me.d }}</div>
+          </button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ m.pdf }}" hint-placeholder-val="{{ true }}">
+        <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;overflow:hidden">
+          <div style="padding:14px 16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid #e4e1d8">
+            <div><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">historico_escolar_2026.pdf</span> <span style="font-size:13px;color:#5d6068">· lido no aparelho, não enviado</span></div>
+            <div style="font-size:13px"><strong style="color:#4f6428">30 reconhecidas</strong> · <strong style="color:#8f5309">2 para revisar</strong></div>
+          </div>
+          <div style="display:grid;grid-template-columns:90px minmax(0,1.6fr) 60px minmax(0,1.4fr);gap:10px;font-size:12px;color:#5d6068;padding:8px 16px;border-bottom:1px solid #ecebe5"><span>No PDF</span><span>Disciplina</span><span>Nota</span><span>Correspondência na matriz</span></div>
+          <sc-for list="{{ parsed }}" as="pr" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:90px minmax(0,1.6fr) 60px minmax(0,1.4fr);gap:10px;font-size:13px;padding:9px 16px;border-bottom:1px solid #ecebe5;background:{{ pr.bg }};align-items:center">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">{{ pr.raw }}</span><span>{{ pr.n }}</span><span>{{ pr.nota }}</span><span style="color:{{ pr.c }}">{{ pr.match }}</span>
+            </div>
+          </sc-for>
+          <div style="padding:12px 16px;display:flex;justify-content:flex-end;gap:10px">
+            <button style="all:unset;cursor:pointer;padding:8px 14px;border:1px solid #e4e1d8;border-radius:7px;font-size:14px">Revisar 2</button>
+            <button onClick="{{ goPainel }}" style="all:unset;cursor:pointer;padding:8px 14px;border-radius:7px;background:#1e3a8a;color:#fff;font-size:14px;font-weight:500">Continuar</button>
+          </div>
+        </section>
+      </sc-if>
+      <sc-if value="{{ m.sigaa }}" hint-placeholder-val="{{ false }}">
+        <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-weight:600">Conector SIGAA · UFX</div>
+          <div style="font-size:14px;color:#41444b;line-height:1.5;text-wrap:pretty">Mantido por 6 voluntários da comunidade. Você entra pela página oficial da universidade; o Akademos só lê histórico, oferta de turmas e pré-matrícula, e nunca guarda sua senha.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;font-size:12px">
+            <span style="padding:3px 9px;border-radius:10px;background:#eef1e2;color:#4f6428">Histórico</span><span style="padding:3px 9px;border-radius:10px;background:#eef1e2;color:#4f6428">Oferta de turmas</span><span style="padding:3px 9px;border-radius:10px;background:#eef1e2;color:#4f6428">Lotação e pré-matrícula</span><span style="padding:3px 9px;border-radius:10px;background:#f1f0eb;color:#5d6068">Frequência (em teste)</span>
+          </div>
+          <button style="all:unset;cursor:pointer;align-self:flex-start;padding:8px 14px;border-radius:7px;background:#1e3a8a;color:#fff;font-size:14px;font-weight:500">Entrar pelo SIGAA</button>
+        </section>
+      </sc-if>
+      <sc-if value="{{ m.manual }}" hint-placeholder-val="{{ false }}">
+        <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-weight:600">Marque o que você já cursou</div>
+          <div style="font-size:14px;color:#41444b">A matriz 2019 já está carregada (mantida pela comunidade). Marque semestre a semestre e lance as notas depois, se quiser.</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <sc-for list="{{ cols }}" as="col" hint-placeholder-count="8"><span style="font-size:13px;padding:6px 10px;border:1px solid #e4e1d8;border-radius:7px">{{ col.n }}º semestre</span></sc-for>
+          </div>
+        </section>
+      </sc-if>
+      <div style="padding:14px 16px;border-radius:10px;background:#eef1e2;color:#3f5120;font-size:13.5px;line-height:1.5">Próximo passo: privacidade. Por padrão, tudo fica neste aparelho. Sincronizar entre aparelhos e compartilhar históricos anônimos com a comunidade são opcionais e você pode desligar quando quiser.</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ is.sobre }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Sobre e apoio" style="display:flex;flex-direction:column;gap:40px;max-width:960px">
+      <section style="display:flex;flex-direction:column;gap:14px;padding-top:12px">
+        <div style="font-size:13px;color:#5d6068">Código aberto · licença MIT</div>
+        <h1 style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:46px;line-height:1.08;letter-spacing:-0.02em;max-width:760px;text-wrap:pretty">Seu percurso na graduação, num só lugar que é seu.</h1>
+        <p style="margin:0;font-size:17px;color:#41444b;line-height:1.55;max-width:640px;text-wrap:pretty">Matriz, horário, notas, turmas e carreira, conectados entre si e com o sistema da sua universidade. Funciona com qualquer curso. Seus dados ficam no seu aparelho.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+          <button onClick="{{ goImport }}" style="all:unset;cursor:pointer;padding:10px 18px;border-radius:7px;background:#1e3a8a;color:#fff;font-size:15px;font-weight:500">Começar com meu curso</button>
+          <a href="https://github.com/luccas-amorim/akademos" style="padding:10px 18px;border-radius:7px;border:1px solid #c9c5b9;font-size:15px;color:#1b1d22">Ver no GitHub</a>
+        </div>
+        <div style="font-size:13px;color:#5d6068;font-style:italic;font-family:'Source Serif 4',serif;margin-top:8px">Akademos é o herói ateniense dono do bosque de oliveiras onde Platão fundou a Academia.</div>
+      </section>
+      <section style="display:flex;flex-direction:column;gap:12px">
+        <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:24px;font-weight:600">Universidades conectadas</h2>
+        <div style="font-size:14px;color:#5d6068">Cada conector é mantido por estudantes daquela universidade.</div>
+        <div style="background:#fffefb;border:1px solid #e4e1d8;border-radius:10px">
+          <sc-for list="{{ adapters }}" as="ad" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1.2fr);gap:12px;padding:11px 16px;border-bottom:1px solid #ecebe5;font-size:14px;align-items:center">
+              <span style="font-weight:500">{{ ad.u }}</span><span style="color:#5d6068;font-size:13px">{{ ad.s }}</span><span style="color:{{ ad.c }};font-size:13px;font-weight:500">{{ ad.st }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+      <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:600">Local primeiro</div><div style="font-size:14px;color:#41444b;line-height:1.5">Notas e histórico ficam no aparelho. Sincronizar é opcional e criptografado.</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:600">Comunidade, de forma anônima</div><div style="font-size:14px;color:#41444b;line-height:1.5">Correlações e previsões só existem porque alunos optam por compartilhar históricos sem identificação.</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:600">Qualquer matriz</div><div style="font-size:14px;color:#41444b;line-height:1.5">Créditos, faixas, séries ou semestres, regras de aprovação: tudo vem dos dados, nada do código.</div></div>
+      </section>
+      <section style="background:#fffefb;border:1px solid #e4e1d8;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:flex-end">
+          <div>
+            <h2 style="margin:0;font-family:'Source Serif 4',serif;font-size:24px;font-weight:600">Mantido por quem usa</h2>
+            <div style="font-size:14px;color:#5d6068;margin-top:4px">Sem anúncios e sem venda de dados. O projeto vive de patrocínio.</div>
+          </div>
+          <a href="https://github.com/sponsors/luccas-amorim" style="padding:10px 18px;border-radius:7px;background:#5a6e2e;color:#fff;font-size:15px;font-weight:500">Patrocinar no GitHub</a>
+        </div>
+        <sc-for list="{{ goals }}" as="g" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <div style="display:flex;justify-content:space-between;font-size:14px;gap:12px"><span style="font-weight:500">{{ g.t }}</span><span style="color:#5d6068;font-family:'IBM Plex Mono',monospace;font-size:12.5px">{{ g.v }}</span></div>
+            <div style="height:6px;background:#ecebe5;border-radius:3px;overflow:hidden"><div style="height:100%;width:{{ g.w }};background:#5a6e2e"></div></div>
+          </div>
+        </sc-for>
+        <div style="font-size:13px;color:#5d6068">Também por <a href="https://luccas-amorim.github.io/apoie/">PIX</a>.</div>
+      </section>
+    </div>
+  </sc-if>
+
+  </div>
+  </main>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;pularLogin&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;telaInicial&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;painel&quot;,&quot;percurso&quot;,&quot;plan&quot;,&quot;insights&quot;,&quot;desemp&quot;,&quot;carreira&quot;,&quot;importar&quot;,&quot;sobre&quot;],&quot;default&quot;:&quot;painel&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ocultarNotas&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const SEMS=['2024/2','2025/1','2025/2','2026/1','2026/2','2027/1','2027/2','2028/1'];
+const D=[
+['EX101','Cálculo I',1,4,'Matemática','ok',7.8,[]],['EX102','Algoritmos e Programação',1,4,'Computação','ok',9.1,[]],['EX103','Geometria Analítica',1,4,'Matemática','ok',8.0,[]],['EX104','Introdução à Engenharia',1,2,'Formação geral','ok',9.5,[]],
+['EX201','Cálculo II',2,4,'Matemática','ok',6.4,['EX101']],['EX202','Estruturas de Dados',2,4,'Computação','ok',8.7,['EX102']],['EX203','Álgebra Linear',2,4,'Matemática','ok',7.2,['EX103']],['EX204','Física I',2,4,'Física','ok',6.9,['EX101']],
+['EX301','Cálculo III',3,4,'Matemática','ok',6.1,['EX201']],['EX302','Probabilidade',3,4,'Matemática','ok',7.5,['EX201']],['EX303','Programação Orientada a Objetos',3,4,'Computação','ok',9.0,['EX202']],['EX304','Física II',3,4,'Física','ok',6.2,['EX204']],['EX305','Circuitos Digitais',3,4,'Eletrônica','ok',8.1,[]],
+['EX401','Banco de Dados',4,4,'Computação','ok',8.8,['EX202']],['EX402','Arquitetura de Computadores',4,4,'Eletrônica','ok',7.4,['EX305']],['EX403','Cálculo Numérico',4,4,'Matemática','ok',6.8,['EX201','EX203']],['EX404','Sinais e Sistemas',4,4,'Eletrônica','adi',null,['EX301']],
+['EX501','Sistemas Operacionais',5,4,'Computação','cur',null,['EX402']],['EX502','Redes de Computadores',5,4,'Computação','cur',null,['EX202']],['EX503','Engenharia de Software',5,4,'Computação','cur',null,['EX303']],['EX504','Estatística Aplicada',5,4,'Matemática','cur',null,['EX302']],
+['EX601','Inteligência Artificial',6,4,'Computação','pen',null,['EX302','EX202']],['EX602','Compiladores',6,4,'Computação','pen',null,['EX202']],['EX603','Sistemas Distribuídos',6,4,'Computação','pen',null,['EX501','EX502']],['EX604','Teoria de Controle',6,4,'Eletrônica','pen',null,['EX404']],
+['EX701','Aprendizado de Máquina',7,4,'Computação','pen',null,['EX601','EX504']],['EX702','Projeto Integrador',7,4,'Formação geral','pen',null,['EX503']],['EX703','Estágio Supervisionado',7,8,'Formação geral','pen',null,[]],['EX704','Eletiva I',7,4,'Eletiva','pen',null,[]],
+['EX801','Trabalho de Conclusão',8,4,'Formação geral','pen',null,['EX702']],['EX802','Ética e Sociedade',8,2,'Formação geral','pen',null,[]],['EX803','Eletiva II',8,4,'Eletiva','pen',null,[]]
+].map(([code,name,sem,cr,area,st,nota,pre])=>({code,name,sem,cr,area,st,nota,pre}));
+const BY=Object.fromEntries(D.map(d=>[d.code,d]));
+const ST={ok:{l:'Cursada',c:'#4f6428',bg:'#eef1e2'},cur:{l:'Cursando',c:'#1e3a8a',bg:'#e7ebf6'},adi:{l:'Adiada',c:'#8f5309',bg:'#f7ecd9'},pen:{l:'Disponível',c:'#41444b',bg:'#fffefb'},blq:{l:'Bloqueada',c:'#8b8d93',bg:'#f6f5f1'}};
+const eff=d=>d.st==='pen'&&!d.pre.every(p=>['ok','cur'].includes(BY[p].st))?'blq':d.st;
+const nf=n=>n.toFixed(1).replace('.',',');
+const DIAS=['Seg','Ter','Qua','Qui','Sex'],SL=['08–10','10–12','14–16','16–18','19–21'];
+const TURMAS=[
+{id:'404A',cod:'EX404',t:'T01',prof:'Profa. Helena Lima · sala 204',sl:[['Seg',0],['Qua',0]],vagas:45,int:52,chance:58},
+{id:'404B',cod:'EX404',t:'T02',prof:'Prof. Davi Rocha · sala 110',sl:[['Ter',4],['Qui',4]],vagas:30,int:18,chance:96},
+{id:'601A',cod:'EX601',t:'T01',prof:'Prof. Ícaro Mendes · Lab 3',sl:[['Ter',2],['Qui',2]],vagas:60,int:94,chance:41},
+{id:'601B',cod:'EX601',t:'T02',prof:'Profa. Lúcia Prado · Lab 1',sl:[['Seg',3],['Qua',3]],vagas:40,int:31,chance:83},
+{id:'602A',cod:'EX602',t:'T01',prof:'Prof. Otávio Reis · sala 302',sl:[['Ter',1],['Sex',1]],vagas:50,int:22,chance:97},
+{id:'603A',cod:'EX603',t:'T01',prof:'Profa. Rita Souza · Lab 2',sl:[['Seg',3],['Qua',3]],vagas:40,int:35,chance:74},
+{id:'704A',cod:'EX704',t:'Bioinformática',prof:'Prof. Caio Nunes · sala 108',sl:[['Qui',3],['Sex',2]],vagas:30,int:24,chance:88},
+{id:'704B',cod:'EX704',t:'Visão Computacional',prof:'Profa. Bia Torres · Lab 3',sl:[['Qui',3]],vagas:30,int:41,chance:33},
+{id:'802A',cod:'EX802',t:'T01',prof:'Prof. André Matos · auditório',sl:[['Sex',0]],vagas:80,int:40,chance:99}];
+const OFFER=[['EX404','Adiada · destrava Teoria de Controle'],['EX601','Destrava Aprendizado de Máquina'],['EX602',''],['EX603','Condicionada à aprovação em SO e Redes'],['EX704','Eletiva'],['EX802','']];
+const CUR=[
+{code:'EX501',hor:'Seg, Qua · 08–10',prev:[7.2,8.0],risco:'Baixo',rc:'#4f6428',why:'Arquitetura de Computadores 7,4; colegas com perfil parecido raramente reprovam.'},
+{code:'EX502',hor:'Ter, Qui · 10–12',prev:[7.6,8.4],risco:'Baixo',rc:'#4f6428',why:'Média de 8,9 em Computação.'},
+{code:'EX503',hor:'Ter · 14–18',prev:[8.1,8.9],risco:'Baixo',rc:'#4f6428',why:'POO 9,0 tem a maior correlação com esta disciplina.'},
+{code:'EX504',hor:'Qui, Sex · 14–16',prev:[6.0,7.1],risco:'Moderado',rc:'#8f5309',why:'18% de reprovação para perfis com Cálculo III abaixo de 6,5.'}];
+const CORRS=[{a:'Cálculo III',b:'Sinais e Sistemas',r:'0,61',n:'1.240',sua:6.1,prev:[5.8,6.9]},{a:'Probabilidade',b:'Estatística Aplicada',r:'0,72',n:'980',sua:7.5,prev:[6.9,7.8]},{a:'Estruturas de Dados',b:'Compiladores',r:'0,58',n:'1.105',sua:8.7,prev:[7.7,8.6]},{a:'Arquitetura de Computadores',b:'Sistemas Operacionais',r:'0,54',n:'1.010',sua:7.4,prev:[6.8,7.9]}];
+const COMPS=[{n:'Estatística e probabilidade',p:80,de:'Probabilidade, Estatística Aplicada'},{n:'Programação e dados',p:95,de:'Algoritmos, Estruturas de Dados, Banco de Dados'},{n:'Aprendizado de máquina',p:30,de:'Falta: Inteligência Artificial, Aprendizado de Máquina'},{n:'Bioestatística e saúde',p:20,de:'Sugestão: eletiva Bioinformática em 2027/1'},{n:'Ética e regulação de dados',p:45,de:'Ética e Sociedade (a cursar) · LGPD na IC'},{n:'Comunicação científica',p:54,de:'Iniciação científica · TCC'}];
+const INS=[
+{k:'risco',tipo:'Formatura',c:'#a33a2a',t:'Sinais e Sistemas segura sua formatura',b:'Adiada desde 2026/1 e exigida por Teoria de Controle. Se não entrar em 2027/1, a formatura passa de 2028/1 para 2028/2.',a:'Planejar 2027/1',to:'plan',src:'Cadeia de pré-requisitos da matriz 2019'},
+{k:'lotacao',tipo:'Lotação',c:'#8f5309',t:'Inteligência Artificial T01 deve lotar',b:'94 interessados para 60 vagas. Nas últimas 4 ofertas, lotou em menos de 36 h. A T02 tem 83% de chance para a sua faixa de prioridade.',a:'Ver turmas',to:'plan',src:'Pré-matrícula SIGAA UFX · há 3 h'},
+{k:'carreira',tipo:'Carreira',c:'#1e3a8a',t:'Ciência de dados em saúde: 54% coberto',b:'Faltam Aprendizado de Máquina e base em saúde. A eletiva Bioinformática cobre as duas lacunas e tem 88% de chance de vaga.',a:'Ver aderência',to:'carreira',src:'Competências declaradas por você'},
+{k:'risco',tipo:'Risco',c:'#a33a2a',t:'Atenção em Estatística Aplicada',b:'Perfis com Cálculo III abaixo de 6,5 reprovam 18% das vezes, o dobro do seu risco médio. A segunda avaliação pesa 60%.',a:'Ver desempenho',to:'desemp',src:'980 históricos anônimos'},
+{k:'correlacao',tipo:'Correlação',c:'#5a6e2e',t:'Cálculo III antecipa Sinais e Sistemas',b:'r = 0,61 entre as duas na sua matriz. Sua nota sugere 5,8 a 6,9. Revisar séries e transformadas de Fourier antes de começar tende a ajudar.',a:'Ver correlações',to:'desemp',src:'1.240 históricos anônimos'},
+{k:'carga',tipo:'Carga',c:'#41444b',t:'2027/1 com 16 h de aula, sexta quase livre',b:'O plano atual concentra aulas de segunda a quinta. Bom para começar a buscar o estágio de 2027/2 com antecedência.',a:'Abrir semana',to:'plan',src:'Seu plano de 2027/1'}];
+const FIL=[['todos','Todos'],['risco','Risco'],['lotacao','Lotação'],['correlacao','Correlação'],['carga','Carga'],['carreira','Carreira']];
+const PARSED=[{raw:'MAT0101',n:'Cálculo Diferencial I',nota:'7,8',match:'EX101 · Cálculo I'},{raw:'INF0102',n:'Algoritmos e Programação',nota:'9,1',match:'EX102 · Algoritmos e Programação'},{raw:'MAT0203',n:'Álgebra Linear',nota:'7,2',match:'EX203 · Álgebra Linear'},{raw:'FIS0204',n:'Física Geral I',nota:'6,9',match:'EX204 · Física I'},{raw:'ENG9910',n:'Tópicos em Inovação',nota:'9,0',match:'Sem equivalente: usar como eletiva?',rev:true},{raw:'MAT0301',n:'Cálculo III (2ª vez)',nota:'6,1',match:'EX301 · registrar reprovação anterior?',rev:true}];
+class Component extends DCLogic{
+  state={screen:this.props.telaInicial??'painel',sel:'EX404',picked:['404A','601B','602A','704A'],priv:!!this.props.ocultarNotas,filter:'todos',method:'pdf',auth:!!this.props.pularLogin,lmode:'entrar'};
+  renderVals(){
+    const s=this.state,go=x=>()=>this.setState({screen:x}),P=s.priv;
+    const fmt=n=>n==null?'—':P?'•,•':nf(n),rng=r=>P?'•,• – •,•':nf(r[0])+'–'+nf(r[1]);
+    const total=D.reduce((a,d)=>a+d.cr,0),done=D.filter(d=>d.st==='ok'),crDone=done.reduce((a,d)=>a+d.cr,0);
+    const avg=ds=>{const w=ds.filter(d=>d.nota!=null);return w.length?w.reduce((a,d)=>a+d.nota*d.cr,0)/w.reduce((a,d)=>a+d.cr,0):null};
+    const mg=avg(D),pct=Math.round(crDone/total*100);
+    const nav=[['painel','Início',''],['percurso','Percurso',''],['plan','Planejar 2027/1','!'],['insights','Insights',String(INS.length)],['desemp','Desempenho',''],['carreira','Carreira','']].map(([id,label,badge])=>({label,badge,go:go(id),bg:s.screen===id?'#e7ebf6':'transparent',c:s.screen===id?'#1e3a8a':'#1b1d22',fw:s.screen===id?600:400}));
+    const insMap=i=>({...i,go:go(i.to)});
+    const areasN=[...new Set(D.map(d=>d.area))];
+    const areas=areasN.map(n=>{const ds=D.filter(d=>d.area===n),t=ds.reduce((a,d)=>a+d.cr,0),c=ds.filter(d=>d.st==='ok').reduce((a,d)=>a+d.cr,0);return{n,w:Math.round(c/t*100)+'%',f:c+'/'+t+' cr'}});
+    const selD=BY[s.sel];
+    const pick=code=>()=>this.setState({sel:code});
+    const cols=SEMS.map((sem,i)=>{const items=D.filter(d=>d.sem===i+1).map(d=>{const e=eff(d),st=ST[e],isSel=d.code===s.sel,isPre=selD.pre.includes(d.code),isUn=d.pre.includes(s.sel);
+      return{code:d.code,name:d.name,nota:fmt(d.nota)==='—'?'':fmt(d.nota),c:st.c,bg:st.bg,bs:e==='blq'?'dashed':'solid',pick:pick(d.code),
+      ring:isSel?'0 0 0 2px #1e3a8a':isPre?'0 0 0 2px #5a6e2e':isUn?'0 0 0 2px #c98a2b':'none',
+      tag:isPre?'pré-requisito':isUn?'destrava':e==='ok'?'':st.l,tagc:isPre?'#4f6428':isUn?'#8f5309':st.c}});
+      return{sem,n:i+1,cr:items.length?D.filter(d=>d.sem===i+1).reduce((a,d)=>a+d.cr,0):0,now:sem==='2026/2'?'· atual':'',items}});
+    const unl=D.filter(d=>d.pre.includes(s.sel));
+    const selE=eff(selD);
+    const INSD={EX404:'Adiada há um semestre. É a única exigência de Teoria de Controle; sem ela em 2027/1, a formatura passa para 2028/2. Sua nota em Cálculo III sugere '+rng([5.8,6.9])+' aqui.',EX601:'Destrava Aprendizado de Máquina, central para seu objetivo de carreira. A turma T01 deve lotar; a T02 tem 83% de chance.',EX504:'Risco moderado: perfis com Cálculo III abaixo de 6,5 reprovam 18% das vezes.',EX301:'Sua menor nota em Matemática. Antecipa Sinais e Sistemas (r = 0,61).'};
+    const sel={code:selD.code,name:selD.name,area:selD.area,cr:selD.cr,ch:selD.cr*15,st:ST[selE].l,c:ST[selE].c,bg:ST[selE].bg==='#fffefb'?'#f1f0eb':ST[selE].bg,nota:selD.nota!=null?'nota '+fmt(selD.nota):'sem nota',
+      ins:INSD[selD.code]??(unl.length?'Exigida por '+unl.length+(unl.length>1?' disciplinas':' disciplina')+' adiante na matriz.':'Não é exigida por nenhuma outra disciplina.'),
+      pre:selD.pre.map(p=>({name:BY[p].name,st:ST[eff(BY[p])].l,c:ST[eff(BY[p])].c,pick:pick(p)})),preEmpty:selD.pre.length?'':'Nenhum pré-requisito.',
+      unl:unl.map(d=>({name:d.name,st:ST[eff(d)].l,c:ST[eff(d)].c,pick:pick(d.code)})),unlEmpty:unl.length?'':'Não destrava nenhuma.'};
+    const pk=s.picked,pT=TURMAS.filter(t=>pk.includes(t.id));
+    const toggle=t=>()=>this.setState(st=>{let p=st.picked.filter(x=>x!==t.id);if(!st.picked.includes(t.id)){p=p.filter(x=>TURMAS.find(y=>y.id===x).cod!==t.cod);p.push(t.id)}return{picked:p}});
+    const offer=OFFER.map(([code,note])=>{const d=BY[code];return{code,name:d.name,cr:d.cr,note,turmas:TURMAS.filter(t=>t.cod===code).map(t=>{const on=pk.includes(t.id),ds=[...new Set(t.sl.map(x=>x[0]))].join(', '),hs=[...new Set(t.sl.map(x=>SL[x[1]]))].join(' / ');
+      const cc=t.chance>=80?'#4f6428':t.chance>=55?'#8f5309':'#a33a2a';
+      return{t:t.t,prof:t.prof,hor:ds+' · '+hs,w:Math.min(100,Math.round(t.int/t.vagas*100))+'%',fc:t.int>t.vagas?'#a33a2a':'#1e3a8a',lot:t.int+' interessados / '+t.vagas+' vagas',chance:t.chance,cc,
+      toggle:toggle(t),bl:on?'Na grade ✓':'Adicionar',bbg:on?'#1e3a8a':'#fffefb',btc:on?'#fff':'#1e3a8a',bc:'#1e3a8a',rowbg:on?'#f3f5fb':'transparent'}})}});
+    let conf=0;
+    const grid=SL.map((h,si)=>({h,cells:DIAS.map(dd=>{const o=pT.filter(t=>t.sl.some(x=>x[0]===dd&&x[1]===si));
+      if(!o.length)return{bg:'#f6f5f1',bd:'transparent',t:'',s:'',c:'#5d6068'};
+      if(o.length>1){conf++;return{bg:'#f8e3df',bd:'#a33a2a',t:'Conflito',s:o.map(t=>BY[t.cod].name.split(' ')[0]).join(' × '),c:'#a33a2a'}}
+      const t=o[0];return{bg:'#e7ebf6',bd:'#c5cfe8',t:t.cod==='EX704'?t.t:BY[t.cod].name,s:t.cod==='EX704'?'Eletiva':t.t,c:'#1e3a8a'}})}));
+    const codes=[...new Set(pT.map(t=>t.cod))],crSel=codes.reduce((a,c)=>a+BY[c].cr,0),hrs=pT.reduce((a,t)=>a+t.sl.length*2,0);
+    const freeDays=DIAS.filter(dd=>!pT.some(t=>t.sl.some(x=>x[0]===dd)));
+    const has404=codes.includes('EX404'),minCh=Math.min(...pT.map(t=>t.chance),100);
+    const planKpis=[{t:'Créditos',v:String(crSel),c:'#1b1d22'},{t:'Horas na semana',v:hrs+' h',c:'#1b1d22'},{t:'Conflitos',v:String(conf),c:conf?'#a33a2a':'#4f6428'},{t:'Formatura',v:has404?'2028/1':'2028/2',c:has404?'#4f6428':'#a33a2a'}];
+    const planNotes=[];
+    if(!has404)planNotes.push({bg:'#f8e3df',c:'#7d2a1d',t:'Sem Sinais e Sistemas, Teoria de Controle fica para 2027/2 e a formatura passa para 2028/2.'});
+    if(conf)planNotes.push({bg:'#f8e3df',c:'#7d2a1d',t:conf+' faixa'+(conf>1?'s':'')+' com choque de horário. Troque de turma ao lado.'});
+    planNotes.push({bg:'#eef1e2',c:'#3f5120',t:(freeDays.length?'Dias livres: '+freeDays.join(', ')+'. ':'Semana sem dia livre. ')+'Menor chance de vaga no plano: '+minCh+'%.'+(minCh<55?' Escolha uma turma reserva.':'')});
+    const cursando=CUR.map(c=>({...c,name:BY[c.code].name,prev:rng(c.prev)}));
+    const semBars=[1,2,3,4].map(i=>{const v=avg(D.filter(d=>d.sem===i));return{l:SEMS[i-1],v:fmt(v),h:P?'50%':Math.round(v/10*100)+'%',c:'#1e3a8a',bs:'solid'}});
+    semBars.push({l:'2026/2',v:P?'•,•':'~7,6',h:P?'50%':'76%',c:'#e7ebf6',bs:'dashed'});
+    const areaAvg=areasN.filter(n=>avg(D.filter(d=>d.area===n))!=null).map(n=>{const v=avg(D.filter(d=>d.area===n));return{n,v:fmt(v),w:P?'0%':v*10+'%',c:v>=8?'#4f6428':v>=7?'#1e3a8a':'#8f5309'}});
+    const ader=Math.round(COMPS.reduce((a,c)=>a+c.p,0)/COMPS.length);
+    return{
+      showLogin:!s.auth,showApp:s.auth,logout:()=>this.setState({auth:false}),enter:()=>this.setState({auth:true}),enterLocal:()=>this.setState({auth:true,screen:'importar'}),
+      modeEntrar:()=>this.setState({lmode:'entrar'}),modeCriar:()=>this.setState({lmode:'criar'}),isCriar:s.lmode==='criar',
+      tabE:s.lmode==='entrar'?{bg:'#fffefb',c:'#1b1d22'}:{bg:'transparent',c:'#5d6068'},tabC:s.lmode==='criar'?{bg:'#fffefb',c:'#1b1d22'}:{bg:'transparent',c:'#5d6068'},
+      loginTitle:s.lmode==='criar'?'Criar conta':'Bem-vinda(o) de volta',loginSub:s.lmode==='criar'?'A conta serve só para sincronizar entre aparelhos. Seus dados ficam criptografados com uma chave que só você tem.':'Entre para sincronizar seu percurso entre aparelhos.',loginCta:s.lmode==='criar'?'Criar conta':'Entrar',
+      nav,is:{[s.screen]:true},togglePriv:()=>this.setState({priv:!P}),privLabel:P?'Mostrar notas':'Ocultar notas',
+      goImport:go('importar'),goSobre:go('sobre'),goInsights:go('insights'),goPlan:go('plan'),goPainel:go('painel'),
+      kpis:[{t:'Integralizado',v:pct+'%',w:pct+'%',s:crDone+' de '+total+' créditos'},{t:'Média ponderada',v:fmt(mg),w:P?'0%':mg*10+'%',s:'aprovação ≥ 6,0 · '+done.length+' notas'},{t:'Formatura prevista',v:'2028/1',w:'56%',s:'mantida se Sinais e Sistemas entrar em 2027/1'},{t:'Esta semana',v:'16 h',w:'64%',s:'sexta à tarde e noites livres'}],
+      topInsights:INS.slice(0,3).map(insMap),cursando,areas,
+      legend:['ok','cur','adi','pen','blq'].map(k=>({l:ST[k].l,c:ST[k].c,bg:ST[k].bg})),cols,sel,
+      offer,dias:DIAS,grid,planKpis,planNotes,
+      filters:FIL.map(([k,l])=>({l,go:()=>this.setState({filter:k}),bg:s.filter===k?'#1b1d22':'#fffefb',c:s.filter===k?'#fff':'#1b1d22',bd:s.filter===k?'#1b1d22':'#e4e1d8'})),
+      insightList:INS.filter(i=>s.filter==='todos'||i.k===s.filter).map(insMap),
+      mediaGeral:fmt(mg),semBars,areaAvg,corrs:CORRS.map(r=>({...r,sua:fmt(r.sua),prev:rng(r.prev)})),
+      aderencia:ader+'%',comps:COMPS.map(c=>({...c,w:c.p+'%',c:c.p>=70?'#4f6428':c.p>=40?'#1e3a8a':'#c98a2b'})),
+      marcos:[{s:'2026/2',t:'Iniciação científica',d:'Em andamento · laboratório de dados em saúde',bg:'#1e3a8a'},{s:'2027/1',t:'Inteligência Artificial e Bioinformática',d:'No plano de 2027/1',bg:'#fffefb'},{s:'2027/2',t:'Estágio supervisionado',d:'Meta: equipe de dados de um hospital',bg:'#fffefb'},{s:'2028/1',t:'TCC e formatura',d:'Tema provisório: triagem clínica com aprendizado de máquina',bg:'#fffefb'}],
+      methods:[['pdf','PDF do histórico','Leitura no aparelho. Reconhece códigos e notas e casa com a matriz.'],['sigaa','Conectar ao SIGAA','Mantém histórico, oferta e lotação de turmas sempre atualizados.'],['manual','Entrada manual','Marque o que já cursou numa matriz pronta da comunidade.']].map(([k,t,d])=>({t,d,go:()=>this.setState({method:k}),bd:s.method===k?'#1e3a8a':'#e4e1d8',ring:s.method===k?'0 0 0 1px #1e3a8a':'none'})),
+      m:{[s.method]:true},
+      parsed:PARSED.map(p=>({...p,nota:P?'•,•':p.nota,bg:p.rev?'#fbf4e8':'transparent',c:p.rev?'#8f5309':'#4f6428'})),
+      adapters:[{u:'Universidade Federal de Exemplo',s:'SIGAA',st:'Histórico, oferta e lotação',c:'#4f6428'},{u:'Universidade Estadual Modelo',s:'Sistema próprio',st:'Histórico e oferta',c:'#4f6428'},{u:'Instituto Federal Demonstração',s:'SUAP',st:'Só histórico (PDF)',c:'#1e3a8a'},{u:'Universidade Comunitária Teste',s:'Portal do aluno',st:'Em construção · 2 voluntários',c:'#8f5309'},{u:'Sua universidade',s:'—',st:'Escreva um conector →',c:'#1e3a8a'}],
+      goals:[{t:'Hospedagem do sync criptografado',v:'R$ 380 / R$ 400 mês',w:'95%'},{t:'Revisão de segurança dos conectores',v:'R$ 2.100 / R$ 6.000',w:'35%'},{t:'App móvel nativo',v:'R$ 900 / R$ 12.000',w:'8%'}]
+    };
+  }
+}
+</script>
+</body>
+</html>

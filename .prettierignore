@@ -1,0 +1,12 @@
+pnpm-lock.yaml
+dist
+coverage
+design
+*.po
+apps/desktop/src-tauri/target
+apps/desktop/src-tauri/gen
+packages/db/drizzle
+apps/server/drizzle
+registry/schema/*.json
+*.md
+.github/FUNDING.yml
