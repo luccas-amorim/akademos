@@ -6,6 +6,7 @@ import { baixar, historicoEmCsv, montarExportacao } from '../dados/exportar';
 import { gravarPreferencia } from '../dados/preferencias';
 import { store, useDados, useEstadoDados } from '../dados/store';
 import { CartaoConta } from './dados/CartaoConta';
+import { InterruptorComunidade } from '../comunidade/InterruptorComunidade';
 
 const DESCRICAO_ARMAZENAMENTO = {
   opfs: 'OPFS (sistema de arquivos privado do navegador)',
@@ -64,6 +65,12 @@ export function Dados() {
         </div>
       </Card>
       <CartaoConta />
+      <Card padding="lg" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <h2 className="ak-h2 ak-h2--sm">
+          <Trans>Comunidade</Trans>
+        </h2>
+        <InterruptorComunidade />
+      </Card>
       <Card padding="lg" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         <h2 className="ak-h2 ak-h2--sm">
           <Trans>Exportar</Trans>

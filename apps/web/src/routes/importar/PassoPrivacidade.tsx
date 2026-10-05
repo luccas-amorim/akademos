@@ -1,11 +1,11 @@
 import { Button, Switch } from '@akademos/ui';
 import { Trans } from '@lingui/react/macro';
 import { Link } from '@tanstack/react-router';
-import { useConsentimentoComunidade, useSessao } from '../../dados/preferencias';
+import { InterruptorComunidade } from '../../comunidade/InterruptorComunidade';
+import { useSessao } from '../../dados/preferencias';
 import s from './importar.module.css';
 
 export function PassoPrivacidade({ aoConcluir }: { aoConcluir: () => void }) {
-  const [comunidade, setComunidade] = useConsentimentoComunidade();
   const sessao = useSessao();
   return (
     <section className={s.painel}>
@@ -35,17 +35,7 @@ export function PassoPrivacidade({ aoConcluir }: { aoConcluir: () => void }) {
           )}
         </div>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-        <Switch isSelected={comunidade} onChange={setComunidade}>
-          <Trans>Compartilhar meu histórico anonimamente com a comunidade</Trans>
-        </Switch>
-        <div className="ak-caption" style={{ paddingLeft: 42 }}>
-          <Trans>
-            Envia só notas por disciplina desta matriz, sem nome, matrícula ou conta. Os agregados
-            só são publicados com pelo menos 10 históricos por célula.
-          </Trans>
-        </div>
-      </div>
+      <InterruptorComunidade />
       <Button style={{ alignSelf: 'flex-start' }} onPress={aoConcluir}>
         <Trans>Concluir</Trans>
       </Button>

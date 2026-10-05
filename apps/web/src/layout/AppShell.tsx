@@ -9,6 +9,7 @@ import { Trans, useLingui } from '@lingui/react/macro';
 import { Link, Outlet, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useAnalise } from '../dados/analise';
+import { iniciarComunidade } from '../comunidade/servico';
 import { sairDaConta } from '../conta/sair';
 import { servicoSync, useEstadoSync } from '../conta/sincronizacao';
 import { lerSessao, gravarPreferencia, useOcultarNotas, useSessao } from '../dados/preferencias';
@@ -33,7 +34,10 @@ export function AppShell() {
   const precisaImportar = semDados && !publica && pathname !== '/importar';
 
   useEffect(() => {
-    void store.iniciar().then(() => servicoSync.iniciar());
+    void store.iniciar().then(() => {
+      void servicoSync.iniciar();
+      void iniciarComunidade();
+    });
   }, []);
 
   // Sem dados ainda: o primeiro passo é escolher o curso e trazer o histórico.
