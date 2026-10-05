@@ -28,7 +28,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 - [x] 2.2 Tela **Planejar**: oferta, turmas, grade semanal com conflitos em tempo real, KPIs (créditos, horas, conflitos, formatura) e avisos.
 - [x] 2.3 `core/insights`: as 5 regras determinísticas com `motivo` e `fonte`.
 - [x] 2.4 Tela **Insights** com filtros por tipo.
-- [ ] 2.5 Tela **Carreira**: objetivo, competências, aderência, marcos, diário de expectativas.
+- [x] 2.5 Tela **Carreira**: objetivo, competências, aderência, marcos, diário de expectativas.
 
 ## Fase 3 — Conta e sincronização (semana 11–14)
 

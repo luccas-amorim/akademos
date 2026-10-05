@@ -1,0 +1,122 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.colunas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.direita {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.objetivo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.titulo {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+.aderencia {
+  text-align: right;
+}
+.aderenciaValor {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1;
+}
+.competencia {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.compTopo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+}
+.marco {
+  display: grid;
+  grid-template-columns: 62px 18px minmax(0, 1fr) auto;
+  gap: 10px;
+  padding-bottom: 14px;
+  align-items: start;
+}
+.ponto {
+  all: unset;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 4px;
+  border: 2px solid var(--primary);
+}
+.ponto:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.entrada {
+  border-left: 2px solid var(--border);
+  padding-left: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.entradaTexto {
+  font-size: 14px;
+  font-family: var(--font-serif);
+}
+.remover {
+  all: unset;
+  cursor: pointer;
+  color: var(--ink-3);
+  font-size: 12px;
+}
+.remover:hover {
+  color: var(--danger);
+}
+.remover:focus-visible {
+  outline: 2px solid var(--primary);
+}
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.editorComp {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-control);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.discGrade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 4px 12px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.linhaForm {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 8px;
+  align-items: end;
+}

@@ -1,4 +1,12 @@
-import type { Aluno, Cursada, Oferta, PacoteInstituicao, Plano } from '@akademos/core';
+import type {
+  Aluno,
+  Cursada,
+  Marco,
+  Objetivo,
+  Oferta,
+  PacoteInstituicao,
+  Plano,
+} from '@akademos/core';
 import { MATRIZ_DA_ANA, semearAna } from '@akademos/db/seed';
 import { mesclarCursadas } from '@akademos/importers';
 import { entradaDaMatriz } from './catalogo';
@@ -80,4 +88,51 @@ export async function salvarOferta(oferta: Omit<Oferta, 'id'> & { id?: string })
 
 export async function apagarOferta(id: string): Promise<void> {
   await store.escrever((repos) => repos.ofertas.apagar(id));
+}
+
+/* ——— Carreira ——— */
+
+export async function salvarObjetivo(o: Omit<Objetivo, 'id'> & { id?: string }): Promise<void> {
+  await store.escrever((repos) => repos.objetivos.salvar({ ...o, id: o.id ?? novoId() }));
+}
+
+/** Um só objetivo principal por aluno. */
+export async function tornarPrincipal(objetivos: readonly Objetivo[], id: string): Promise<void> {
+  await store.escrever((repos) =>
+    repos.transacao(async (tx) => {
+      for (const o of objetivos) await tx.objetivos.salvar({ ...o, principal: o.id === id });
+    }),
+  );
+}
+
+export async function apagarObjetivo(id: string): Promise<void> {
+  await store.escrever((repos) => repos.objetivos.apagar(id));
+}
+
+export async function salvarMarco(m: Omit<Marco, 'id'> & { id?: string }): Promise<void> {
+  await store.escrever((repos) => repos.marcos.salvar({ ...m, id: m.id ?? novoId() }));
+}
+
+export async function apagarMarco(id: string): Promise<void> {
+  await store.escrever((repos) => repos.marcos.apagar(id));
+}
+
+export async function registrarNoDiario(
+  alunoId: string,
+  texto: string,
+  data = new Date(),
+): Promise<void> {
+  await store.escrever((repos) =>
+    repos.diario.salvar({
+      id: novoId(),
+      alunoId,
+      data: data.toISOString().slice(0, 10),
+      texto: texto.trim(),
+      humor: null,
+    }),
+  );
+}
+
+export async function apagarDoDiario(id: string): Promise<void> {
+  await store.escrever((repos) => repos.diario.apagar(id));
 }

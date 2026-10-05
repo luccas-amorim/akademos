@@ -37,10 +37,26 @@ msgstr "{0} de {1} créditos"
 msgid "{0} exige as duas."
 msgstr "{0} exige as duas."
 
+#. placeholder {0}: resumo.conflitos.length
+#: src/routes/Planejar.tsx:312
+msgid "{0} faixas com choque de horário. Troque de turma ao lado."
+msgstr "{0} faixas com choque de horário. Troque de turma ao lado."
+
 #. placeholder {0}: formatarInteiro(c.n)
 #: src/routes/Desempenho.tsx:280
 msgid "{0} históricos"
 msgstr "{0} históricos"
+
+#. placeholder {0}: n.selo
+#: src/layout/AppShell.tsx:186
+msgid "{0} insights"
+msgstr "{0} insights"
+
+#. placeholder {0}: o.interessados
+#. placeholder {1}: o.vagas
+#: src/routes/Planejar.tsx:199
+msgid "{0} interessados / {1} vagas · <0>{chance}% de vaga</0>"
+msgstr "{0} interessados / {1} vagas · <0>{chance}% de vaga</0>"
 
 #. placeholder {0}: estado.naoReconhecidas.length
 #: src/routes/importar/ImportarPdf.tsx:259
@@ -53,7 +69,7 @@ msgid "{0} para revisar"
 msgstr "{0} para revisar"
 
 #. placeholder {0}: ordinalDoSemestre(dados.aluno.ingresso, atual)
-#: src/layout/AppShell.tsx:126
+#: src/layout/AppShell.tsx:119
 msgid "{0}º semestre · {atual}"
 msgstr "{0}º semestre · {atual}"
 
@@ -83,11 +99,24 @@ msgstr "{n} decisões de {prox} definem se a formatura fica em {formatura}."
 msgid "{n}º semestre"
 msgstr "{n}º semestre"
 
+#: src/routes/Carreira.tsx:270
+msgid "{ordinal}º semestre"
+msgstr "{ordinal}º semestre"
+
 #: src/routes/importar/ImportarPdf.tsx:158
 msgid "{reconhecidas} reconhecidas"
 msgstr "{reconhecidas} reconhecidas"
 
+#: src/routes/carreira/EditorObjetivo.tsx:135
+msgid "+ Competência"
+msgstr "+ Competência"
+
+#: src/routes/planejar/NovaTurma.tsx:27
+msgid "+ Lançar turma à mão"
+msgstr "+ Lançar turma à mão"
+
 #: src/routes/Kit.tsx:215
+#: src/routes/Planejar.tsx:310
 msgid "1 faixa com choque de horário. Troque de turma ao lado."
 msgstr "1 faixa com choque de horário. Troque de turma ao lado."
 
@@ -108,18 +137,29 @@ msgstr "A matriz {0} já está carregada (mantida pela comunidade). Marque semes
 msgid "A matriz vem do registro aberto do Akademos, mantido pela comunidade. Nada disso sai deste aparelho."
 msgstr "A matriz vem do registro aberto do Akademos, mantido pela comunidade. Nada disso sai deste aparelho."
 
-#: src/layout/AppShell.tsx:34
-#: src/layout/AppShell.tsx:52
+#: src/layout/AppShell.tsx:35
+#: src/layout/AppShell.tsx:53
 msgid "Abrindo seus dados…"
 msgstr "Abrindo seus dados…"
 
+#: src/routes/Carreira.tsx:101
+msgid "aderência"
+msgstr "aderência"
+
 #: src/componentes/situacao.ts:18
+#: src/routes/Planejar.tsx:92
 msgid "Adiada"
 msgstr "Adiada"
 
+#: src/routes/Carreira.tsx:251
 #: src/routes/Kit.tsx:126
+#: src/routes/Planejar.tsx:213
 msgid "Adicionar"
 msgstr "Adicionar"
+
+#: src/routes/Carreira.tsx:127
+msgid "Adicionar alternativa"
+msgstr "Adicionar alternativa"
 
 #: src/routes/importar/PainelConector.tsx:50
 msgid "Ainda não há conector para esta instituição. Use o PDF ou a entrada manual."
@@ -134,9 +174,43 @@ msgstr "Ainda não há históricos anônimos suficientes desta matriz (mínimo d
 msgid "Ainda não há modelo de leitura de histórico para {0}. Use a entrada manual ou contribua com um modelo no registro."
 msgstr "Ainda não há modelo de leitura de histórico para {0}. Use a entrada manual ou contribua com um modelo no registro."
 
+#: src/routes/Planejar.tsx:138
+msgid "Ainda não há turmas de {semestre} neste aparelho."
+msgstr "Ainda não há turmas de {semestre} neste aparelho."
+
+#. placeholder {0}: o.titulo
+#: src/routes/Carreira.tsx:88
+msgid "Alternativa: {0}"
+msgstr "Alternativa: {0}"
+
 #: src/componentes/risco.ts:17
 msgid "Alto"
 msgstr "Alto"
+
+#: src/routes/Dados.tsx:114
+msgid "Apagando…"
+msgstr "Apagando…"
+
+#: src/routes/Dados.tsx:114
+msgid "Apagar"
+msgstr "Apagar"
+
+#: src/routes/Dados.tsx:95
+#: src/routes/Dados.tsx:108
+msgid "Apagar dados deste aparelho"
+msgstr "Apagar dados deste aparelho"
+
+#: src/routes/Carreira.tsx:314
+msgid "Apagar entrada"
+msgstr "Apagar entrada"
+
+#: src/routes/carreira/EditorObjetivo.tsx:157
+msgid "Apagar objetivo"
+msgstr "Apagar objetivo"
+
+#: src/routes/Dados.tsx:113
+msgid "Apagar todos os dados deste aparelho?"
+msgstr "Apagar todos os dados deste aparelho?"
 
 #. placeholder {0}: fmt.nota(aprov)
 #. placeholder {1}: a.notasLancadas
@@ -152,7 +226,7 @@ msgstr "Aprovada"
 msgid "Aproveitada"
 msgstr "Aproveitada"
 
-#: src/layout/AppShell.tsx:153
+#: src/layout/AppShell.tsx:133
 msgid "Armazenamento indisponível: nada será guardado"
 msgstr "Armazenamento indisponível: nada será guardado"
 
@@ -160,9 +234,21 @@ msgstr "Armazenamento indisponível: nada será guardado"
 msgid "Arquivo PDF"
 msgstr "Arquivo PDF"
 
+#: src/routes/carreira/EditorObjetivo.tsx:120
+msgid "Atividades fora da matriz (uma por linha; \"[x]\" no início = feita)"
+msgstr "Atividades fora da matriz (uma por linha; \"[x]\" no início = feita)"
+
 #: src/routes/importar/PassoPrivacidade.tsx:27
 msgid "Ativo: sua conta sincroniza os dados cifrados."
 msgstr "Ativo: sua conta sincroniza os dados cifrados."
+
+#: src/layout/AvisoAtualizacao.tsx:42
+msgid "Atualizar"
+msgstr "Atualizar"
+
+#: src/routes/Dados.tsx:77
+msgid "Baixar tudo (JSON)"
+msgstr "Baixar tudo (JSON)"
 
 #: src/routes/importar/ImportarPdf.tsx:80
 msgid "Baixe o histórico escolar no sistema da sua universidade e escolha o arquivo. A leitura acontece neste aparelho; o PDF não é enviado."
@@ -172,9 +258,21 @@ msgstr "Baixe o histórico escolar no sistema da sua universidade e escolha o ar
 msgid "Baixo"
 msgstr "Baixo"
 
+#. placeholder {0}: DESCRICAO_ARMAZENAMENTO[estado.armazenamento]
+#. placeholder {1}: dados.cursadas.length
+#. placeholder {2}: dados.ofertas.length
+#. placeholder {3}: dados.planos.length
+#: src/routes/Dados.tsx:57
+msgid "Banco SQLite local em {0}. {1} cursadas, {2} turmas, {3} planos."
+msgstr "Banco SQLite local em {0}. {1} cursadas, {2} turmas, {3} planos."
+
 #: src/componentes/situacao.ts:22
 msgid "Bloqueada"
 msgstr "Bloqueada"
+
+#: src/routes/Planejar.tsx:223
+msgid "Bloqueadas neste semestre:"
+msgstr "Bloqueadas neste semestre:"
 
 #: src/routes/inicio-textos.ts:9
 msgid "Boa noite, {primeiro}."
@@ -192,18 +290,37 @@ msgstr "Bom dia, {primeiro}."
 msgid "Botões"
 msgstr "Botões"
 
+#: src/routes/Insights.tsx:30
+msgid "Calculados no seu aparelho. Comparações com a comunidade usam só históricos anônimos de quem optou por compartilhar."
+msgstr "Calculados no seu aparelho. Comparações com a comunidade usam só históricos anônimos de quem optou por compartilhar."
+
+#: src/routes/carreira/EditorObjetivo.tsx:147
+#: src/routes/Dados.tsx:115
+#: src/routes/planejar/NovaTurma.tsx:137
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#: src/routes/Insights.tsx:20
 #: src/routes/Kit.tsx:187
 msgid "Carga"
 msgstr "Carga"
 
-#: src/layout/AppShell.tsx:104
-#: src/routes/Carreira.tsx:5
+#: src/layout/AppShell.tsx:176
+#: src/routes/Carreira.tsx:58
+#: src/routes/Carreira.tsx:71
+#: src/routes/Insights.tsx:21
 msgid "Carreira"
 msgstr "Carreira"
 
 #: src/routes/Kit.tsx:119
 msgid "Chave de acesso"
 msgstr "Chave de acesso"
+
+#. placeholder {0}: resumo.formatura
+#. placeholder {1}: resumo.formaturaIdeal
+#: src/routes/Planejar.tsx:301
+msgid "Com este plano, a formatura fica em {0}; o melhor possível é {1}."
+msgstr "Com este plano, a formatura fica em {0}; o melhor possível é {1}."
 
 #: src/routes/Importar.tsx:37
 msgid "Comece pelo seu curso"
@@ -225,6 +342,11 @@ msgstr "Compartilhar históricos anônimos"
 msgid "Compartilhar meu histórico anonimamente com a comunidade"
 msgstr "Compartilhar meu histórico anonimamente com a comunidade"
 
+#. placeholder {0}: i + 1
+#: src/routes/carreira/EditorObjetivo.tsx:89
+msgid "Competência {0}"
+msgstr "Competência {0}"
+
 #: src/routes/Kit.tsx:158
 msgid "Computação"
 msgstr "Computação"
@@ -232,6 +354,11 @@ msgstr "Computação"
 #: src/routes/importar/PassoPrivacidade.tsx:50
 msgid "Concluir"
 msgstr "Concluir"
+
+#. placeholder {0}: emCurso.join(' e ')
+#: src/routes/Planejar.tsx:93
+msgid "Condicionada à aprovação em {0}"
+msgstr "Condicionada à aprovação em {0}"
 
 #: src/routes/Importar.tsx:92
 msgid "Conectar ao sistema"
@@ -246,7 +373,12 @@ msgstr "Conector {sistema} · {0}"
 msgid "Conectores rodam no app de desktop: o navegador não deixa um site falar com o sistema da universidade em seu nome. Aqui na web, use o PDF do histórico."
 msgstr "Conectores rodam no app de desktop: o navegador não deixa um site falar com o sistema da universidade em seu nome. Aqui na web, use o PDF do histórico."
 
+#: src/routes/Planejar.tsx:267
+msgid "Conflito"
+msgstr "Conflito"
+
 #: src/routes/Kit.tsx:155
+#: src/routes/Planejar.tsx:147
 msgid "Conflitos"
 msgstr "Conflitos"
 
@@ -263,6 +395,10 @@ msgstr "Controles"
 msgid "Cores"
 msgstr "Cores"
 
+#: src/routes/Insights.tsx:19
+msgid "Correlação"
+msgstr "Correlação"
+
 #: src/routes/Desempenho.tsx:237
 msgid "Correlações na sua matriz"
 msgstr "Correlações na sua matriz"
@@ -270,6 +406,10 @@ msgstr "Correlações na sua matriz"
 #: src/routes/importar/ImportarPdf.tsx:187
 msgid "Correspondência na matriz"
 msgstr "Correspondência na matriz"
+
+#: src/routes/Planejar.tsx:143
+msgid "Créditos"
+msgstr "Créditos"
 
 #: src/routes/Kit.tsx:197
 msgid "Criar conta"
@@ -289,15 +429,27 @@ msgstr "Cursando"
 msgid "Dados de demonstração."
 msgstr "Dados de demonstração."
 
-#: src/layout/AppShell.tsx:149
+#: src/layout/AppShell.tsx:129
 msgid "Dados neste aparelho"
 msgstr "Dados neste aparelho"
+
+#: src/routes/carreira/EditorObjetivo.tsx:61
+msgid "Dê um nome ao objetivo."
+msgstr "Dê um nome ao objetivo."
+
+#: src/routes/Carreira.tsx:137
+msgid "Declare o que quer fazer depois e as competências que isso exige. O Akademos mostra quanto do seu percurso já cobre cada uma."
+msgstr "Declare o que quer fazer depois e as competências que isso exige. O Akademos mostra quanto do seu percurso já cobre cada uma."
+
+#: src/routes/Carreira.tsx:143
+msgid "Definir objetivo"
+msgstr "Definir objetivo"
 
 #: src/routes/Kit.tsx:138
 msgid "Desativado"
 msgstr "Desativado"
 
-#: src/layout/AppShell.tsx:103
+#: src/layout/AppShell.tsx:175
 #: src/routes/Desempenho.tsx:83
 msgid "Desempenho"
 msgstr "Desempenho"
@@ -310,6 +462,11 @@ msgstr "destrava"
 msgid "Destrava"
 msgstr "Destrava"
 
+#. placeholder {0}: destrava.join(', ')
+#: src/routes/Planejar.tsx:94
+msgid "destrava {0}"
+msgstr "destrava {0}"
+
 #: src/routes/Percurso.tsx:150
 msgid "Detalhes da disciplina"
 msgstr "Detalhes da disciplina"
@@ -318,6 +475,15 @@ msgstr "Detalhes da disciplina"
 msgid "Diário"
 msgstr "Diário"
 
+#: src/routes/Carreira.tsx:276
+msgid "Diário de expectativas"
+msgstr "Diário de expectativas"
+
+#. placeholder {0}: resumo.diasLivres.map((d) => ROTULO_DIA[d]).join(', ')
+#: src/routes/Planejar.tsx:321
+msgid "Dias livres: {0}."
+msgstr "Dias livres: {0}."
+
 #: src/routes/Kit.tsx:218
 msgid "Dias livres: Sex. Menor chance de vaga no plano: 83%."
 msgstr "Dias livres: Sex. Menor chance de vaga no plano: 83%."
@@ -325,8 +491,17 @@ msgstr "Dias livres: Sex. Menor chance de vaga no plano: 83%."
 #: src/routes/Desempenho.tsx:188
 #: src/routes/importar/ImportarManual.tsx:131
 #: src/routes/importar/ImportarPdf.tsx:178
+#: src/routes/planejar/NovaTurma.tsx:69
 msgid "Disciplina"
 msgstr "Disciplina"
+
+#: src/routes/carreira/EditorObjetivo.tsx:98
+msgid "Disciplinas que contribuem"
+msgstr "Disciplinas que contribuem"
+
+#: src/routes/Planejar.tsx:161
+msgid "Disponíveis para você"
+msgstr "Disponíveis para você"
 
 #: src/componentes/situacao.ts:20
 msgid "Disponível"
@@ -342,11 +517,26 @@ msgstr "É {0} · {1}"
 msgid "E-mail"
 msgstr "E-mail"
 
+#: src/routes/Carreira.tsx:124
+#: src/routes/carreira/EditorObjetivo.tsx:78
+msgid "Editar objetivo"
+msgstr "Editar objetivo"
+
+#: src/routes/Planejar.tsx:95
+#: src/routes/Planejar.tsx:124
+msgid "Eletiva"
+msgstr "Eletiva"
+
+#. placeholder {0}: ofertaSugerida.titulo
+#: src/routes/Carreira.tsx:46
+msgid "eletiva {0}"
+msgstr "eletiva {0}"
+
 #: src/routes/Importar.tsx:97
 msgid "Entrada manual"
 msgstr "Entrada manual"
 
-#: src/layout/AppShell.tsx:79
+#: src/layout/AppShell.tsx:80
 #: src/routes/Entrar.tsx:10
 #: src/routes/Kit.tsx:196
 msgid "Entrar"
@@ -360,6 +550,10 @@ msgstr "Entrar pelo {sistema}"
 msgid "Envia só notas por disciplina desta matriz, sem nome, matrícula ou conta. Os agregados só são publicados com pelo menos 10 históricos por célula."
 msgstr "Envia só notas por disciplina desta matriz, sem nome, matrícula ou conta. Os agregados só são publicados com pelo menos 10 históricos por célula."
 
+#: src/routes/planejar/NovaTurma.tsx:35
+msgid "Escolha a disciplina e pelo menos um horário."
+msgstr "Escolha a disciplina e pelo menos um horário."
+
 #: src/routes/Importar.tsx:39
 msgid "Escolha a matriz. Depois você traz o histórico por PDF, conector ou à mão."
 msgstr "Escolha a matriz. Depois você traz o histórico por PDF, conector ou à mão."
@@ -367,6 +561,14 @@ msgstr "Escolha a matriz. Depois você traz o histórico por PDF, conector ou à
 #: src/routes/importar/PassoCurso.tsx:32
 msgid "Escolha o curso e diga como quer ser chamada(o)."
 msgstr "Escolha o curso e diga como quer ser chamada(o)."
+
+#: src/routes/Planejar.tsx:331
+msgid "Escolha uma turma reserva."
+msgstr "Escolha uma turma reserva."
+
+#: src/routes/Carreira.tsx:279
+msgid "Escreva o que você espera a cada semestre. O Akademos mostra como isso mudou."
+msgstr "Escreva o que você espera a cada semestre. O Akademos mostra como isso mudou."
 
 #: src/routes/Inicio.tsx:64
 msgid "Esta semana"
@@ -380,9 +582,22 @@ msgstr "Este PDF é uma imagem digitalizada, sem texto. Baixe o histórico diret
 msgid "Este semestre"
 msgstr "Este semestre"
 
+#: src/routes/carreira/EditorObjetivo.tsx:84
+msgid "Ex.: ciência de dados em saúde"
+msgstr "Ex.: ciência de dados em saúde"
+
+#: src/routes/Carreira.tsx:247
+msgid "Ex.: intercâmbio"
+msgstr "Ex.: intercâmbio"
+
 #: src/routes/Percurso.tsx:172
 msgid "Exige"
 msgstr "Exige"
+
+#. placeholder {0}: faltam.join(' e ')
+#: src/routes/Planejar.tsx:229
+msgid "exige {0}"
+msgstr "exige {0}"
 
 #. placeholder {0}: destravaSel.length
 #: src/routes/Percurso.tsx:84
@@ -397,17 +612,34 @@ msgstr "Exigida por 1 disciplina adiante na matriz."
 #~ msgid "Explorar com dados de exemplo"
 #~ msgstr "Explorar com dados de exemplo"
 
+#: src/routes/Dados.tsx:67
+msgid "Exportar"
+msgstr "Exportar"
+
 #: src/routes/inicio-textos.ts:35
 msgid "Falta pouco para a formatura."
 msgstr "Falta pouco para a formatura."
 
-#: src/layout/AppShell.tsx:46
+#. placeholder {0}: c.faltando.map(nome).join(', ')
+#: src/routes/Carreira.tsx:50
+msgid "Falta: {0}"
+msgstr "Falta: {0}"
+
+#: src/layout/AvisoAtualizacao.tsx:53
+msgid "Fechar"
+msgstr "Fechar"
+
+#: src/layout/AppShell.tsx:47
 msgid "Feche a outra aba e recarregue esta página. Os dados ficam num só arquivo neste navegador."
 msgstr "Feche a outra aba e recarregue esta página. Os dados ficam num só arquivo neste navegador."
 
 #: src/routes/importar/PassoCurso.tsx:67
 msgid "fictícia"
 msgstr "fictícia"
+
+#: src/routes/Planejar.tsx:153
+msgid "Formatura"
+msgstr "Formatura"
 
 #: src/routes/Inicio.tsx:52
 msgid "Formatura prevista"
@@ -422,11 +654,31 @@ msgstr "Frequência (em teste)"
 msgid "geral <0>{0}</0>"
 msgstr "geral <0>{0}</0>"
 
+#: src/layout/AvisoAtualizacao.tsx:35
+msgid "Há uma versão nova do Akademos."
+msgstr "Há uma versão nova do Akademos."
+
 #: src/routes/importar/PainelConector.tsx:36
 msgid "Histórico"
 msgstr "Histórico"
 
-#: src/layout/AppShell.tsx:169
+#: src/routes/Dados.tsx:89
+msgid "Histórico (CSV)"
+msgstr "Histórico (CSV)"
+
+#: src/routes/Dados.tsx:120
+msgid "Histórico, planos, objetivos e diário serão removidos deste navegador. Esta ação não pode ser desfeita."
+msgstr "Histórico, planos, objetivos e diário serão removidos deste navegador. Esta ação não pode ser desfeita."
+
+#: src/routes/planejar/NovaTurma.tsx:101
+msgid "Horários"
+msgstr "Horários"
+
+#: src/routes/Planejar.tsx:144
+msgid "Horas na semana"
+msgstr "Horas na semana"
+
+#: src/layout/AppShell.tsx:149
 msgid "Importar"
 msgstr "Importar"
 
@@ -444,12 +696,12 @@ msgstr "Indicadores"
 msgid "Ingresso"
 msgstr "Ingresso"
 
-#: src/layout/AppShell.tsx:99
+#: src/layout/AppShell.tsx:171
 msgid "Início"
 msgstr "Início"
 
-#: src/layout/AppShell.tsx:102
-#: src/routes/Insights.tsx:5
+#: src/layout/AppShell.tsx:174
+#: src/routes/Insights.tsx:27
 msgid "Insights"
 msgstr "Insights"
 
@@ -462,9 +714,21 @@ msgstr "Instituição, curso e matriz"
 msgid "Integralizado"
 msgstr "Integralizado"
 
+#: src/routes/planejar/NovaTurma.tsx:93
+msgid "Interessados"
+msgstr "Interessados"
+
+#: src/routes/Dados.tsx:70
+msgid "JSON com todas as tabelas (para levar a outro aparelho ou guardar) e CSV do histórico (para planilhas)."
+msgstr "JSON com todas as tabelas (para levar a outro aparelho ou guardar) e CSV do histórico (para planilhas)."
+
 #: src/routes/Kit.tsx:45
 msgid "Kit de design"
 msgstr "Kit de design"
+
+#: src/routes/Planejar.tsx:116
+msgid "lançamento manual"
+msgstr "lançamento manual"
 
 #: src/routes/Desempenho.tsx:173
 msgid "Lance notas para ver a média por área."
@@ -487,9 +751,19 @@ msgstr "Leitura no aparelho. Reconhece códigos e notas e casa com a matriz."
 msgid "Lendo {0}…"
 msgstr "Lendo {0}…"
 
+#: src/routes/Planejar.tsx:262
+msgid "livre"
+msgstr "livre"
+
+#: src/routes/Insights.tsx:18
 #: src/routes/Kit.tsx:159
 msgid "Lotação"
 msgstr "Lotação"
+
+#. placeholder {0}: o.turma
+#: src/routes/Planejar.tsx:194
+msgid "Lotação de {0}"
+msgstr "Lotação de {0}"
 
 #: src/routes/importar/PainelConector.tsx:42
 msgid "Lotação e pré-matrícula"
@@ -508,6 +782,20 @@ msgstr "mantida se {0} entrar em {1}"
 #: src/routes/importar/PainelConector.tsx:29
 msgid "Mantido por voluntários da comunidade. Você entra com o seu usuário da universidade; o Akademos só lê histórico, oferta de turmas e pré-matrícula, e nunca guarda sua senha."
 msgstr "Mantido por voluntários da comunidade. Você entra com o seu usuário da universidade; o Akademos só lê histórico, oferta de turmas e pré-matrícula, e nunca guarda sua senha."
+
+#. placeholder {0}: m.titulo
+#: src/routes/Carreira.tsx:198
+msgid "Marcar {0} como feito"
+msgstr "Marcar {0} como feito"
+
+#. placeholder {0}: m.titulo
+#: src/routes/Carreira.tsx:198
+msgid "Marcar {0} como pendente"
+msgstr "Marcar {0} como pendente"
+
+#: src/routes/Carreira.tsx:182
+msgid "Marcos até a formatura"
+msgstr "Marcos até a formatura"
 
 #: src/routes/Importar.tsx:98
 msgid "Marque o que já cursou numa matriz pronta da comunidade."
@@ -554,6 +842,11 @@ msgstr "Média ponderada por créditos · escala {0}–{1} · aprovação ≥ {2
 msgid "Média por semestre"
 msgstr "Média por semestre"
 
+#. placeholder {0}: resumo.menorChance
+#: src/routes/Planejar.tsx:327
+msgid "Menor chance de vaga no plano: {0}%."
+msgstr "Menor chance de vaga no plano: {0}%."
+
 #: src/componentes/risco.ts:15
 msgid "Moderado"
 msgstr "Moderado"
@@ -562,11 +855,12 @@ msgstr "Moderado"
 msgid "Modo"
 msgstr "Modo"
 
-#: src/layout/AppShell.tsx:165
+#: src/layout/AppShell.tsx:145
 msgid "Mostrar notas"
 msgstr "Mostrar notas"
 
 #: src/routes/Kit.tsx:129
+#: src/routes/Planejar.tsx:213
 msgid "Na grade ✓"
 msgstr "Na grade ✓"
 
@@ -586,7 +880,7 @@ msgstr "Não destrava nenhuma."
 msgid "Não é exigida por nenhuma outra disciplina."
 msgstr "Não é exigida por nenhuma outra disciplina."
 
-#: src/layout/AppShell.tsx:42
+#: src/layout/AppShell.tsx:43
 msgid "Não foi possível abrir os dados locais"
 msgstr "Não foi possível abrir os dados locais"
 
@@ -600,13 +894,17 @@ msgstr "Não importar"
 msgid "Não reconhecemos nenhuma disciplina neste PDF. Confira se é o histórico do {0} da {1}."
 msgstr "Não reconhecemos nenhuma disciplina neste PDF. Confira se é o histórico do {0} da {1}."
 
-#: src/layout/AppShell.tsx:72
+#: src/layout/AppShell.tsx:73
 msgid "Navegação"
 msgstr "Navegação"
 
-#: src/layout/AppShell.tsx:114
+#: src/layout/AppShell.tsx:107
 msgid "Navegação principal"
 msgstr "Navegação principal"
+
+#: src/routes/Insights.tsx:50
+msgid "Nenhum insight deste tipo agora."
+msgstr "Nenhum insight deste tipo agora."
 
 #: src/routes/Percurso.tsx:175
 msgid "Nenhum pré-requisito."
@@ -620,6 +918,10 @@ msgstr "Nenhuma disciplina em curso neste semestre."
 msgid "Nenhuma disciplina em curso."
 msgstr "Nenhuma disciplina em curso."
 
+#: src/routes/Insights.tsx:37
+msgid "Nesta matriz fictícia, os dados da comunidade são de demonstração."
+msgstr "Nesta matriz fictícia, os dados da comunidade são de demonstração."
+
 #: src/routes/importar/ImportarPdf.tsx:175
 msgid "No PDF"
 msgstr "No PDF"
@@ -632,6 +934,7 @@ msgstr "no ritmo do seu plano"
 msgid "noites livres"
 msgstr "noites livres"
 
+#: src/routes/carreira/EditorObjetivo.tsx:93
 #: src/routes/importar/PassoCurso.tsx:74
 msgid "Nome"
 msgstr "Nome"
@@ -662,7 +965,23 @@ msgstr "Nota inválida em {0}: use de {1} a {2}."
 msgid "Nota prevista"
 msgstr "Nota prevista"
 
-#: src/layout/AppShell.tsx:41
+#: src/routes/Carreira.tsx:291
+msgid "Nova entrada"
+msgstr "Nova entrada"
+
+#: src/routes/planejar/NovaTurma.tsx:65
+msgid "Nova turma em {semestre}"
+msgstr "Nova turma em {semestre}"
+
+#: src/routes/Carreira.tsx:244
+msgid "Novo marco"
+msgstr "Novo marco"
+
+#: src/routes/carreira/EditorObjetivo.tsx:78
+msgid "Novo objetivo"
+msgstr "Novo objetivo"
+
+#: src/layout/AppShell.tsx:42
 msgid "O Akademos está aberto em outra aba"
 msgstr "O Akademos está aberto em outra aba"
 
@@ -679,17 +998,45 @@ msgstr "O que fazer com {0}"
 msgid "O que merece atenção"
 msgstr "O que merece atenção"
 
+#: src/routes/Carreira.tsx:295
 #: src/routes/Kit.tsx:204
 msgid "O que você espera do próximo semestre?"
 msgstr "O que você espera do próximo semestre?"
 
-#: src/layout/AppShell.tsx:165
+#: src/routes/Carreira.tsx:73
+msgid "O que você quer fazer depois, e quanto do percurso já aponta para lá"
+msgstr "O que você quer fazer depois, e quanto do percurso já aponta para lá"
+
+#: src/routes/Planejar.tsx:293
+msgid "o restante"
+msgstr "o restante"
+
+#: src/routes/carreira/EditorObjetivo.tsx:81
+msgid "Objetivo"
+msgstr "Objetivo"
+
+#: src/routes/Carreira.tsx:83
+msgid "Objetivo principal"
+msgstr "Objetivo principal"
+
+#: src/layout/AppShell.tsx:145
 msgid "Ocultar notas"
 msgstr "Ocultar notas"
 
 #: src/routes/importar/PainelConector.tsx:39
 msgid "Oferta de turmas"
 msgstr "Oferta de turmas"
+
+#. placeholder {0}: instituicao.sigla
+#. placeholder {1}: leitura ? ` ${tempoDecorrido(new Date(leitura), a.agora)}` : ''
+#. placeholder {2}: a.integralizacao.percentual
+#: src/routes/Planejar.tsx:132
+msgid "Oferta e pré-matrícula lidas do {sistema} {0}{1} · sua prioridade: {FAIXA_PRIORIDADE}ª faixa (regular, {2}% integralizado)"
+msgstr "Oferta e pré-matrícula lidas do {sistema} {0}{1} · sua prioridade: {FAIXA_PRIORIDADE}ª faixa (regular, {2}% integralizado)"
+
+#: src/routes/Dados.tsx:53
+msgid "Onde estão"
+msgstr "Onde estão"
 
 #: src/routes/importar/ImportarPdf.tsx:277
 msgid "Outro arquivo"
@@ -720,23 +1067,27 @@ msgstr "Patrocinar"
 msgid "PDF do histórico"
 msgstr "PDF do histórico"
 
-#: src/layout/AppShell.tsx:100
+#: src/layout/AppShell.tsx:172
 #: src/routes/Percurso.tsx:96
 msgid "Percurso"
 msgstr "Percurso"
 
 #: src/routes/Planejar.tsx:5
-msgid "Planejar"
-msgstr "Planejar"
+#~ msgid "Planejar"
+#~ msgstr "Planejar"
 
 #. placeholder {0}: a.proximoSemestre
 #: src/routes/Percurso.tsx:192
 msgid "Planejar {0}"
 msgstr "Planejar {0}"
 
-#: src/layout/AppShell.tsx:101
+#: src/layout/AppShell.tsx:173
 msgid "Planejar {proximo}"
 msgstr "Planejar {proximo}"
+
+#: src/routes/Planejar.tsx:129
+msgid "Planejar {semestre}"
+msgstr "Planejar {semestre}"
 
 #: src/routes/Desempenho.tsx:148
 #: src/routes/Inicio.tsx:137
@@ -780,21 +1131,33 @@ msgstr "Primário"
 msgid "Privacidade"
 msgstr "Privacidade"
 
+#: src/routes/planejar/NovaTurma.tsx:83
+msgid "Professor(a)"
+msgstr "Professor(a)"
+
 #: src/routes/Desempenho.tsx:133
 msgid "projeção "
 msgstr "projeção "
+
+#: src/layout/AvisoAtualizacao.tsx:37
+msgid "Pronto para funcionar offline."
+msgstr "Pronto para funcionar offline."
 
 #: src/routes/Importar.tsx:128
 msgid "Próximo passo: privacidade. Por padrão, tudo fica neste aparelho. Sincronizar entre aparelhos e compartilhar históricos anônimos com a comunidade são opcionais e você pode desligar quando quiser."
 msgstr "Próximo passo: privacidade. Por padrão, tudo fica neste aparelho. Sincronizar entre aparelhos e compartilhar históricos anônimos com a comunidade são opcionais e você pode desligar quando quiser."
 
-#: src/layout/AppShell.tsx:57
+#: src/layout/AppShell.tsx:58
 msgid "Pular para o conteúdo"
 msgstr "Pular para o conteúdo"
 
 #: src/routes/Importar.tsx:140
 msgid "Pular para privacidade"
 msgstr "Pular para privacidade"
+
+#: src/routes/Carreira.tsx:134
+msgid "Qual é o seu objetivo?"
+msgstr "Qual é o seu objetivo?"
 
 #. placeholder {0}: curso.nome
 #. placeholder {1}: instituicao.sigla
@@ -810,9 +1173,30 @@ msgstr "quarta"
 msgid "quinta"
 msgstr "quinta"
 
+#: src/routes/Carreira.tsx:299
+msgid "Registrar"
+msgstr "Registrar"
+
+#: src/routes/Dados.tsx:98
+msgid "Remove o banco local deste navegador. Se você não tem conta com sincronização, não há outra cópia: exporte antes."
+msgstr "Remove o banco local deste navegador. Se você não tem conta com sincronização, não há outra cópia: exporte antes."
+
+#. placeholder {0}: m.titulo
+#: src/routes/Carreira.tsx:220
+msgid "Remover {0}"
+msgstr "Remover {0}"
+
+#: src/routes/carreira/EditorObjetivo.tsx:125
+msgid "Remover competência"
+msgstr "Remover competência"
+
 #: src/routes/importar/ImportarManual.tsx:158
 msgid "Reprovada"
 msgstr "Reprovada"
+
+#: src/layout/AppShell.tsx:186
+msgid "requer atenção"
+msgstr "requer atenção"
 
 #. placeholder {0}: paraRevisar.length
 #: src/routes/importar/ImportarPdf.tsx:273
@@ -824,6 +1208,7 @@ msgid "Revisar 2"
 msgstr "Revisar 2"
 
 #: src/routes/Desempenho.tsx:194
+#: src/routes/Insights.tsx:17
 #: src/routes/Kit.tsx:186
 msgid "Risco"
 msgstr "Risco"
@@ -840,9 +1225,13 @@ msgstr "Rótulo de seção"
 msgid "sábado"
 msgstr "sábado"
 
-#: src/layout/AppShell.tsx:172
+#: src/layout/AppShell.tsx:152
 msgid "Sair"
 msgstr "Sair"
+
+#: src/routes/carreira/EditorObjetivo.tsx:144
+msgid "Salvar"
+msgstr "Salvar"
 
 #: src/routes/importar/PassoCurso.tsx:103
 msgid "Salvar curso"
@@ -852,11 +1241,22 @@ msgstr "Salvar curso"
 msgid "Salvar e continuar"
 msgstr "Salvar e continuar"
 
+#: src/routes/planejar/NovaTurma.tsx:134
+msgid "Salvar turma"
+msgstr "Salvar turma"
+
 #: src/routes/inicio-textos.ts:55
 msgid "segunda"
 msgstr "segunda"
 
-#: src/layout/AppShell.tsx:155
+#. placeholder {0}: d.nome
+#. placeholder {1}: destrava.join(' e ') || t`o restante`
+#. placeholder {2}: resumo.formatura
+#: src/routes/Planejar.tsx:292
+msgid "Sem {0}, {1} fica para depois e a formatura passa para {2}."
+msgstr "Sem {0}, {1} fica para depois e a formatura passa para {2}."
+
+#: src/layout/AppShell.tsx:135
 msgid "Sem conta · nada sai daqui"
 msgstr "Sem conta · nada sai daqui"
 
@@ -880,10 +1280,15 @@ msgstr "sem previsão"
 msgid "sem turmas registradas"
 msgstr "sem turmas registradas"
 
+#: src/routes/Planejar.tsx:325
+msgid "Semana sem dia livre."
+msgstr "Semana sem dia livre."
+
 #: src/routes/inicio-textos.ts:69
 msgid "semana sem folga"
 msgstr "semana sem folga"
 
+#: src/routes/Carreira.tsx:229
 #: src/routes/importar/ImportarManual.tsx:137
 #: src/routes/importar/ImportarPdf.tsx:181
 msgid "Semestre"
@@ -906,6 +1311,10 @@ msgstr "Seu curso"
 msgid "Seu curso não está na lista? A matriz é um arquivo YAML no registro; veja o guia de contribuição no GitHub."
 msgstr "Seu curso não está na lista? A matriz é um arquivo YAML no registro; veja o guia de contribuição no GitHub."
 
+#: src/routes/Dados.tsx:43
+msgid "Seus dados"
+msgstr "Seus dados"
+
 #: src/routes/Importar.tsx:76
 msgid "Seus dados, suas regras"
 msgstr "Seus dados, suas regras"
@@ -927,8 +1336,8 @@ msgstr "Situação \"{0}\" desconhecida"
 msgid "Só quero explorar: carregar a aluna de exemplo (fictícia) →"
 msgstr "Só quero explorar: carregar a aluna de exemplo (fictícia) →"
 
-#: src/layout/AppShell.tsx:82
-#: src/layout/AppShell.tsx:175
+#: src/layout/AppShell.tsx:83
+#: src/layout/AppShell.tsx:155
 #: src/routes/Sobre.tsx:5
 msgid "Sobre e apoio"
 msgstr "Sobre e apoio"
@@ -939,10 +1348,19 @@ msgstr "Sobre e apoio"
 msgid "Sua nota {0} → prevista <0>{1}</0>"
 msgstr "Sua nota {0} → prevista <0>{1}</0>"
 
+#: src/routes/Planejar.tsx:240
+msgid "Sua semana"
+msgstr "Sua semana"
+
 #. placeholder {0}: sel.semestreSugerido
 #: src/routes/Percurso.tsx:197
 msgid "sugerida no {0}º semestre"
 msgstr "sugerida no {0}º semestre"
+
+#. placeholder {0}: a.proximoSemestre
+#: src/routes/Carreira.tsx:48
+msgid "Sugestão: {rotulo} em {0}"
+msgstr "Sugestão: {rotulo} em {0}"
 
 #: src/routes/inicio-textos.ts:56
 msgid "terça"
@@ -952,10 +1370,15 @@ msgstr "terça"
 msgid "Tipo"
 msgstr "Tipo"
 
+#: src/routes/Insights.tsx:43
+msgid "Tipo de insight"
+msgstr "Tipo de insight"
+
 #: src/routes/Kit.tsx:86
 msgid "Tipografia"
 msgstr "Tipografia"
 
+#: src/routes/Insights.tsx:16
 #: src/routes/Kit.tsx:185
 msgid "Todos"
 msgstr "Todos"
@@ -969,6 +1392,10 @@ msgstr "Todos os insights"
 msgid "Tokens de docs/DESIGN.md e componentes base, construídos com React Aria."
 msgstr "Tokens de docs/DESIGN.md e componentes base, construídos com React Aria."
 
+#: src/routes/Carreira.tsx:93
+msgid "tornar principal"
+msgstr "tornar principal"
+
 #: src/routes/Importar.tsx:107
 msgid "Traga seu histórico"
 msgstr "Traga seu histórico"
@@ -981,6 +1408,14 @@ msgstr "trocar"
 msgid "Trocar de curso"
 msgstr "Trocar de curso"
 
+#: src/routes/Dados.tsx:45
+msgid "Tudo o que o Akademos sabe sobre você está neste aparelho. Leve com você ou apague quando quiser."
+msgstr "Tudo o que o Akademos sabe sobre você está neste aparelho. Leve com você ou apague quando quiser."
+
+#: src/routes/planejar/NovaTurma.tsx:82
+msgid "Turma"
+msgstr "Turma"
+
 #. placeholder {0}: e.codigo
 #. placeholder {1}: e.nome
 #: src/routes/importar/ImportarPdf.tsx:239
@@ -990,6 +1425,10 @@ msgstr "Usar como {0} · {1}"
 #: src/routes/Entrar.tsx:18
 msgid "Usar sem conta, só neste aparelho →"
 msgstr "Usar sem conta, só neste aparelho →"
+
+#: src/routes/planejar/NovaTurma.tsx:86
+msgid "Vagas"
+msgstr "Vagas"
 
 #. placeholder {0}: a.proximoSemestre
 #: src/routes/Percurso.tsx:190
