@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { cursadas, matriz } from './__fixtures__/ana';
 import {
+  disciplinaQueCruzaAreas,
   integralizacao,
   mediaPonderada,
   mediaPorSemestre,
@@ -156,5 +157,14 @@ describe('notaDaDisciplina', () => {
   it('usa a nota da última cursada com nota', () => {
     expect(notaDaDisciplina('EX301', cursadas)).toBe(6.1);
     expect(notaDaDisciplina('EX501', cursadas)).toBeNull();
+  });
+});
+
+describe('disciplinaQueCruzaAreas', () => {
+  it('acha a disciplina futura que depende das duas áreas', () => {
+    expect(disciplinaQueCruzaAreas(matriz, cursadas, 'Computação', 'Matemática')?.nome).toBe(
+      'Inteligência Artificial',
+    );
+    expect(disciplinaQueCruzaAreas(matriz, cursadas, 'Física', 'Eletiva')).toBeNull();
   });
 });

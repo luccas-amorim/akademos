@@ -16,7 +16,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 - [x] 1.1 `core`: situação efetiva, integralização, média ponderada, áreas. [testes]
 - [x] 1.2 Tela **Início** (KPIs, "O que merece atenção", "Este semestre", "Por área").
 - [x] 1.3 Tela **Percurso**: matriz por semestre, seleção destaca pré-requisitos (verde-oliva) e o que destrava (âmbar); painel lateral.
-- [ ] 1.4 Tela **Desempenho**: média por semestre, por área, risco, correlações.
+- [x] 1.4 Tela **Desempenho**: média por semestre, por área, risco, correlações.
 - [ ] 1.5 Tela **Importar** — entrada manual + parser de PDF com tela de revisão. [importa um histórico SIGAA real anonimizado em `__fixtures__`]
 - [ ] 1.6 Modo **Ocultar notas** global (substitui valores por `•,•`).
 - [ ] 1.7 Exportar/apagar dados locais.

@@ -33,7 +33,12 @@ function juntar(slots: number[], faixas: readonly FaixaHoraria[]): string[] {
 export function descreverHorarios(horarios: readonly Horario[], grade: GradeSemanal): string {
   if (!horarios.length) return 'sem horário';
   const dias = grade.dias.filter((d) => horarios.some((h) => h.dia === d));
-  const porDia = dias.map((d) => juntar(horarios.filter((h) => h.dia === d).map((h) => h.slot), grade.faixas).join(' / '));
+  const porDia = dias.map((d) =>
+    juntar(
+      horarios.filter((h) => h.dia === d).map((h) => h.slot),
+      grade.faixas,
+    ).join(' / '),
+  );
   const iguais = porDia.every((p) => p === porDia[0]);
   const faixas = iguais ? porDia[0]! : [...new Set(porDia)].join(' / ');
   return `${dias.map((d) => ROTULO_DIA[d]).join(', ')} · ${faixas}`;

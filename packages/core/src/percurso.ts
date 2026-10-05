@@ -160,3 +160,44 @@ export function progressoPorArea(matriz: Matriz, cursadas: readonly Cursada[]): 
     };
   });
 }
+
+/**
+ * Primeira disciplina ainda não cursada cuja cadeia de requisitos (incluindo
+ * ela mesma) passa pelas duas áreas. Ex.: Aprendizado de Máquina exige
+ * Computação e Matemática.
+ */
+export function disciplinaQueCruzaAreas(
+  matriz: Matriz,
+  cursadas: readonly Cursada[],
+  areaA: string,
+  areaB: string,
+): Disciplina | null {
+  const porCodigo = new Map(matriz.disciplinas.map((d) => [d.codigo, d]));
+  const requisitos = (codigo: string): string[] =>
+    matriz.prerequisitos
+      .filter((p) => p.disciplinaCodigo === codigo && p.tipo === 'pre')
+      .map((p) => p.requerCodigo);
+  const areasDaCadeia = (codigo: string): Set<string> => {
+    const areas = new Set<string>();
+    const pilha = [codigo];
+    const vistos = new Set<string>();
+    while (pilha.length) {
+      const c = pilha.pop()!;
+      if (vistos.has(c)) continue;
+      vistos.add(c);
+      const d = porCodigo.get(c);
+      if (d) areas.add(d.area);
+      pilha.push(...requisitos(c));
+    }
+    return areas;
+  };
+  const candidatas = [...matriz.disciplinas]
+    .filter((d) => estadoNoHistorico(d.codigo, cursadas) === null)
+    .sort((a, b) => a.semestreSugerido - b.semestreSugerido);
+  for (const d of candidatas) {
+    if (!requisitos(d.codigo).length) continue;
+    const areas = areasDaCadeia(d.codigo);
+    if (areas.has(areaA) && areas.has(areaB)) return d;
+  }
+  return null;
+}

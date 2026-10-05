@@ -1,0 +1,129 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.duas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.barras {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  height: 190px;
+  margin-top: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.barra {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+  height: 100%;
+}
+.barraValor {
+  font-size: 12px;
+  font-weight: 600;
+}
+.barraCorpo {
+  width: 100%;
+  max-width: 44px;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid var(--primary);
+}
+.rotulos {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+}
+.rotulos > span {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  color: var(--ink-2);
+}
+.area {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) 40px;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+}
+.areaValor {
+  text-align: right;
+  font-weight: 600;
+}
+.comentario {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+.secao {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tabela {
+  overflow-x: auto;
+}
+.tabela table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+.tabela th {
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--ink-2);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.tabela td {
+  font-size: 13.5px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border-soft);
+  vertical-align: middle;
+}
+.tabela tr:last-child td {
+  border-bottom: 0;
+}
+.correlacoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+.correlacao {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+}
+.par {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.numeros {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.previsto {
+  font-size: 13px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-soft);
+}
