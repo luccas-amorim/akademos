@@ -32,7 +32,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 
 ## Fase 3 — Conta e sincronização (semana 11–14)
 
-- [ ] 3.1 Spike: Evolu vs. implementação própria. Registrar decisão em `docs/adr/0001-sync.md`.
+- [x] 3.1 Spike: Evolu vs. implementação própria. Registrar decisão em `docs/adr/0001-sync.md`.
 - [ ] 3.2 `apps/server`: Hono + Postgres + Better Auth (passkey, Google, link mágico). Docker Compose.
 - [ ] 3.3 Tela **Entrar/Criar conta** conforme o protótipo; frase de recuperação; "Usar sem conta".
 - [ ] 3.4 `packages/sync`: ops HLC, cifra, push/pull, indicador "sincronizado há X" na barra lateral.
