@@ -1,28 +1,35 @@
 import { deslocarSemestre, ordinalDoSemestre, semestreDaData } from '@akademos/core';
 import { LogoMark } from '@akademos/ui';
 import { Trans, useLingui } from '@lingui/react/macro';
-import { Link, Navigate, Outlet, useLocation, useNavigate } from '@tanstack/react-router';
+import { Link, Outlet, useLocation, useNavigate } from '@tanstack/react-router';
 import { useEffect } from 'react';
 import { gravarPreferencia, useOcultarNotas, useSessao } from '../dados/preferencias';
 import { store, useEstadoDados } from '../dados/store';
 import { TelaDeEstado } from './TelaDeEstado';
 import s from './AppShell.module.css';
 
-/** Telas acessíveis sem sessão e sem dados. */
-const PUBLICAS = new Set(['/sobre']);
+import { ROTAS_PUBLICAS } from './rotasPublicas';
 
 export function AppShell() {
   const { t } = useLingui();
   const estado = useEstadoDados();
   const sessao = useSessao();
   const { pathname } = useLocation();
-  const publica = PUBLICAS.has(pathname);
+  const publica = ROTAS_PUBLICAS.has(pathname);
+  const navigate = useNavigate();
+
+  const semDados = estado.fase === 'pronto' && estado.dados === null;
+  const precisaImportar = semDados && !publica && pathname !== '/importar';
 
   useEffect(() => {
     void store.iniciar();
   }, []);
 
-  if (!sessao && !publica) return <Navigate to="/entrar" replace />;
+  // Sem dados ainda: o primeiro passo é escolher o curso e trazer o histórico.
+  useEffect(() => {
+    if (precisaImportar) void navigate({ to: '/importar', replace: true });
+  }, [precisaImportar, navigate]);
+
   if (estado.fase === 'abrindo') {
     return <TelaDeEstado titulo={t`Abrindo seus dados…`} />;
   }
@@ -42,10 +49,7 @@ export function AppShell() {
       />
     );
   }
-  const temDados = estado.dados !== null;
-  if (!temDados && !publica && pathname !== '/importar') {
-    return <Navigate to="/importar" replace />;
-  }
+  if (precisaImportar) return <TelaDeEstado titulo={t`Abrindo seus dados…`} />;
 
   return (
     <div className={s.shell}>

@@ -4,7 +4,10 @@ import {
   createRouter,
   lazyRouteComponent,
   Outlet,
+  redirect,
 } from '@tanstack/react-router';
+import { lerSessao } from './dados/preferencias';
+import { ROTAS_PUBLICAS } from './layout/rotasPublicas';
 import { AppShell } from './layout/AppShell';
 import { NotFound } from './routes/NotFound';
 
@@ -17,6 +20,12 @@ const rootRoute = createRootRoute({
 const appRoute = createRoute({
   getParentRoute: () => rootRoute,
   id: 'app',
+  // Sem sessão (nem conta, nem "usar sem conta"), a porta de entrada é /entrar.
+  beforeLoad: ({ location }) => {
+    if (!lerSessao() && !ROTAS_PUBLICAS.has(location.pathname)) {
+      throw redirect({ to: '/entrar', replace: true });
+    }
+  },
   component: AppShell,
 });
 
