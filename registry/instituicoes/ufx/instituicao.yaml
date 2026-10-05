@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema/instituicao.schema.json
+# Instituição FICTÍCIA, usada no protótipo e no seed de desenvolvimento.
+sigla: UFX
+nome: Universidade Federal de Exemplo
+sistema: sigaa
+escala: ufx-0-10
+creditos_max_semestre: 24
+ficticia: true
+grade:
+  dias: [seg, ter, qua, qui, sex]
+  faixas:
+    - { inicio: '08:00', fim: '10:00' }
+    - { inicio: '10:00', fim: '12:00' }
+    - { inicio: '14:00', fim: '16:00' }
+    - { inicio: '16:00', fim: '18:00' }
+    - { inicio: '19:00', fim: '21:00' }

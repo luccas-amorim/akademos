@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../../schema/instituicao.schema.json
+# Instituição FICTÍCIA: o "Curso de Exemplo" do rascunho original do Akademos.
+sigla: UEM
+nome: Universidade Estadual Modelo
+sistema: outro
+escala: uem-0-10
+creditos_max_semestre: 16
+ficticia: true
+grade:
+  dias: [seg, ter, qua, qui, sex]
+  faixas:
+    - { inicio: '19:00', fim: '20:40' }
+    - { inicio: '20:50', fim: '22:30' }
