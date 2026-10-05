@@ -24,7 +24,10 @@ export class GrafoDePrerequisitos {
     }
     for (const a of arestas) {
       if (!this.#exige.has(a.disciplinaCodigo) || !this.#exige.has(a.requerCodigo)) {
-        this.#inexistentes.push({ disciplinaCodigo: a.disciplinaCodigo, requerCodigo: a.requerCodigo });
+        this.#inexistentes.push({
+          disciplinaCodigo: a.disciplinaCodigo,
+          requerCodigo: a.requerCodigo,
+        });
         continue;
       }
       this.#exige.get(a.disciplinaCodigo)!.push(a.requerCodigo);

@@ -54,3 +54,11 @@ export function intervaloDeSemestres(de: Semestre, ate: Semestre): Semestre[] {
 export function ehSemestreImpar(semestre: Semestre): boolean {
   return parseSemestre(semestre).periodo === 1;
 }
+
+/**
+ * Semestre letivo de uma data: janeiro–julho → `/1`, agosto–dezembro → `/2`.
+ * Convenção da maioria das universidades brasileiras; o aluno pode corrigir.
+ */
+export function semestreDaData(data: Date): Semestre {
+  return `${data.getFullYear()}/${data.getMonth() < 7 ? 1 : 2}`;
+}

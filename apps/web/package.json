@@ -15,12 +15,16 @@
   },
   "dependencies": {
     "@akademos/core": "workspace:*",
+    "@akademos/db": "workspace:*",
+    "@akademos/registry": "workspace:*",
+    "@akademos/sync": "workspace:*",
     "@akademos/ui": "workspace:*",
     "@lingui/core": "^6.9.0",
     "@lingui/react": "^6.9.0",
     "@tanstack/react-router": "^1.170.41",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@lingui/babel-plugin-lingui-macro": "^6.9.0",

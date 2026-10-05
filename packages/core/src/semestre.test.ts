@@ -6,6 +6,7 @@ import {
   intervaloDeSemestres,
   ordinalDoSemestre,
   parseSemestre,
+  semestreDaData,
   semestreDoOrdinal,
 } from './semestre';
 
@@ -60,5 +61,14 @@ describe('aritmética de semestres', () => {
   it('identifica a paridade do período', () => {
     expect(ehSemestreImpar('2027/1')).toBe(true);
     expect(ehSemestreImpar('2027/2')).toBe(false);
+  });
+});
+
+describe('semestreDaData', () => {
+  it('divide o ano em julho', () => {
+    expect(semestreDaData(new Date(2026, 9, 4))).toBe('2026/2');
+    expect(semestreDaData(new Date(2027, 0, 15))).toBe('2027/1');
+    expect(semestreDaData(new Date(2027, 6, 31))).toBe('2027/1');
+    expect(semestreDaData(new Date(2027, 7, 1))).toBe('2027/2');
   });
 });
