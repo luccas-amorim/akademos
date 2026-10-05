@@ -7,7 +7,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 - [x] 0.1 Monorepo pnpm + Turborepo, TS strict, ESLint, Prettier, Vitest, GitHub Actions. [CI verde com `lint typecheck test`]
 - [x] 0.2 `packages/ui`: tokens de `docs/DESIGN.md` em CSS variables; fontes Source Serif 4, IBM Plex Sans, IBM Plex Mono auto-hospedadas. [página `/kit` mostra cores, tipos, botões]
 - [x] 0.3 `apps/web`: Vite + React + TanStack Router; layout com barra lateral de 232px e as 8 rotas vazias. [navegação igual ao protótipo]
-- [ ] 0.4 `packages/db`: esquema Drizzle do `ARCHITECTURE.md`, migrações, adaptador wa-sqlite + OPFS. [dados sobrevivem a recarregar a página]
+- [x] 0.4 `packages/db`: esquema Drizzle do `ARCHITECTURE.md`, migrações, adaptador wa-sqlite + OPFS. [dados sobrevivem a recarregar a página]
 - [ ] 0.5 `registry/`: schema Zod → JSON Schema; uma instituição fictícia "UFX" com a matriz do protótipo. [`pnpm registry:validate`]
 - [ ] 0.6 Seed de desenvolvimento com a aluna fictícia "Ana" do protótipo.
 

@@ -1,0 +1,31 @@
+{
+  "name": "@akademos/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Esquema Drizzle (SQLite), migrações, repositórios e adaptadores por plataforma.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./node": "./src/adapters/node.ts",
+    "./web": "./src/adapters/web/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate && node scripts/empacotar-migracoes.mjs"
+  },
+  "dependencies": {
+    "@akademos/core": "workspace:*",
+    "drizzle-orm": "^0.45.3",
+    "wa-sqlite": "^1.0.0"
+  },
+  "devDependencies": {
+    "@akademos/sync": "workspace:*",
+    "@types/node": "^26.6.4",
+    "drizzle-kit": "^0.31.11",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
+  }
+}
