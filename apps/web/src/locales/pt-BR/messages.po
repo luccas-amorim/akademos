@@ -1,0 +1,221 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-10-04 22:22-0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: pt-BR\n"
+
+#: src/routes/Kit.tsx:203
+msgid "1 faixa com choque de horário. Troque de turma ao lado."
+msgstr "1 faixa com choque de horário. Troque de turma ao lado."
+
+#: src/routes/Kit.tsx:209
+msgid "2 linhas para revisar."
+msgstr "2 linhas para revisar."
+
+#: src/routes/Kit.tsx:146
+msgid "62 de 128 créditos"
+msgstr "62 de 128 créditos"
+
+#: src/routes/Kit.tsx:118
+msgid "Adicionar"
+msgstr "Adicionar"
+
+#: src/routes/Kit.tsx:104
+msgid "Botões"
+msgstr "Botões"
+
+#: src/routes/Kit.tsx:179
+msgid "Carga"
+msgstr "Carga"
+
+#: src/layout/AppShell.tsx:20
+#: src/routes/Carreira.tsx:5
+msgid "Carreira"
+msgstr "Carreira"
+
+#: src/routes/Kit.tsx:111
+msgid "Chave de acesso"
+msgstr "Chave de acesso"
+
+#: src/routes/Kit.tsx:198
+msgid "Compartilhar históricos anônimos"
+msgstr "Compartilhar históricos anônimos"
+
+#: src/routes/Kit.tsx:150
+msgid "Computação"
+msgstr "Computação"
+
+#: src/routes/Kit.tsx:147
+msgid "Conflitos"
+msgstr "Conflitos"
+
+#: src/routes/Kit.tsx:170
+msgid "Controles"
+msgstr "Controles"
+
+#: src/routes/Kit.tsx:51
+msgid "Cores"
+msgstr "Cores"
+
+#: src/routes/Kit.tsx:189
+msgid "Criar conta"
+msgstr "Criar conta"
+
+#: src/routes/Kit.tsx:195
+msgid "Cursada"
+msgstr "Cursada"
+
+#: src/routes/Kit.tsx:130
+msgid "Desativado"
+msgstr "Desativado"
+
+#: src/layout/AppShell.tsx:19
+#: src/routes/Desempenho.tsx:5
+msgid "Desempenho"
+msgstr "Desempenho"
+
+#: src/routes/Kit.tsx:193
+msgid "Diário"
+msgstr "Diário"
+
+#: src/routes/Kit.tsx:206
+msgid "Dias livres: Sex. Menor chance de vaga no plano: 83%."
+msgstr "Dias livres: Sex. Menor chance de vaga no plano: 83%."
+
+#: src/routes/Kit.tsx:192
+msgid "E-mail"
+msgstr "E-mail"
+
+#: src/routes/Entrar.tsx:5
+#: src/routes/Kit.tsx:188
+msgid "Entrar"
+msgstr "Entrar"
+
+#: src/layout/AppShell.tsx:49
+#: src/routes/Importar.tsx:5
+msgid "Importar"
+msgstr "Importar"
+
+#: src/routes/Kit.tsx:137
+msgid "Indicadores"
+msgstr "Indicadores"
+
+#: src/layout/AppShell.tsx:15
+#: src/routes/Inicio.tsx:5
+msgid "Início"
+msgstr "Início"
+
+#: src/layout/AppShell.tsx:18
+#: src/routes/Insights.tsx:5
+msgid "Insights"
+msgstr "Insights"
+
+#: src/routes/Kit.tsx:146
+msgid "Integralizado"
+msgstr "Integralizado"
+
+#: src/routes/Kit.tsx:45
+msgid "Kit de design"
+msgstr "Kit de design"
+
+#: src/routes/Kit.tsx:91
+msgid "Legenda 12–13px em --ink-2."
+msgstr "Legenda 12–13px em --ink-2."
+
+#: src/routes/Kit.tsx:151
+msgid "Lotação"
+msgstr "Lotação"
+
+#: src/routes/Kit.tsx:152
+msgid "Média"
+msgstr "Média"
+
+#: src/routes/Kit.tsx:184
+msgid "Modo"
+msgstr "Modo"
+
+#: src/routes/Kit.tsx:121
+msgid "Na grade ✓"
+msgstr "Na grade ✓"
+
+#: src/layout/AppShell.tsx:28
+msgid "Navegação principal"
+msgstr "Navegação principal"
+
+#: src/routes/NotFound.tsx:10
+msgid "O endereço não corresponde a nenhuma tela do Akademos."
+msgstr "O endereço não corresponde a nenhuma tela do Akademos."
+
+#: src/routes/Kit.tsx:193
+msgid "O que você espera do próximo semestre?"
+msgstr "O que você espera do próximo semestre?"
+
+#: src/routes/NotFound.tsx:9
+msgid "Página não encontrada"
+msgstr "Página não encontrada"
+
+#: src/routes/Kit.tsx:114
+msgid "Patrocinar"
+msgstr "Patrocinar"
+
+#: src/layout/AppShell.tsx:16
+#: src/routes/Percurso.tsx:5
+msgid "Percurso"
+msgstr "Percurso"
+
+#: src/layout/AppShell.tsx:17
+#: src/routes/Planejar.tsx:5
+msgid "Planejar"
+msgstr "Planejar"
+
+#: src/routes/Kit.tsx:108
+msgid "Primário"
+msgstr "Primário"
+
+#: src/layout/AppShell.tsx:26
+msgid "Pular para o conteúdo"
+msgstr "Pular para o conteúdo"
+
+#: src/routes/Kit.tsx:124
+msgid "Revisar 2"
+msgstr "Revisar 2"
+
+#: src/routes/Kit.tsx:178
+msgid "Risco"
+msgstr "Risco"
+
+#: src/routes/Kit.tsx:94
+msgid "Rótulo de seção"
+msgstr "Rótulo de seção"
+
+#: src/layout/AppShell.tsx:52
+#: src/routes/Sobre.tsx:5
+msgid "Sobre e apoio"
+msgstr "Sobre e apoio"
+
+#: src/routes/Kit.tsx:173
+msgid "Tipo"
+msgstr "Tipo"
+
+#: src/routes/Kit.tsx:78
+msgid "Tipografia"
+msgstr "Tipografia"
+
+#: src/routes/Kit.tsx:177
+msgid "Todos"
+msgstr "Todos"
+
+#: src/routes/Kit.tsx:127
+msgid "Todos os insights"
+msgstr "Todos os insights"
+
+#: src/routes/Kit.tsx:46
+msgid "Tokens de docs/DESIGN.md e componentes base, construídos com React Aria."
+msgstr "Tokens de docs/DESIGN.md e componentes base, construídos com React Aria."
+
+#: src/routes/NotFound.tsx:13
+msgid "Voltar ao início"
+msgstr "Voltar ao início"

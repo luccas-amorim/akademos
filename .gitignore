@@ -45,3 +45,6 @@ Histórico*.pdf
 Historico*.pdf
 /documentos/
 *.rg.pdf
+
+# Ferramentas locais
+.claude/
