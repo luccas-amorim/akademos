@@ -10,276 +10,42 @@ creditos_total: 128
 horas_por_credito: 15
 disciplinas:
   # 1º semestre
-  - {
-      codigo: EX101,
-      nome: Cálculo I,
-      creditos: 4,
-      semestre: 1,
-      area: Matemática,
-      codigos_alternativos: [MAT0101],
-    }
-  - {
-      codigo: EX102,
-      nome: Algoritmos e Programação,
-      creditos: 4,
-      semestre: 1,
-      area: Computação,
-      codigos_alternativos: [INF0102],
-    }
-  - {
-      codigo: EX103,
-      nome: Geometria Analítica,
-      creditos: 4,
-      semestre: 1,
-      area: Matemática,
-      codigos_alternativos: [MAT0103],
-    }
-  - {
-      codigo: EX104,
-      nome: Introdução à Engenharia,
-      creditos: 2,
-      semestre: 1,
-      area: Formação geral,
-      codigos_alternativos: [ENG0104],
-    }
+  - { codigo: EX101, nome: Cálculo I, creditos: 4, semestre: 1, area: Matemática, codigos_alternativos: [MAT0101] }
+  - { codigo: EX102, nome: Algoritmos e Programação, creditos: 4, semestre: 1, area: Computação, codigos_alternativos: [INF0102] }
+  - { codigo: EX103, nome: Geometria Analítica, creditos: 4, semestre: 1, area: Matemática, codigos_alternativos: [MAT0103] }
+  - { codigo: EX104, nome: Introdução à Engenharia, creditos: 2, semestre: 1, area: Formação geral, codigos_alternativos: [ENG0104] }
   # 2º semestre
-  - {
-      codigo: EX201,
-      nome: Cálculo II,
-      creditos: 4,
-      semestre: 2,
-      area: Matemática,
-      requer: [EX101],
-      codigos_alternativos: [MAT0201],
-    }
-  - {
-      codigo: EX202,
-      nome: Estruturas de Dados,
-      creditos: 4,
-      semestre: 2,
-      area: Computação,
-      requer: [EX102],
-      codigos_alternativos: [INF0202],
-    }
-  - {
-      codigo: EX203,
-      nome: Álgebra Linear,
-      creditos: 4,
-      semestre: 2,
-      area: Matemática,
-      requer: [EX103],
-      codigos_alternativos: [MAT0203],
-    }
-  - {
-      codigo: EX204,
-      nome: Física I,
-      creditos: 4,
-      semestre: 2,
-      area: Física,
-      requer: [EX101],
-      codigos_alternativos: [FIS0204],
-    }
+  - { codigo: EX201, nome: Cálculo II, creditos: 4, semestre: 2, area: Matemática, requer: [EX101], codigos_alternativos: [MAT0201] }
+  - { codigo: EX202, nome: Estruturas de Dados, creditos: 4, semestre: 2, area: Computação, requer: [EX102], codigos_alternativos: [INF0202] }
+  - { codigo: EX203, nome: Álgebra Linear, creditos: 4, semestre: 2, area: Matemática, requer: [EX103], codigos_alternativos: [MAT0203] }
+  - { codigo: EX204, nome: Física I, creditos: 4, semestre: 2, area: Física, requer: [EX101], codigos_alternativos: [FIS0204] }
   # 3º semestre
-  - {
-      codigo: EX301,
-      nome: Cálculo III,
-      creditos: 4,
-      semestre: 3,
-      area: Matemática,
-      requer: [EX201],
-      codigos_alternativos: [MAT0301],
-    }
-  - {
-      codigo: EX302,
-      nome: Probabilidade,
-      creditos: 4,
-      semestre: 3,
-      area: Matemática,
-      requer: [EX201],
-      codigos_alternativos: [MAT0302],
-    }
-  - {
-      codigo: EX303,
-      nome: Programação Orientada a Objetos,
-      creditos: 4,
-      semestre: 3,
-      area: Computação,
-      requer: [EX202],
-      codigos_alternativos: [INF0303],
-    }
-  - {
-      codigo: EX304,
-      nome: Física II,
-      creditos: 4,
-      semestre: 3,
-      area: Física,
-      requer: [EX204],
-      codigos_alternativos: [FIS0304],
-    }
-  - {
-      codigo: EX305,
-      nome: Circuitos Digitais,
-      creditos: 4,
-      semestre: 3,
-      area: Eletrônica,
-      codigos_alternativos: [ELE0305],
-    }
+  - { codigo: EX301, nome: Cálculo III, creditos: 4, semestre: 3, area: Matemática, requer: [EX201], codigos_alternativos: [MAT0301] }
+  - { codigo: EX302, nome: Probabilidade, creditos: 4, semestre: 3, area: Matemática, requer: [EX201], codigos_alternativos: [MAT0302] }
+  - { codigo: EX303, nome: Programação Orientada a Objetos, creditos: 4, semestre: 3, area: Computação, requer: [EX202], codigos_alternativos: [INF0303] }
+  - { codigo: EX304, nome: Física II, creditos: 4, semestre: 3, area: Física, requer: [EX204], codigos_alternativos: [FIS0304] }
+  - { codigo: EX305, nome: Circuitos Digitais, creditos: 4, semestre: 3, area: Eletrônica, codigos_alternativos: [ELE0305] }
   # 4º semestre
-  - {
-      codigo: EX401,
-      nome: Banco de Dados,
-      creditos: 4,
-      semestre: 4,
-      area: Computação,
-      requer: [EX202],
-      codigos_alternativos: [INF0401],
-    }
-  - {
-      codigo: EX402,
-      nome: Arquitetura de Computadores,
-      creditos: 4,
-      semestre: 4,
-      area: Eletrônica,
-      requer: [EX305],
-      codigos_alternativos: [ELE0402],
-    }
-  - {
-      codigo: EX403,
-      nome: Cálculo Numérico,
-      creditos: 4,
-      semestre: 4,
-      area: Matemática,
-      requer: [EX201, EX203],
-      codigos_alternativos: [MAT0403],
-    }
-  - {
-      codigo: EX404,
-      nome: Sinais e Sistemas,
-      creditos: 4,
-      semestre: 4,
-      area: Eletrônica,
-      requer: [EX301],
-      oferta: impar,
-      codigos_alternativos: [ELE0404],
-    }
+  - { codigo: EX401, nome: Banco de Dados, creditos: 4, semestre: 4, area: Computação, requer: [EX202], codigos_alternativos: [INF0401] }
+  - { codigo: EX402, nome: Arquitetura de Computadores, creditos: 4, semestre: 4, area: Eletrônica, requer: [EX305], codigos_alternativos: [ELE0402] }
+  - { codigo: EX403, nome: Cálculo Numérico, creditos: 4, semestre: 4, area: Matemática, requer: [EX201, EX203], codigos_alternativos: [MAT0403] }
+  - { codigo: EX404, nome: Sinais e Sistemas, creditos: 4, semestre: 4, area: Eletrônica, requer: [EX301], oferta: impar, codigos_alternativos: [ELE0404] }
   # 5º semestre
-  - {
-      codigo: EX501,
-      nome: Sistemas Operacionais,
-      creditos: 4,
-      semestre: 5,
-      area: Computação,
-      requer: [EX402],
-      codigos_alternativos: [INF0501],
-    }
-  - {
-      codigo: EX502,
-      nome: Redes de Computadores,
-      creditos: 4,
-      semestre: 5,
-      area: Computação,
-      requer: [EX202],
-      codigos_alternativos: [INF0502],
-    }
-  - {
-      codigo: EX503,
-      nome: Engenharia de Software,
-      creditos: 4,
-      semestre: 5,
-      area: Computação,
-      requer: [EX303],
-      codigos_alternativos: [INF0503],
-    }
-  - {
-      codigo: EX504,
-      nome: Estatística Aplicada,
-      creditos: 4,
-      semestre: 5,
-      area: Matemática,
-      requer: [EX302],
-      codigos_alternativos: [MAT0504],
-    }
+  - { codigo: EX501, nome: Sistemas Operacionais, creditos: 4, semestre: 5, area: Computação, requer: [EX402], codigos_alternativos: [INF0501] }
+  - { codigo: EX502, nome: Redes de Computadores, creditos: 4, semestre: 5, area: Computação, requer: [EX202], codigos_alternativos: [INF0502] }
+  - { codigo: EX503, nome: Engenharia de Software, creditos: 4, semestre: 5, area: Computação, requer: [EX303], codigos_alternativos: [INF0503] }
+  - { codigo: EX504, nome: Estatística Aplicada, creditos: 4, semestre: 5, area: Matemática, requer: [EX302], codigos_alternativos: [MAT0504] }
   # 6º semestre
-  - {
-      codigo: EX601,
-      nome: Inteligência Artificial,
-      creditos: 4,
-      semestre: 6,
-      area: Computação,
-      requer: [EX302, EX202],
-      codigos_alternativos: [INF0601],
-    }
-  - {
-      codigo: EX602,
-      nome: Compiladores,
-      creditos: 4,
-      semestre: 6,
-      area: Computação,
-      requer: [EX202],
-      codigos_alternativos: [INF0602],
-    }
-  - {
-      codigo: EX603,
-      nome: Sistemas Distribuídos,
-      creditos: 4,
-      semestre: 6,
-      area: Computação,
-      requer: [EX501, EX502],
-      codigos_alternativos: [INF0603],
-    }
-  - {
-      codigo: EX604,
-      nome: Teoria de Controle,
-      creditos: 4,
-      semestre: 6,
-      area: Eletrônica,
-      requer: [EX404],
-      codigos_alternativos: [ELE0604],
-    }
+  - { codigo: EX601, nome: Inteligência Artificial, creditos: 4, semestre: 6, area: Computação, requer: [EX302, EX202], codigos_alternativos: [INF0601] }
+  - { codigo: EX602, nome: Compiladores, creditos: 4, semestre: 6, area: Computação, requer: [EX202], codigos_alternativos: [INF0602] }
+  - { codigo: EX603, nome: Sistemas Distribuídos, creditos: 4, semestre: 6, area: Computação, requer: [EX501, EX502], codigos_alternativos: [INF0603] }
+  - { codigo: EX604, nome: Teoria de Controle, creditos: 4, semestre: 6, area: Eletrônica, requer: [EX404], codigos_alternativos: [ELE0604] }
   # 7º semestre
-  - {
-      codigo: EX701,
-      nome: Aprendizado de Máquina,
-      creditos: 4,
-      semestre: 7,
-      area: Computação,
-      requer: [EX601, EX504],
-      codigos_alternativos: [INF0701],
-    }
-  - {
-      codigo: EX702,
-      nome: Projeto Integrador,
-      creditos: 4,
-      semestre: 7,
-      area: Formação geral,
-      requer: [EX503],
-      codigos_alternativos: [ENG0702],
-    }
-  - {
-      codigo: EX703,
-      nome: Estágio Supervisionado,
-      creditos: 8,
-      semestre: 7,
-      area: Formação geral,
-      codigos_alternativos: [ENG0703],
-    }
+  - { codigo: EX701, nome: Aprendizado de Máquina, creditos: 4, semestre: 7, area: Computação, requer: [EX601, EX504], codigos_alternativos: [INF0701] }
+  - { codigo: EX702, nome: Projeto Integrador, creditos: 4, semestre: 7, area: Formação geral, requer: [EX503], codigos_alternativos: [ENG0702] }
+  - { codigo: EX703, nome: Estágio Supervisionado, creditos: 8, semestre: 7, area: Formação geral, codigos_alternativos: [ENG0703] }
   - { codigo: EX704, nome: Eletiva I, creditos: 4, semestre: 7, area: Eletiva, tipo: eletiva }
   # 8º semestre
-  - {
-      codigo: EX801,
-      nome: Trabalho de Conclusão,
-      creditos: 4,
-      semestre: 8,
-      area: Formação geral,
-      requer: [EX702],
-      codigos_alternativos: [ENG0801],
-    }
-  - {
-      codigo: EX802,
-      nome: Ética e Sociedade,
-      creditos: 2,
-      semestre: 8,
-      area: Formação geral,
-      codigos_alternativos: [ENG0802],
-    }
+  - { codigo: EX801, nome: Trabalho de Conclusão, creditos: 4, semestre: 8, area: Formação geral, requer: [EX702], codigos_alternativos: [ENG0801] }
+  - { codigo: EX802, nome: Ética e Sociedade, creditos: 2, semestre: 8, area: Formação geral, codigos_alternativos: [ENG0802] }
   - { codigo: EX803, nome: Eletiva II, creditos: 4, semestre: 8, area: Eletiva, tipo: eletiva }

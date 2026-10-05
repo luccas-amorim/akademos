@@ -10,3 +10,4 @@ apps/server/drizzle
 registry/schema/*.json
 *.md
 .github/FUNDING.yml
+registry/instituicoes
