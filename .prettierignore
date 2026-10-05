@@ -13,3 +13,4 @@ registry/schema/*.json
 registry/instituicoes
 apps/web/test-results
 apps/web/playwright-report
+**/__fixtures__
