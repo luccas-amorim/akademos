@@ -49,9 +49,9 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 
 ## Fase 5 — Mobile (semana 21+)
 
-- [ ] 5.1 Expo reusando `core`, `db` (expo-sqlite) e `sync`.
-- [ ] 5.2 Telas prioritárias: Início, Percurso, Planejar, Insights.
-- [ ] 5.3 Notificações locais (prazo de matrícula, nota lançada).
+- [x] 5.1 Expo reusando `core`, `db` (expo-sqlite) e `sync`.
+- [x] 5.2 Telas prioritárias: Início, Percurso, Planejar, Insights.
+- [x] 5.3 Notificações locais (prazo de matrícula, nota lançada).
 
 ## Riscos
 

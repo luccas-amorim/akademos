@@ -46,6 +46,12 @@ export default tseslint.config(
     },
   },
   {
+    // Configurações em CommonJS (Metro, Babel).
+    files: ['**/*.config.js'],
+    languageOptions: { sourceType: 'commonjs' },
+    rules: { '@typescript-eslint/no-require-imports': 'off' },
+  },
+  {
     // Regra 4 do CLAUDE.md: o domínio é puro.
     files: ['packages/core/src/**/*.ts'],
     rules: {

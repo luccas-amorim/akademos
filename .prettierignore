@@ -14,3 +14,4 @@ registry/instituicoes
 apps/web/test-results
 apps/web/playwright-report
 **/__fixtures__
+apps/mobile/src/dados/catalogo.generated.json

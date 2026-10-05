@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Akademos",
+    "slug": "akademos",
+    "scheme": "akademos",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icone.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#f6f5f1",
+    "primaryColor": "#1e3a8a",
+    "ios": {
+      "bundleIdentifier": "dev.akademos.app",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "dev.akademos.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icone-adaptavel.png",
+        "backgroundColor": "#1e3a8a"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-font",
+      "expo-status-bar",
+      [
+        "expo-notifications",
+        {
+          "color": "#1e3a8a"
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

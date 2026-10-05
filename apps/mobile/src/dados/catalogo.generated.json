@@ -1,0 +1,1236 @@
+{
+ "entradas": [
+  {
+   "ficticia": true,
+   "modeloHistorico": null,
+   "conector": null,
+   "pacote": {
+    "instituicao": {
+     "id": "uem",
+     "sigla": "UEM",
+     "nome": "Universidade Estadual Modelo",
+     "escalaId": "uem-0-10",
+     "sistema": "outro",
+     "creditosMaxSemestre": 16,
+     "grade": {
+      "dias": [
+       "seg",
+       "ter",
+       "qua",
+       "qui",
+       "sex"
+      ],
+      "faixas": [
+       {
+        "inicio": "19:00",
+        "fim": "20:40"
+       },
+       {
+        "inicio": "20:50",
+        "fim": "22:30"
+       }
+      ]
+     }
+    },
+    "escala": {
+     "id": "uem-0-10",
+     "nome": "Nota de 0 a 10",
+     "min": 0,
+     "max": 10,
+     "aprovacao": 7,
+     "frequenciaMinima": 0.75
+    },
+    "curso": {
+     "id": "uem/curso-exemplo",
+     "instituicaoId": "uem",
+     "nome": "Curso de Exemplo",
+     "grau": "bacharelado"
+    },
+    "matriz": {
+     "id": "uem/curso-exemplo/2025",
+     "cursoId": "uem/curso-exemplo",
+     "ano": 2025,
+     "creditosTotal": 80,
+     "versaoRegistro": "1.0.0",
+     "disciplinas": [
+      {
+       "codigo": "EX101",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Introdução aos Estudos do Curso",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 1,
+       "area": "Fundamentos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX102",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Leitura e Produção de Textos",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 1,
+       "area": "Linguagens",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX103",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Lógica e Argumentação",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 1,
+       "area": "Métodos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX104",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Matemática Básica",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 1,
+       "area": "Métodos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX201",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Teoria Geral I",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 2,
+       "area": "Fundamentos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX202",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Estatística Aplicada",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 2,
+       "area": "Métodos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX203",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Metodologia da Pesquisa",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 2,
+       "area": "Pesquisa",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX204",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Ética Profissional",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 2,
+       "area": "Fundamentos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX301",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Teoria Geral II",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 3,
+       "area": "Fundamentos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX302",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Análise de Dados",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 3,
+       "area": "Métodos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX303",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Comunicação Oral",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 3,
+       "area": "Linguagens",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX304",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Seminário Temático I",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 3,
+       "area": "Pesquisa",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX401",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Tópicos Avançados I",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 4,
+       "area": "Fundamentos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX402",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Modelagem e Simulação",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 4,
+       "area": "Métodos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX403",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Projeto Integrador I",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 4,
+       "area": "Prática Profissional",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX404",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Seminário Temático II",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 4,
+       "area": "Pesquisa",
+       "tipo": "obrigatoria",
+       "periodicidade": "par",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX501",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Tópicos Avançados II",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 5,
+       "area": "Fundamentos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX502",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Gestão de Projetos",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 5,
+       "area": "Prática Profissional",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX503",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Trabalho de Conclusão I",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 5,
+       "area": "Pesquisa",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX504",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Estágio Supervisionado I",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 5,
+       "area": "Prática Profissional",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX505",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Eletiva",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 5,
+       "area": "Eletiva",
+       "tipo": "eletiva",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX601",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Tópicos Avançados III",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 6,
+       "area": "Fundamentos",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX602",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Projeto Integrador II",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 6,
+       "area": "Prática Profissional",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX603",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Trabalho de Conclusão II",
+       "creditos": 2,
+       "cargaHoraria": 40,
+       "semestreSugerido": 6,
+       "area": "Pesquisa",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX604",
+       "matrizId": "uem/curso-exemplo/2025",
+       "nome": "Estágio Supervisionado II",
+       "creditos": 4,
+       "cargaHoraria": 80,
+       "semestreSugerido": 6,
+       "area": "Prática Profissional",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      }
+     ],
+     "prerequisitos": [
+      {
+       "disciplinaCodigo": "EX201",
+       "requerCodigo": "EX101",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX202",
+       "requerCodigo": "EX104",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX203",
+       "requerCodigo": "EX102",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX301",
+       "requerCodigo": "EX201",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX302",
+       "requerCodigo": "EX202",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX303",
+       "requerCodigo": "EX102",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX304",
+       "requerCodigo": "EX203",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX401",
+       "requerCodigo": "EX301",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX402",
+       "requerCodigo": "EX302",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX403",
+       "requerCodigo": "EX303",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX404",
+       "requerCodigo": "EX304",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX501",
+       "requerCodigo": "EX401",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX503",
+       "requerCodigo": "EX404",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX504",
+       "requerCodigo": "EX403",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX601",
+       "requerCodigo": "EX501",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX602",
+       "requerCodigo": "EX403",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX603",
+       "requerCodigo": "EX503",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX604",
+       "requerCodigo": "EX504",
+       "tipo": "pre"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "ficticia": true,
+   "modeloHistorico": {
+    "sistema": "sigaa",
+    "descricao": "Histórico escolar do SIGAA (Ano.Período, código, nome, CH, turma, frequência, nota, situação)",
+    "linha": "^(?<semestre>\\d{4}\\.[12])\\s+(?<codigo>[A-Z]{3}\\d{4})\\s+(?<nome>.+?)\\s+(?<ch>\\d+)\\s+(?<turma>\\S+)\\s+(?<frequencia>\\d{1,3},\\d|--)\\s+(?<nota>\\d{1,2},\\d|--)\\s+(?<situacao>[A-Z]+)$",
+    "situacoes": {
+     "APR": "aprovada",
+     "APRN": "aprovada",
+     "REP": "reprovada",
+     "REPF": "reprovada",
+     "REPMF": "reprovada",
+     "MATR": "cursando",
+     "TRANC": "trancada",
+     "CUMP": "aproveitada",
+     "DISP": "aproveitada"
+    },
+    "separador_decimal": ","
+   },
+   "conector": {
+    "sistema": "sigaa",
+    "base": "https://sigaa.ufx.example",
+    "departamentos": [
+     "1234"
+    ]
+   },
+   "pacote": {
+    "instituicao": {
+     "id": "ufx",
+     "sigla": "UFX",
+     "nome": "Universidade Federal de Exemplo",
+     "escalaId": "ufx-0-10",
+     "sistema": "sigaa",
+     "creditosMaxSemestre": 24,
+     "grade": {
+      "dias": [
+       "seg",
+       "ter",
+       "qua",
+       "qui",
+       "sex"
+      ],
+      "faixas": [
+       {
+        "inicio": "08:00",
+        "fim": "10:00"
+       },
+       {
+        "inicio": "10:00",
+        "fim": "12:00"
+       },
+       {
+        "inicio": "14:00",
+        "fim": "16:00"
+       },
+       {
+        "inicio": "16:00",
+        "fim": "18:00"
+       },
+       {
+        "inicio": "19:00",
+        "fim": "21:00"
+       }
+      ]
+     }
+    },
+    "escala": {
+     "id": "ufx-0-10",
+     "nome": "Nota de 0 a 10",
+     "min": 0,
+     "max": 10,
+     "aprovacao": 6,
+     "frequenciaMinima": 0.75
+    },
+    "curso": {
+     "id": "ufx/eng-computacao",
+     "instituicaoId": "ufx",
+     "nome": "Engenharia de Computação",
+     "grau": "bacharelado"
+    },
+    "matriz": {
+     "id": "ufx/eng-computacao/2019",
+     "cursoId": "ufx/eng-computacao",
+     "ano": 2019,
+     "creditosTotal": 128,
+     "versaoRegistro": "1.0.0",
+     "disciplinas": [
+      {
+       "codigo": "EX101",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Cálculo I",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 1,
+       "area": "Matemática",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "MAT0101"
+       ]
+      },
+      {
+       "codigo": "EX102",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Algoritmos e Programação",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 1,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0102"
+       ]
+      },
+      {
+       "codigo": "EX103",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Geometria Analítica",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 1,
+       "area": "Matemática",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "MAT0103"
+       ]
+      },
+      {
+       "codigo": "EX104",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Introdução à Engenharia",
+       "creditos": 2,
+       "cargaHoraria": 30,
+       "semestreSugerido": 1,
+       "area": "Formação geral",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "ENG0104"
+       ]
+      },
+      {
+       "codigo": "EX201",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Cálculo II",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 2,
+       "area": "Matemática",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "MAT0201"
+       ]
+      },
+      {
+       "codigo": "EX202",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Estruturas de Dados",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 2,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0202"
+       ]
+      },
+      {
+       "codigo": "EX203",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Álgebra Linear",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 2,
+       "area": "Matemática",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "MAT0203"
+       ]
+      },
+      {
+       "codigo": "EX204",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Física I",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 2,
+       "area": "Física",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "FIS0204"
+       ]
+      },
+      {
+       "codigo": "EX301",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Cálculo III",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 3,
+       "area": "Matemática",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "MAT0301"
+       ]
+      },
+      {
+       "codigo": "EX302",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Probabilidade",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 3,
+       "area": "Matemática",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "MAT0302"
+       ]
+      },
+      {
+       "codigo": "EX303",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Programação Orientada a Objetos",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 3,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0303"
+       ]
+      },
+      {
+       "codigo": "EX304",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Física II",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 3,
+       "area": "Física",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "FIS0304"
+       ]
+      },
+      {
+       "codigo": "EX305",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Circuitos Digitais",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 3,
+       "area": "Eletrônica",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "ELE0305"
+       ]
+      },
+      {
+       "codigo": "EX401",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Banco de Dados",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 4,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0401"
+       ]
+      },
+      {
+       "codigo": "EX402",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Arquitetura de Computadores",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 4,
+       "area": "Eletrônica",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "ELE0402"
+       ]
+      },
+      {
+       "codigo": "EX403",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Cálculo Numérico",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 4,
+       "area": "Matemática",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "MAT0403"
+       ]
+      },
+      {
+       "codigo": "EX404",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Sinais e Sistemas",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 4,
+       "area": "Eletrônica",
+       "tipo": "obrigatoria",
+       "periodicidade": "impar",
+       "codigosAlternativos": [
+        "ELE0404"
+       ]
+      },
+      {
+       "codigo": "EX501",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Sistemas Operacionais",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 5,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0501"
+       ]
+      },
+      {
+       "codigo": "EX502",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Redes de Computadores",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 5,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0502"
+       ]
+      },
+      {
+       "codigo": "EX503",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Engenharia de Software",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 5,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0503"
+       ]
+      },
+      {
+       "codigo": "EX504",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Estatística Aplicada",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 5,
+       "area": "Matemática",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "MAT0504"
+       ]
+      },
+      {
+       "codigo": "EX601",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Inteligência Artificial",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 6,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0601"
+       ]
+      },
+      {
+       "codigo": "EX602",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Compiladores",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 6,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0602"
+       ]
+      },
+      {
+       "codigo": "EX603",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Sistemas Distribuídos",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 6,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0603"
+       ]
+      },
+      {
+       "codigo": "EX604",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Teoria de Controle",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 6,
+       "area": "Eletrônica",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "ELE0604"
+       ]
+      },
+      {
+       "codigo": "EX701",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Aprendizado de Máquina",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 7,
+       "area": "Computação",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "INF0701"
+       ]
+      },
+      {
+       "codigo": "EX702",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Projeto Integrador",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 7,
+       "area": "Formação geral",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "ENG0702"
+       ]
+      },
+      {
+       "codigo": "EX703",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Estágio Supervisionado",
+       "creditos": 8,
+       "cargaHoraria": 120,
+       "semestreSugerido": 7,
+       "area": "Formação geral",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "ENG0703"
+       ]
+      },
+      {
+       "codigo": "EX704",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Eletiva I",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 7,
+       "area": "Eletiva",
+       "tipo": "eletiva",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      },
+      {
+       "codigo": "EX801",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Trabalho de Conclusão",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 8,
+       "area": "Formação geral",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "ENG0801"
+       ]
+      },
+      {
+       "codigo": "EX802",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Ética e Sociedade",
+       "creditos": 2,
+       "cargaHoraria": 30,
+       "semestreSugerido": 8,
+       "area": "Formação geral",
+       "tipo": "obrigatoria",
+       "periodicidade": "ambos",
+       "codigosAlternativos": [
+        "ENG0802"
+       ]
+      },
+      {
+       "codigo": "EX803",
+       "matrizId": "ufx/eng-computacao/2019",
+       "nome": "Eletiva II",
+       "creditos": 4,
+       "cargaHoraria": 60,
+       "semestreSugerido": 8,
+       "area": "Eletiva",
+       "tipo": "eletiva",
+       "periodicidade": "ambos",
+       "codigosAlternativos": []
+      }
+     ],
+     "prerequisitos": [
+      {
+       "disciplinaCodigo": "EX201",
+       "requerCodigo": "EX101",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX202",
+       "requerCodigo": "EX102",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX203",
+       "requerCodigo": "EX103",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX204",
+       "requerCodigo": "EX101",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX301",
+       "requerCodigo": "EX201",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX302",
+       "requerCodigo": "EX201",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX303",
+       "requerCodigo": "EX202",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX304",
+       "requerCodigo": "EX204",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX401",
+       "requerCodigo": "EX202",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX402",
+       "requerCodigo": "EX305",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX403",
+       "requerCodigo": "EX201",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX403",
+       "requerCodigo": "EX203",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX404",
+       "requerCodigo": "EX301",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX501",
+       "requerCodigo": "EX402",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX502",
+       "requerCodigo": "EX202",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX503",
+       "requerCodigo": "EX303",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX504",
+       "requerCodigo": "EX302",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX601",
+       "requerCodigo": "EX302",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX601",
+       "requerCodigo": "EX202",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX602",
+       "requerCodigo": "EX202",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX603",
+       "requerCodigo": "EX501",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX603",
+       "requerCodigo": "EX502",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX604",
+       "requerCodigo": "EX404",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX701",
+       "requerCodigo": "EX601",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX701",
+       "requerCodigo": "EX504",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX702",
+       "requerCodigo": "EX503",
+       "tipo": "pre"
+      },
+      {
+       "disciplinaCodigo": "EX801",
+       "requerCodigo": "EX702",
+       "tipo": "pre"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "demonstracao": [
+  {
+   "matrizId": "ufx/eng-computacao/2019",
+   "geradoEm": "2026-10-01T00:00:00Z",
+   "k": 10,
+   "demonstracao": true,
+   "disciplinas": {
+    "EX404": {
+     "n": 1240,
+     "media": 6.4,
+     "desvio": 1.3,
+     "reprovacao": 0.2
+    },
+    "EX501": {
+     "n": 1010,
+     "media": 7.2,
+     "desvio": 1.1,
+     "reprovacao": 0.06
+    },
+    "EX502": {
+     "n": 900,
+     "media": 7.6,
+     "desvio": 1,
+     "reprovacao": 0.05
+    },
+    "EX503": {
+     "n": 1100,
+     "media": 8,
+     "desvio": 0.9,
+     "reprovacao": 0.04
+    },
+    "EX504": {
+     "n": 980,
+     "media": 7,
+     "desvio": 1.2,
+     "reprovacao": 0.09
+    },
+    "EX602": {
+     "n": 1105,
+     "media": 7.4,
+     "desvio": 1.1,
+     "reprovacao": 0.08
+    }
+   },
+   "correlacoes": [
+    {
+     "de": "EX301",
+     "para": "EX404",
+     "r": 0.61,
+     "n": 1240,
+     "inclinacao": 0.7,
+     "intercepto": 2.08,
+     "residuo": 1.1
+    },
+    {
+     "de": "EX302",
+     "para": "EX504",
+     "r": 0.72,
+     "n": 980,
+     "inclinacao": 0.8,
+     "intercepto": 1.35,
+     "residuo": 0.9
+    },
+    {
+     "de": "EX202",
+     "para": "EX602",
+     "r": 0.58,
+     "n": 1105,
+     "inclinacao": 0.6,
+     "intercepto": 2.93,
+     "residuo": 0.9
+    },
+    {
+     "de": "EX402",
+     "para": "EX501",
+     "r": 0.54,
+     "n": 1010,
+     "inclinacao": 0.6,
+     "intercepto": 2.91,
+     "residuo": 1.1
+    },
+    {
+     "de": "EX303",
+     "para": "EX503",
+     "r": 0.66,
+     "n": 1100,
+     "inclinacao": 0.7,
+     "intercepto": 2.2,
+     "residuo": 0.8
+    },
+    {
+     "de": "EX202",
+     "para": "EX502",
+     "r": 0.5,
+     "n": 900,
+     "inclinacao": 0.6,
+     "intercepto": 2.78,
+     "residuo": 0.8
+    }
+   ],
+   "condicionais": [
+    {
+     "disciplina": "EX504",
+     "dado": "EX301",
+     "abaixoDe": 6.5,
+     "reprovacao": 0.18,
+     "n": 214
+    }
+   ]
+  }
+ ]
+}
