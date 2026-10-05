@@ -5,7 +5,9 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
 import type { ArquivosInstituicao } from './pacote';
 
-export const RAIZ_REGISTRO = fileURLToPath(new URL('..', import.meta.url));
+/** Raiz do registro; em bundles (servidor em Docker) vem de AKADEMOS_REGISTRO. */
+export const RAIZ_REGISTRO =
+  process.env.AKADEMOS_REGISTRO ?? fileURLToPath(new URL('..', import.meta.url));
 
 const ler = (arquivo: string): unknown => parse(readFileSync(arquivo, 'utf8'));
 

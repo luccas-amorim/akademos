@@ -48,3 +48,6 @@ Historico*.pdf
 
 # Ferramentas locais
 .claude/
+
+# Servidor
+apps/server/.dados

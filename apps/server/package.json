@@ -1,0 +1,37 @@
+{
+  "name": "@akademos/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API do Akademos: autenticação, relay cego de sincronização e agregados anônimos.",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsup",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@akademos/core": "workspace:*",
+    "@akademos/registry": "workspace:*",
+    "@better-auth/passkey": "^1.7.7",
+    "@electric-sql/pglite": "^0.5.8",
+    "@hono/node-server": "^2.1.3",
+    "better-auth": "^1.7.7",
+    "drizzle-orm": "^0.45.3",
+    "hono": "^4.13.13",
+    "postgres": "^3.4.9",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "drizzle-kit": "^0.31.11",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.3"
+  }
+}
