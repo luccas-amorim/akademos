@@ -9,6 +9,7 @@ export type Sessao = 'local' | 'conta';
 const CHAVES = {
   sessao: 'akademos:sessao',
   ocultarNotas: 'akademos:ocultar-notas',
+  comunidade: 'akademos:comunidade',
 } as const;
 
 type Chave = keyof typeof CHAVES;
@@ -64,4 +65,19 @@ export function useOcultarNotas(): [boolean, (v: boolean) => void] {
     [],
   );
   return [valor, definir];
+}
+
+/** Consentimento explícito para enviar agregados anônimos (opt-in, regra 6). */
+export function useConsentimentoComunidade(): [boolean, (v: boolean) => void] {
+  const valor = useSyncExternalStore(
+    subscribe,
+    () => ler('comunidade') === '1',
+    () => false,
+  );
+  const definir = useCallback((v: boolean) => gravarPreferencia('comunidade', v ? '1' : null), []);
+  return [valor, definir];
+}
+
+export function lerConsentimentoComunidade(): boolean {
+  return ler('comunidade') === '1';
 }

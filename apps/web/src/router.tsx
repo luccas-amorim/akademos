@@ -68,6 +68,8 @@ const sobre = filha(
 const entrar = createRoute({
   getParentRoute: () => rootRoute,
   path: '/entrar',
+  validateSearch: (search: Record<string, unknown>): { modo?: 'entrar' | 'criar' } =>
+    search.modo === 'criar' ? { modo: 'criar' } : {},
   component: lazyRouteComponent(() => import('./routes/Entrar'), 'Entrar'),
 });
 
