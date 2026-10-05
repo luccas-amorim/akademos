@@ -9,10 +9,16 @@ import {
 import { lerSessao } from './dados/preferencias';
 import { ROTAS_PUBLICAS } from './layout/rotasPublicas';
 import { AppShell } from './layout/AppShell';
+import { AvisoAtualizacao } from './layout/AvisoAtualizacao';
 import { NotFound } from './routes/NotFound';
 
 const rootRoute = createRootRoute({
-  component: Outlet,
+  component: () => (
+    <>
+      <Outlet />
+      <AvisoAtualizacao />
+    </>
+  ),
   notFoundComponent: NotFound,
 });
 

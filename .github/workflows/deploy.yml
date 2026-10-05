@@ -1,0 +1,51 @@
+name: Deploy no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Permite publicar manualmente pela aba Actions.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v5
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      # Falha cedo e com mensagem clara se o Pages não estiver habilitado.
+      - uses: actions/configure-pages@v6
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm registry:validate
+      - name: Build do app web (PWA)
+        run: pnpm --filter @akademos/web build
+        env:
+          AKADEMOS_BASE: /akademos/
+          # Servidor de sincronização opcional; sem ele, o app funciona só local.
+          VITE_API_URL: ${{ vars.AKADEMOS_API_URL }}
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: apps/web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
