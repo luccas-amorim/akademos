@@ -33,6 +33,13 @@ describe('preverFormatura — matriz da UFX (Ana)', () => {
     expect(s2028.codigos).toContain('EX404');
   });
 
+  it('simula "e se eu não cursar" com disciplinas proibidas num semestre', () => {
+    expect(preverFormatura(base).formatura).toBe('2028/1');
+    expect(preverFormatura({ ...base, proibidas: { '2027/1': ['EX404'] } }).formatura).toBe(
+      '2028/2',
+    );
+  });
+
   it('respeita o limite de créditos por semestre', () => {
     const p = preverFormatura(base);
     for (const s of p.cronograma) {

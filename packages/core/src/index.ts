@@ -5,3 +5,5 @@ export * from './planner/grafo';
 export * from './percurso';
 export * from './formato';
 export * from './planner/planejador';
+export * from './carreira';
+export * from './insights';

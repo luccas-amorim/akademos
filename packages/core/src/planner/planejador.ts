@@ -63,6 +63,8 @@ export interface EntradaPrevisao {
   limiteCreditos: number;
   /** Disciplinas já decididas por semestre (ex.: o plano de matrícula). */
   fixos?: Record<Semestre, readonly string[]>;
+  /** Disciplinas que não podem entrar num semestre (cenário "e se eu não cursar…"). */
+  proibidas?: Record<Semestre, readonly string[]>;
   /** Teto de semestres simulados, para não rodar para sempre. */
   maxSemestres?: number;
 }
@@ -112,7 +114,9 @@ export function preverFormatura(e: EntradaPrevisao): Previsao {
     if (fixos) {
       escolhidas = fixos.filter((c) => restantes.has(c));
     } else {
+      const proibidas = new Set(e.proibidas?.[semestre] ?? []);
       const candidatas = [...restantes]
+        .filter((c) => !proibidas.has(c))
         .filter((c) => grafo.requisitos(c).every((r) => feitas.has(r)))
         .filter((c) => ofertadaEm(porCodigo.get(c)!.periodicidade, semestre))
         .sort((a, b) => {

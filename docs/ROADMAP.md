@@ -26,7 +26,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 
 - [x] 2.1 `core/planner`: DAG, caminho crítico, previsão de formatura. [testes com 3 matrizes]
 - [ ] 2.2 Tela **Planejar**: oferta, turmas, grade semanal com conflitos em tempo real, KPIs (créditos, horas, conflitos, formatura) e avisos.
-- [ ] 2.3 `core/insights`: as 5 regras determinísticas com `motivo` e `fonte`.
+- [x] 2.3 `core/insights`: as 5 regras determinísticas com `motivo` e `fonte`.
 - [ ] 2.4 Tela **Insights** com filtros por tipo.
 - [ ] 2.5 Tela **Carreira**: objetivo, competências, aderência, marcos, diário de expectativas.
 

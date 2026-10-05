@@ -6,6 +6,7 @@ import {
   formatarIntervalo,
   formatarNota,
   normalizarNota,
+  tempoDecorrido,
 } from './formato';
 
 describe('formato', () => {
@@ -33,5 +34,17 @@ describe('formato', () => {
 
   it('formata inteiros com separador de milhar', () => {
     expect(formatarInteiro(1240)).toBe('1.240');
+  });
+});
+
+describe('tempoDecorrido', () => {
+  const agora = new Date('2026-10-04T21:00:00Z');
+  const antes = (min: number) => new Date(agora.getTime() - min * 60_000);
+  it('descreve intervalos curtos e longos', () => {
+    expect(tempoDecorrido(antes(0), agora)).toBe('agora');
+    expect(tempoDecorrido(antes(12), agora)).toBe('há 12 min');
+    expect(tempoDecorrido(antes(180), agora)).toBe('há 3 h');
+    expect(tempoDecorrido(antes(60 * 24), agora)).toBe('há 1 dia');
+    expect(tempoDecorrido(antes(60 * 72), agora)).toBe('há 3 dias');
   });
 });

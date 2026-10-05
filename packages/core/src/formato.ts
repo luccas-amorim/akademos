@@ -37,3 +37,14 @@ export function desnormalizarNota(nota10: number, escala: Escala): number {
 export function formatarInteiro(n: number): string {
   return Math.round(n).toLocaleString('pt-BR');
 }
+
+/** "agora", "há 12 min", "há 3 h", "há 2 dias". */
+export function tempoDecorrido(desde: Date, agora: Date): string {
+  const min = Math.max(0, Math.round((agora.getTime() - desde.getTime()) / 60_000));
+  if (min < 1) return 'agora';
+  if (min < 60) return `há ${min} min`;
+  const h = Math.round(min / 60);
+  if (h < 24) return `há ${h} h`;
+  const d = Math.round(h / 24);
+  return d === 1 ? 'há 1 dia' : `há ${d} dias`;
+}

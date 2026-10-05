@@ -1,0 +1,69 @@
+import type { EstatisticasComunidade } from '../insights/contexto';
+import { MATRIZ_ID } from './ana';
+
+/** Agregados fictícios da matriz da UFX (valores do protótipo). */
+export const comunidade: EstatisticasComunidade = {
+  matrizId: MATRIZ_ID,
+  geradoEm: '2026-10-01T00:00:00Z',
+  k: 10,
+  demonstracao: true,
+  disciplinas: {
+    EX404: { n: 1240, media: 6.4, desvio: 1.3, reprovacao: 0.2 },
+    EX501: { n: 1010, media: 7.2, desvio: 1.1, reprovacao: 0.06 },
+    EX502: { n: 900, media: 7.6, desvio: 1.0, reprovacao: 0.05 },
+    EX503: { n: 1100, media: 8.0, desvio: 0.9, reprovacao: 0.04 },
+    EX504: { n: 980, media: 7.0, desvio: 1.2, reprovacao: 0.09 },
+    EX602: { n: 1105, media: 7.4, desvio: 1.1, reprovacao: 0.08 },
+  },
+  correlacoes: [
+    {
+      de: 'EX301',
+      para: 'EX404',
+      r: 0.61,
+      n: 1240,
+      inclinacao: 0.7,
+      intercepto: 2.08,
+      residuo: 1.1,
+    },
+    {
+      de: 'EX302',
+      para: 'EX504',
+      r: 0.72,
+      n: 980,
+      inclinacao: 0.8,
+      intercepto: 1.35,
+      residuo: 0.9,
+    },
+    {
+      de: 'EX202',
+      para: 'EX602',
+      r: 0.58,
+      n: 1105,
+      inclinacao: 0.6,
+      intercepto: 2.93,
+      residuo: 0.9,
+    },
+    {
+      de: 'EX402',
+      para: 'EX501',
+      r: 0.54,
+      n: 1010,
+      inclinacao: 0.6,
+      intercepto: 2.91,
+      residuo: 1.1,
+    },
+    {
+      de: 'EX303',
+      para: 'EX503',
+      r: 0.66,
+      n: 1100,
+      inclinacao: 0.7,
+      intercepto: 2.2,
+      residuo: 0.8,
+    },
+    { de: 'EX202', para: 'EX502', r: 0.5, n: 900, inclinacao: 0.6, intercepto: 2.78, residuo: 0.8 },
+    // Abaixo de k: nunca deve aparecer.
+    { de: 'EX101', para: 'EX604', r: 0.9, n: 7, inclinacao: 1, intercepto: 0, residuo: 0.5 },
+  ],
+  condicionais: [{ disciplina: 'EX504', dado: 'EX301', abaixoDe: 6.5, reprovacao: 0.18, n: 214 }],
+};
