@@ -10,6 +10,7 @@ import { lerSessao } from './dados/preferencias';
 import { ROTAS_PUBLICAS } from './layout/rotasPublicas';
 import { AppShell } from './layout/AppShell';
 import { AvisoAtualizacao } from './layout/AvisoAtualizacao';
+import { ErroDeTela } from './layout/ErroDeTela';
 import { NotFound } from './routes/NotFound';
 
 const rootRoute = createRootRoute({
@@ -20,6 +21,7 @@ const rootRoute = createRootRoute({
     </>
   ),
   notFoundComponent: NotFound,
+  errorComponent: ErroDeTela,
 });
 
 /** Rotas com a barra lateral. Cada tela é carregada sob demanda. */

@@ -25,3 +25,21 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm registry:validate
       - run: pnpm test
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v5
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @akademos/web exec playwright install --with-deps chromium
+      - run: pnpm e2e
+      - uses: actions/upload-artifact@v5
+        if: failure()
+        with:
+          name: playwright
+          path: apps/web/test-results

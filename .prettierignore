@@ -11,3 +11,5 @@ registry/schema/*.json
 *.md
 .github/FUNDING.yml
 registry/instituicoes
+apps/web/test-results
+apps/web/playwright-report

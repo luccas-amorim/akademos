@@ -45,6 +45,11 @@ export interface Banco {
   db: DrizzleDb;
   repos: Repositorios;
   ops: LogDeOps;
+  /**
+   * Executa leituras sem intercalar com transações em andamento (a conexão é
+   * única: sem isto, uma leitura poderia ver uma escrita pela metade).
+   */
+  consistente<R>(fn: () => Promise<R>): Promise<R>;
   /** Exporta todas as tabelas como objetos simples (LGPD: portabilidade). */
   exportar(): Promise<Record<string, unknown[]>>;
   /** Apaga todos os dados deste aparelho, mantendo o esquema. */
@@ -361,6 +366,7 @@ export async function abrirBanco(driver: SqlDriver, relogio: Relogio): Promise<B
     db,
     repos,
     ops,
+    consistente: (fn) => mutex.executar(fn),
     async exportar() {
       const saida: Record<string, unknown[]> = {};
       for (const [nome, tabela] of Object.entries(TABELAS_SINCRONIZADAS)) {

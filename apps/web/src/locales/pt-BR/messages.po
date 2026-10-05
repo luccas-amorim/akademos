@@ -48,7 +48,7 @@ msgid "{0} históricos"
 msgstr "{0} históricos"
 
 #. placeholder {0}: n.selo
-#: src/layout/AppShell.tsx:194
+#: src/layout/AppShell.tsx:197
 msgid "{0} insights"
 msgstr "{0} insights"
 
@@ -69,7 +69,7 @@ msgid "{0} para revisar"
 msgstr "{0} para revisar"
 
 #. placeholder {0}: ordinalDoSemestre(dados.aluno.ingresso, atual)
-#: src/layout/AppShell.tsx:127
+#: src/layout/AppShell.tsx:130
 msgid "{0}º semestre · {atual}"
 msgstr "{0}º semestre · {atual}"
 
@@ -132,6 +132,10 @@ msgstr "62 de 128 créditos"
 msgid "A conta serve só para sincronizar entre aparelhos. Seus dados ficam criptografados com uma chave que só você tem."
 msgstr "A conta serve só para sincronizar entre aparelhos. Seus dados ficam criptografados com uma chave que só você tem."
 
+#: src/routes/dados/CartaoConta.tsx:93
+msgid "A conta, as chaves e todos os blobs cifrados são apagados do servidor. Os dados deste aparelho continuam aqui, sem sincronizar."
+msgstr "A conta, as chaves e todos os blobs cifrados são apagados do servidor. Os dados deste aparelho continuam aqui, sem sincronizar."
+
 #: src/routes/Entrar.tsx:385
 msgid "A frase não confere com a desta conta."
 msgstr "A frase não confere com a desta conta."
@@ -145,8 +149,8 @@ msgstr "A matriz {0} já está carregada (mantida pela comunidade). Marque semes
 msgid "A matriz vem do registro aberto do Akademos, mantido pela comunidade. Nada disso sai deste aparelho."
 msgstr "A matriz vem do registro aberto do Akademos, mantido pela comunidade. Nada disso sai deste aparelho."
 
-#: src/layout/AppShell.tsx:42
-#: src/layout/AppShell.tsx:60
+#: src/layout/AppShell.tsx:45
+#: src/layout/AppShell.tsx:63
 msgid "Abrindo seus dados…"
 msgstr "Abrindo seus dados…"
 
@@ -186,6 +190,10 @@ msgstr "Ainda não há modelo de leitura de histórico para {0}. Use a entrada m
 msgid "Ainda não há turmas de {semestre} neste aparelho."
 msgstr "Ainda não há turmas de {semestre} neste aparelho."
 
+#: src/routes/dados/CartaoConta.tsx:67
+msgid "Ainda não sincronizou."
+msgstr "Ainda não sincronizou."
+
 #: src/routes/Entrar.tsx:99
 msgid "Akademos neste aparelho"
 msgstr "Akademos neste aparelho"
@@ -203,16 +211,28 @@ msgstr "Alto"
 msgid "Anotei a frase num lugar seguro"
 msgstr "Anotei a frase num lugar seguro"
 
-#: src/routes/Dados.tsx:114
+#: src/routes/Dados.tsx:116
 msgid "Apagando…"
 msgstr "Apagando…"
 
-#: src/routes/Dados.tsx:114
+#: src/routes/Dados.tsx:116
 msgid "Apagar"
 msgstr "Apagar"
 
-#: src/routes/Dados.tsx:95
-#: src/routes/Dados.tsx:108
+#: src/routes/dados/CartaoConta.tsx:86
+msgid "Apagar a conta?"
+msgstr "Apagar a conta?"
+
+#: src/routes/dados/CartaoConta.tsx:87
+msgid "Apagar conta"
+msgstr "Apagar conta"
+
+#: src/routes/dados/CartaoConta.tsx:80
+msgid "Apagar conta e dados do servidor"
+msgstr "Apagar conta e dados do servidor"
+
+#: src/routes/Dados.tsx:97
+#: src/routes/Dados.tsx:110
 msgid "Apagar dados deste aparelho"
 msgstr "Apagar dados deste aparelho"
 
@@ -224,7 +244,7 @@ msgstr "Apagar entrada"
 msgid "Apagar objetivo"
 msgstr "Apagar objetivo"
 
-#: src/routes/Dados.tsx:113
+#: src/routes/Dados.tsx:115
 msgid "Apagar todos os dados deste aparelho?"
 msgstr "Apagar todos os dados deste aparelho?"
 
@@ -242,7 +262,7 @@ msgstr "Aprovada"
 msgid "Aproveitada"
 msgstr "Aproveitada"
 
-#: src/layout/AppShell.tsx:141
+#: src/layout/AppShell.tsx:144
 msgid "Armazenamento indisponível: nada será guardado"
 msgstr "Armazenamento indisponível: nada será guardado"
 
@@ -266,7 +286,7 @@ msgstr "Ativo: sua conta sincroniza os dados cifrados."
 msgid "Atualizar"
 msgstr "Atualizar"
 
-#: src/routes/Dados.tsx:77
+#: src/routes/Dados.tsx:79
 msgid "Baixar tudo (JSON)"
 msgstr "Baixar tudo (JSON)"
 
@@ -282,7 +302,7 @@ msgstr "Baixo"
 #. placeholder {1}: dados.cursadas.length
 #. placeholder {2}: dados.ofertas.length
 #. placeholder {3}: dados.planos.length
-#: src/routes/Dados.tsx:57
+#: src/routes/Dados.tsx:58
 msgid "Banco SQLite local em {0}. {1} cursadas, {2} turmas, {3} planos."
 msgstr "Banco SQLite local em {0}. {1} cursadas, {2} turmas, {3} planos."
 
@@ -319,7 +339,8 @@ msgid "Calculados no seu aparelho. Comparações com a comunidade usam só hist�
 msgstr "Calculados no seu aparelho. Comparações com a comunidade usam só históricos anônimos de quem optou por compartilhar."
 
 #: src/routes/carreira/EditorObjetivo.tsx:147
-#: src/routes/Dados.tsx:115
+#: src/routes/Dados.tsx:117
+#: src/routes/dados/CartaoConta.tsx:88
 #: src/routes/planejar/NovaTurma.tsx:137
 msgid "Cancelar"
 msgstr "Cancelar"
@@ -329,7 +350,7 @@ msgstr "Cancelar"
 msgid "Carga"
 msgstr "Carga"
 
-#: src/layout/AppShell.tsx:184
+#: src/layout/AppShell.tsx:187
 #: src/routes/Carreira.tsx:58
 #: src/routes/Carreira.tsx:71
 #: src/routes/Insights.tsx:21
@@ -340,11 +361,11 @@ msgstr "Carreira"
 msgid "Chave de acesso"
 msgstr "Chave de acesso"
 
-#: src/layout/AppShell.tsx:228
+#: src/layout/AppShell.tsx:231
 msgid "Cifrado · aguardando"
 msgstr "Cifrado · aguardando"
 
-#: src/layout/AppShell.tsx:226
+#: src/layout/AppShell.tsx:229
 msgid "Cifrado · sincronizado {quando}"
 msgstr "Cifrado · sincronizado {quando}"
 
@@ -439,6 +460,10 @@ msgstr "Conflito"
 msgid "Conflitos"
 msgstr "Conflitos"
 
+#: src/routes/dados/CartaoConta.tsx:59
+msgid "Conta e sincronização"
+msgstr "Conta e sincronização"
+
 #: src/routes/Entrar.tsx:428
 #: src/routes/Entrar.tsx:536
 #: src/routes/importar/ImportarPdf.tsx:280
@@ -481,6 +506,14 @@ msgstr "Créditos"
 msgid "Criar conta"
 msgstr "Criar conta"
 
+#: src/routes/dados/CartaoConta.tsx:35
+msgid "Criar conta →"
+msgstr "Criar conta →"
+
+#: src/routes/dados/CartaoConta.tsx:29
+msgid "Crie uma conta para levar seus dados a outros aparelhos. Tudo é cifrado aqui antes de sair; o servidor guarda só blobs ilegíveis."
+msgstr "Crie uma conta para levar seus dados a outros aparelhos. Tudo é cifrado aqui antes de sair; o servidor guarda só blobs ilegíveis."
+
 #: src/componentes/situacao.ts:14
 #: src/routes/Kit.tsx:207
 msgid "Cursada"
@@ -495,7 +528,7 @@ msgstr "Cursando"
 msgid "Dados de demonstração."
 msgstr "Dados de demonstração."
 
-#: src/layout/AppShell.tsx:137
+#: src/layout/AppShell.tsx:140
 msgid "Dados neste aparelho"
 msgstr "Dados neste aparelho"
 
@@ -515,7 +548,7 @@ msgstr "Definir objetivo"
 msgid "Desativado"
 msgstr "Desativado"
 
-#: src/layout/AppShell.tsx:183
+#: src/layout/AppShell.tsx:186
 #: src/routes/Desempenho.tsx:83
 msgid "Desempenho"
 msgstr "Desempenho"
@@ -615,7 +648,7 @@ msgstr "eletiva {0}"
 msgid "Entrada manual"
 msgstr "Entrada manual"
 
-#: src/layout/AppShell.tsx:87
+#: src/layout/AppShell.tsx:90
 #: src/routes/Entrar.tsx:196
 #: src/routes/Entrar.tsx:291
 #: src/routes/Kit.tsx:196
@@ -721,7 +754,7 @@ msgstr "Explorar com a aluna de exemplo (dados fictícios) →"
 #~ msgid "Explorar com dados de exemplo"
 #~ msgstr "Explorar com dados de exemplo"
 
-#: src/routes/Dados.tsx:67
+#: src/routes/Dados.tsx:69
 msgid "Exportar"
 msgstr "Exportar"
 
@@ -738,7 +771,7 @@ msgstr "Falta: {0}"
 msgid "Fechar"
 msgstr "Fechar"
 
-#: src/layout/AppShell.tsx:54
+#: src/layout/AppShell.tsx:57
 msgid "Feche a outra aba e recarregue esta página. Os dados ficam num só arquivo neste navegador."
 msgstr "Feche a outra aba e recarregue esta página. Os dados ficam num só arquivo neste navegador."
 
@@ -779,7 +812,7 @@ msgstr "Há uma versão nova do Akademos."
 msgid "Histórico"
 msgstr "Histórico"
 
-#: src/routes/Dados.tsx:89
+#: src/routes/Dados.tsx:91
 msgid "Histórico (CSV)"
 msgstr "Histórico (CSV)"
 
@@ -787,7 +820,7 @@ msgstr "Histórico (CSV)"
 msgid "Histórico, planejamento de matrícula e previsões calculadas no seu aparelho. Seus dados não saem dele sem você pedir."
 msgstr "Histórico, planejamento de matrícula e previsões calculadas no seu aparelho. Seus dados não saem dele sem você pedir."
 
-#: src/routes/Dados.tsx:120
+#: src/routes/Dados.tsx:122
 msgid "Histórico, planos, objetivos e diário serão removidos deste navegador. Esta ação não pode ser desfeita."
 msgstr "Histórico, planos, objetivos e diário serão removidos deste navegador. Esta ação não pode ser desfeita."
 
@@ -799,7 +832,7 @@ msgstr "Horários"
 msgid "Horas na semana"
 msgstr "Horas na semana"
 
-#: src/layout/AppShell.tsx:157
+#: src/layout/AppShell.tsx:160
 msgid "Importar"
 msgstr "Importar"
 
@@ -821,11 +854,11 @@ msgstr "Informe seu e-mail institucional."
 msgid "Ingresso"
 msgstr "Ingresso"
 
-#: src/layout/AppShell.tsx:179
+#: src/layout/AppShell.tsx:182
 msgid "Início"
 msgstr "Início"
 
-#: src/layout/AppShell.tsx:182
+#: src/layout/AppShell.tsx:185
 #: src/routes/Insights.tsx:27
 msgid "Insights"
 msgstr "Insights"
@@ -843,7 +876,7 @@ msgstr "Integralizado"
 msgid "Interessados"
 msgstr "Interessados"
 
-#: src/routes/Dados.tsx:70
+#: src/routes/Dados.tsx:72
 msgid "JSON com todas as tabelas (para levar a outro aparelho ou guardar) e CSV do histórico (para planilhas)."
 msgstr "JSON com todas as tabelas (para levar a outro aparelho ou guardar) e CSV do histórico (para planilhas)."
 
@@ -984,7 +1017,7 @@ msgstr "Moderado"
 msgid "Modo"
 msgstr "Modo"
 
-#: src/layout/AppShell.tsx:153
+#: src/layout/AppShell.tsx:156
 msgid "Mostrar notas"
 msgstr "Mostrar notas"
 
@@ -1009,7 +1042,7 @@ msgstr "Não destrava nenhuma."
 msgid "Não é exigida por nenhuma outra disciplina."
 msgstr "Não é exigida por nenhuma outra disciplina."
 
-#: src/layout/AppShell.tsx:50
+#: src/layout/AppShell.tsx:53
 msgid "Não foi possível abrir os dados locais"
 msgstr "Não foi possível abrir os dados locais"
 
@@ -1027,11 +1060,11 @@ msgstr "Não importar"
 msgid "Não reconhecemos nenhuma disciplina neste PDF. Confira se é o histórico do {0} da {1}."
 msgstr "Não reconhecemos nenhuma disciplina neste PDF. Confira se é o histórico do {0} da {1}."
 
-#: src/layout/AppShell.tsx:80
+#: src/layout/AppShell.tsx:83
 msgid "Navegação"
 msgstr "Navegação"
 
-#: src/layout/AppShell.tsx:115
+#: src/layout/AppShell.tsx:118
 msgid "Navegação principal"
 msgstr "Navegação principal"
 
@@ -1115,7 +1148,7 @@ msgstr "Novo marco"
 msgid "Novo objetivo"
 msgstr "Novo objetivo"
 
-#: src/layout/AppShell.tsx:49
+#: src/layout/AppShell.tsx:52
 msgid "O Akademos está aberto em outra aba"
 msgstr "O Akademos está aberto em outra aba"
 
@@ -1153,7 +1186,7 @@ msgstr "Objetivo"
 msgid "Objetivo principal"
 msgstr "Objetivo principal"
 
-#: src/layout/AppShell.tsx:153
+#: src/layout/AppShell.tsx:156
 msgid "Ocultar notas"
 msgstr "Ocultar notas"
 
@@ -1168,7 +1201,7 @@ msgstr "Oferta de turmas"
 msgid "Oferta e pré-matrícula lidas do {sistema} {0}{1} · sua prioridade: {FAIXA_PRIORIDADE}ª faixa (regular, {2}% integralizado)"
 msgstr "Oferta e pré-matrícula lidas do {sistema} {0}{1} · sua prioridade: {FAIXA_PRIORIDADE}ª faixa (regular, {2}% integralizado)"
 
-#: src/routes/Dados.tsx:53
+#: src/routes/Dados.tsx:54
 msgid "Onde estão"
 msgstr "Onde estão"
 
@@ -1210,7 +1243,7 @@ msgstr "Patrocinar"
 msgid "PDF do histórico"
 msgstr "PDF do histórico"
 
-#: src/layout/AppShell.tsx:180
+#: src/layout/AppShell.tsx:183
 #: src/routes/Percurso.tsx:96
 msgid "Percurso"
 msgstr "Percurso"
@@ -1224,7 +1257,7 @@ msgstr "Percurso"
 msgid "Planejar {0}"
 msgstr "Planejar {0}"
 
-#: src/layout/AppShell.tsx:181
+#: src/layout/AppShell.tsx:184
 msgid "Planejar {proximo}"
 msgstr "Planejar {proximo}"
 
@@ -1295,7 +1328,7 @@ msgstr "Pronto para funcionar offline."
 msgid "Próximo passo: privacidade. Por padrão, tudo fica neste aparelho. Sincronizar entre aparelhos e compartilhar históricos anônimos com a comunidade são opcionais e você pode desligar quando quiser."
 msgstr "Próximo passo: privacidade. Por padrão, tudo fica neste aparelho. Sincronizar entre aparelhos e compartilhar históricos anônimos com a comunidade são opcionais e você pode desligar quando quiser."
 
-#: src/layout/AppShell.tsx:65
+#: src/layout/AppShell.tsx:68
 msgid "Pular para o conteúdo"
 msgstr "Pular para o conteúdo"
 
@@ -1325,7 +1358,7 @@ msgstr "quinta"
 msgid "Registrar"
 msgstr "Registrar"
 
-#: src/routes/Dados.tsx:98
+#: src/routes/Dados.tsx:100
 msgid "Remove o banco local deste navegador. Se você não tem conta com sincronização, não há outra cópia: exporte antes."
 msgstr "Remove o banco local deste navegador. Se você não tem conta com sincronização, não há outra cópia: exporte antes."
 
@@ -1342,7 +1375,7 @@ msgstr "Remover competência"
 msgid "Reprovada"
 msgstr "Reprovada"
 
-#: src/layout/AppShell.tsx:194
+#: src/layout/AppShell.tsx:197
 msgid "requer atenção"
 msgstr "requer atenção"
 
@@ -1373,7 +1406,7 @@ msgstr "Rótulo de seção"
 msgid "sábado"
 msgstr "sábado"
 
-#: src/layout/AppShell.tsx:160
+#: src/layout/AppShell.tsx:163
 msgid "Sair"
 msgstr "Sair"
 
@@ -1408,7 +1441,7 @@ msgstr "Sem {0}, {1} fica para depois e a formatura passa para {2}."
 msgid "Sem a frase, os dados sincronizados não podem ser recuperados em outro aparelho — nem por nós."
 msgstr "Sem a frase, os dados sincronizados não podem ser recuperados em outro aparelho — nem por nós."
 
-#: src/layout/AppShell.tsx:213
+#: src/layout/AppShell.tsx:216
 msgid "Sem conta · nada sai daqui"
 msgstr "Sem conta · nada sai daqui"
 
@@ -1429,7 +1462,7 @@ msgid "sem previsão"
 msgstr "sem previsão"
 
 #. placeholder {0}: sync.mensagem
-#: src/layout/AppShell.tsx:222
+#: src/layout/AppShell.tsx:225
 msgid "Sem sincronizar · {0}"
 msgstr "Sem sincronizar · {0}"
 
@@ -1476,9 +1509,13 @@ msgstr "Seu curso não está na lista? A matriz é um arquivo YAML no registro; 
 msgid "Seu percurso acadêmico, do primeiro semestre à formatura."
 msgstr "Seu percurso acadêmico, do primeiro semestre à formatura."
 
-#: src/routes/Dados.tsx:43
+#: src/routes/Dados.tsx:44
 msgid "Seus dados"
 msgstr "Seus dados"
+
+#: src/layout/ErroDeTela.tsx:14
+msgid "Seus dados continuam salvos neste aparelho."
+msgstr "Seus dados continuam salvos neste aparelho."
 
 #: src/routes/Importar.tsx:76
 msgid "Seus dados, suas regras"
@@ -1493,13 +1530,22 @@ msgid "Sincronização opcional e criptografada"
 msgstr "Sincronização opcional e criptografada"
 
 #. placeholder {0}: sync.mensagem
-#: src/layout/AppShell.tsx:218
+#: src/layout/AppShell.tsx:221
 msgid "Sincronizado {quando} · {0}"
 msgstr "Sincronizado {quando} · {0}"
 
-#: src/layout/AppShell.tsx:214
+#: src/layout/AppShell.tsx:217
+#: src/routes/dados/CartaoConta.tsx:63
 msgid "Sincronizando…"
 msgstr "Sincronizando…"
+
+#: src/routes/dados/CartaoConta.tsx:73
+msgid "Sincronizar agora"
+msgstr "Sincronizar agora"
+
+#: src/routes/dados/CartaoConta.tsx:26
+msgid "Sincronizar entre aparelhos"
+msgstr "Sincronizar entre aparelhos"
 
 #: src/routes/importar/PassoPrivacidade.tsx:23
 msgid "Sincronizar entre aparelhos, com criptografia de ponta a ponta"
@@ -1514,8 +1560,8 @@ msgstr "Situação \"{0}\" desconhecida"
 msgid "Só quero explorar: carregar a aluna de exemplo (fictícia) →"
 msgstr "Só quero explorar: carregar a aluna de exemplo (fictícia) →"
 
-#: src/layout/AppShell.tsx:90
-#: src/layout/AppShell.tsx:163
+#: src/layout/AppShell.tsx:93
+#: src/layout/AppShell.tsx:166
 #: src/routes/Sobre.tsx:5
 msgid "Sobre e apoio"
 msgstr "Sobre e apoio"
@@ -1543,6 +1589,10 @@ msgstr "sugerida no {0}º semestre"
 #: src/routes/Carreira.tsx:48
 msgid "Sugestão: {rotulo} em {0}"
 msgstr "Sugestão: {rotulo} em {0}"
+
+#: src/layout/ErroDeTela.tsx:16
+msgid "Tentar de novo"
+msgstr "Tentar de novo"
 
 #: src/routes/inicio-textos.ts:56
 msgid "terça"
@@ -1598,13 +1648,17 @@ msgstr "Trocar de curso"
 msgid "Tudo funciona offline. Você pode criar uma conta depois para sincronizar."
 msgstr "Tudo funciona offline. Você pode criar uma conta depois para sincronizar."
 
-#: src/routes/Dados.tsx:45
+#: src/routes/Dados.tsx:46
 msgid "Tudo o que o Akademos sabe sobre você está neste aparelho. Leve com você ou apague quando quiser."
 msgstr "Tudo o que o Akademos sabe sobre você está neste aparelho. Leve com você ou apague quando quiser."
 
 #: src/routes/planejar/NovaTurma.tsx:82
 msgid "Turma"
 msgstr "Turma"
+
+#: src/routes/dados/CartaoConta.tsx:65
+msgid "Última sincronização {ultima}."
+msgstr "Última sincronização {ultima}."
 
 #. placeholder {0}: e.codigo
 #. placeholder {1}: e.nome

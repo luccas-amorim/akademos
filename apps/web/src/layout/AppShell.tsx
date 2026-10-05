@@ -6,7 +6,7 @@ import {
 } from '@akademos/core';
 import { LogoMark } from '@akademos/ui';
 import { Trans, useLingui } from '@lingui/react/macro';
-import { Link, Outlet, useLocation, useNavigate } from '@tanstack/react-router';
+import { Link, Outlet, useNavigate, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useAnalise } from '../dados/analise';
 import { sairDaConta } from '../conta/sair';
@@ -22,7 +22,10 @@ export function AppShell() {
   const { t } = useLingui();
   const estado = useEstadoDados();
   const sessao = useSessao();
-  const { pathname } = useLocation();
+  // Rota de fato renderizada (durante uma transição, a URL já pode ser a nova).
+  const pathname = useRouterState({
+    select: (r) => r.matches.at(-1)?.fullPath ?? r.location.pathname,
+  });
   const publica = ROTAS_PUBLICAS.has(pathname);
   const navigate = useNavigate();
 

@@ -3,6 +3,7 @@ import { abrirBanco, type Banco } from '@akademos/db';
 import { criarDriverWeb, ErroOutraAba, type Armazenamento, type DriverWeb } from '@akademos/db/web';
 import { Hlc } from '@akademos/sync';
 import { useSyncExternalStore } from 'react';
+import { entradaDaMatriz } from './catalogo';
 
 export type EstadoDados =
   | { fase: 'abrindo' }
@@ -75,12 +76,24 @@ class StoreDeDados {
   }
 
   async recarregar(): Promise<void> {
-    const dados = await carregarDados(this.banco.repos);
+    await this.#garantirMatriz();
+    const dados = await this.banco.consistente(() => carregarDados(this.banco.repos));
     this.#definir({
       fase: 'pronto',
       dados,
       armazenamento: this.#driver?.armazenamento ?? 'memoria',
     });
+  }
+
+  /**
+   * Matrizes vêm do registro, não da sincronização: um aparelho que acabou de
+   * receber o perfil do aluno instala a matriz a partir do catálogo embutido.
+   */
+  async #garantirMatriz(): Promise<void> {
+    const [aluno] = await this.banco.repos.alunos.listar();
+    if (!aluno || (await this.banco.repos.registro.obter(aluno.matrizId))) return;
+    const entrada = entradaDaMatriz(aluno.matrizId);
+    if (entrada) await this.banco.repos.registro.instalar(entrada.pacote);
   }
 
   /** Executa uma escrita e atualiza a UI com o resultado gravado. */
