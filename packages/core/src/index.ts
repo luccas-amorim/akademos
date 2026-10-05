@@ -10,3 +10,5 @@ export * from './insights';
 export * from './planner/horarios';
 export * from './planner/resumo';
 export * from './comunidade';
+export * from './painel';
+export * from './notas';
