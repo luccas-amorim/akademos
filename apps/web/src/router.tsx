@@ -60,6 +60,10 @@ const importar = filha(
   '/importar',
   lazyRouteComponent(() => import('./routes/Importar'), 'Importar'),
 );
+const dadosRota = filha(
+  '/dados',
+  lazyRouteComponent(() => import('./routes/Dados'), 'Dados'),
+);
 const sobre = filha(
   '/sobre',
   lazyRouteComponent(() => import('./routes/Sobre'), 'Sobre'),
@@ -88,6 +92,7 @@ const routeTree = rootRoute.addChildren([
     desempenho,
     carreira,
     importar,
+    dadosRota,
     sobre,
   ]),
   entrar,

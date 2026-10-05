@@ -144,7 +144,7 @@ function BarraLateral() {
         </nav>
       )}
       <div className={s.footer}>
-        <div className={s.dataBox}>
+        <Link to="/dados" className={s.dataBox}>
           <div className={s.dataBoxTitle}>
             <Trans>Dados neste aparelho</Trans>
           </div>
@@ -155,7 +155,7 @@ function BarraLateral() {
               <Trans>Sem conta · nada sai daqui</Trans>
             )}
           </div>
-        </div>
+        </Link>
         <button
           type="button"
           className={s.privacy}
