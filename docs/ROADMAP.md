@@ -45,7 +45,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 - [x] 4.3 Conector JúpiterWeb (USP).
 - [x] 4.4 Consentimento opt-in + envio de agregados anônimos; `/stats` com k ≥ 10.
 - [x] 4.5 Insights com dados da comunidade (risco, correlação, chance de vaga).
-- [ ] 4.6 Página pública **Sobre/Apoio**; guia de contribuição do registro.
+- [x] 4.6 Página pública **Sobre/Apoio**; guia de contribuição do registro.
 
 ## Fase 5 — Mobile (semana 21+)
 

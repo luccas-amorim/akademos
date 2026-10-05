@@ -45,6 +45,22 @@ export function AppShell() {
     if (precisaImportar) void navigate({ to: '/importar', replace: true });
   }, [precisaImportar, navigate]);
 
+  // Páginas públicas não esperam o banco abrir.
+  const conteudo = (
+    <div className={s.shell}>
+      <a className={s.skip} href="#conteudo">
+        <Trans>Pular para o conteúdo</Trans>
+      </a>
+      {sessao ? <BarraLateral /> : <BarraPublica />}
+      <main className={s.main} id="conteudo">
+        <div className={s.content}>
+          <Outlet />
+        </div>
+      </main>
+    </div>
+  );
+  if (publica && !sessao) return conteudo;
+
   if (estado.fase === 'abrindo') {
     return <TelaDeEstado titulo={t`Abrindo seus dados…`} />;
   }
@@ -65,20 +81,7 @@ export function AppShell() {
     );
   }
   if (precisaImportar) return <TelaDeEstado titulo={t`Abrindo seus dados…`} />;
-
-  return (
-    <div className={s.shell}>
-      <a className={s.skip} href="#conteudo">
-        <Trans>Pular para o conteúdo</Trans>
-      </a>
-      {sessao ? <BarraLateral /> : <BarraPublica />}
-      <main className={s.main} id="conteudo">
-        <div className={s.content}>
-          <Outlet />
-        </div>
-      </main>
-    </div>
-  );
+  return conteudo;
 }
 
 function BarraPublica() {

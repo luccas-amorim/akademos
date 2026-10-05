@@ -11,18 +11,18 @@ msgstr ""
 msgid "· atual"
 msgstr "· atual"
 
-#: src/routes/importar/ImportarPdf.tsx:153
+#: src/routes/importar/ImportarPdf.tsx:111
 msgid "· lido no aparelho, não enviado"
 msgstr "· lido no aparelho, não enviado"
 
 #. placeholder {0}: d?.codigo
 #. placeholder {1}: d?.nome
-#: src/routes/importar/ImportarPdf.tsx:129
+#: src/routes/importar/RevisaoHistorico.tsx:56
 msgid "{0} · {1} (pelo nome)"
 msgstr "{0} · {1} (pelo nome)"
 
 #. placeholder {0}: d?.codigo
-#: src/routes/importar/ImportarPdf.tsx:125
+#: src/routes/importar/RevisaoHistorico.tsx:52
 msgid "{0} · registrar reprovação anterior?"
 msgstr "{0} · registrar reprovação anterior?"
 
@@ -48,7 +48,7 @@ msgid "{0} históricos"
 msgstr "{0} históricos"
 
 #. placeholder {0}: n.selo
-#: src/layout/AppShell.tsx:197
+#: src/layout/AppShell.tsx:204
 msgid "{0} insights"
 msgstr "{0} insights"
 
@@ -58,18 +58,23 @@ msgstr "{0} insights"
 msgid "{0} interessados / {1} vagas · <0>{chance}% de vaga</0>"
 msgstr "{0} interessados / {1} vagas · <0>{chance}% de vaga</0>"
 
-#. placeholder {0}: estado.naoReconhecidas.length
-#: src/routes/importar/ImportarPdf.tsx:259
+#. placeholder {0}: naoReconhecidas.length
+#: src/routes/importar/RevisaoHistorico.tsx:179
 msgid "{0} linha(s) pareciam disciplinas mas não seguiram o formato esperado; confira e lance à mão se faltar algo."
 msgstr "{0} linha(s) pareciam disciplinas mas não seguiram o formato esperado; confira e lance à mão se faltar algo."
 
 #. placeholder {0}: paraRevisar.length
-#: src/routes/importar/ImportarPdf.tsx:164
+#: src/routes/importar/RevisaoHistorico.tsx:84
 msgid "{0} para revisar"
 msgstr "{0} para revisar"
 
+#. placeholder {0}: ofertas.length
+#: src/conectores/ConectorDesktop.tsx:137
+msgid "{0} turmas de {proximo} atualizadas."
+msgstr "{0} turmas de {proximo} atualizadas."
+
 #. placeholder {0}: ordinalDoSemestre(dados.aluno.ingresso, atual)
-#: src/layout/AppShell.tsx:130
+#: src/layout/AppShell.tsx:137
 msgid "{0}º semestre · {atual}"
 msgstr "{0}º semestre · {atual}"
 
@@ -103,7 +108,7 @@ msgstr "{n}º semestre"
 msgid "{ordinal}º semestre"
 msgstr "{ordinal}º semestre"
 
-#: src/routes/importar/ImportarPdf.tsx:158
+#: src/routes/importar/RevisaoHistorico.tsx:78
 msgid "{reconhecidas} reconhecidas"
 msgstr "{reconhecidas} reconhecidas"
 
@@ -149,8 +154,8 @@ msgstr "A matriz {0} já está carregada (mantida pela comunidade). Marque semes
 msgid "A matriz vem do registro aberto do Akademos, mantido pela comunidade. Nada disso sai deste aparelho."
 msgstr "A matriz vem do registro aberto do Akademos, mantido pela comunidade. Nada disso sai deste aparelho."
 
-#: src/layout/AppShell.tsx:45
-#: src/layout/AppShell.tsx:63
+#: src/layout/AppShell.tsx:65
+#: src/layout/AppShell.tsx:83
 msgid "Abrindo seus dados…"
 msgstr "Abrindo seus dados…"
 
@@ -173,16 +178,24 @@ msgstr "Adicionar"
 msgid "Adicionar alternativa"
 msgstr "Adicionar alternativa"
 
+#: src/routes/Sobre.tsx:88
+msgid "Adicione sua matriz →"
+msgstr "Adicione sua matriz →"
+
 #: src/routes/importar/PainelConector.tsx:50
 msgid "Ainda não há conector para esta instituição. Use o PDF ou a entrada manual."
 msgstr "Ainda não há conector para esta instituição. Use o PDF ou a entrada manual."
+
+#: src/routes/Insights.tsx:37
+msgid "Ainda não há históricos anônimos suficientes desta matriz (mínimo de 10 por célula): por enquanto, só regras e os seus dados."
+msgstr "Ainda não há históricos anônimos suficientes desta matriz (mínimo de 10 por célula): por enquanto, só regras e os seus dados."
 
 #: src/routes/Desempenho.tsx:246
 msgid "Ainda não há históricos anônimos suficientes desta matriz (mínimo de 10 por par de disciplinas)."
 msgstr "Ainda não há históricos anônimos suficientes desta matriz (mínimo de 10 por par de disciplinas)."
 
 #. placeholder {0}: dados.instituicao.sigla
-#: src/routes/importar/ImportarPdf.tsx:39
+#: src/routes/importar/ImportarPdf.tsx:30
 msgid "Ainda não há modelo de leitura de histórico para {0}. Use a entrada manual ou contribua com um modelo no registro."
 msgstr "Ainda não há modelo de leitura de histórico para {0}. Use a entrada manual ou contribua com um modelo no registro."
 
@@ -193,6 +206,10 @@ msgstr "Ainda não há turmas de {semestre} neste aparelho."
 #: src/routes/dados/CartaoConta.tsx:67
 msgid "Ainda não sincronizou."
 msgstr "Ainda não sincronizou."
+
+#: src/routes/Sobre.tsx:57
+msgid "Akademos é o herói ateniense dono do bosque de oliveiras onde Platão fundou a Academia."
+msgstr "Akademos é o herói ateniense dono do bosque de oliveiras onde Platão fundou a Academia."
 
 #: src/routes/Entrar.tsx:99
 msgid "Akademos neste aparelho"
@@ -211,11 +228,11 @@ msgstr "Alto"
 msgid "Anotei a frase num lugar seguro"
 msgstr "Anotei a frase num lugar seguro"
 
-#: src/routes/Dados.tsx:116
+#: src/routes/Dados.tsx:123
 msgid "Apagando…"
 msgstr "Apagando…"
 
-#: src/routes/Dados.tsx:116
+#: src/routes/Dados.tsx:123
 msgid "Apagar"
 msgstr "Apagar"
 
@@ -231,8 +248,8 @@ msgstr "Apagar conta"
 msgid "Apagar conta e dados do servidor"
 msgstr "Apagar conta e dados do servidor"
 
-#: src/routes/Dados.tsx:97
-#: src/routes/Dados.tsx:110
+#: src/routes/Dados.tsx:104
+#: src/routes/Dados.tsx:117
 msgid "Apagar dados deste aparelho"
 msgstr "Apagar dados deste aparelho"
 
@@ -244,7 +261,7 @@ msgstr "Apagar entrada"
 msgid "Apagar objetivo"
 msgstr "Apagar objetivo"
 
-#: src/routes/Dados.tsx:115
+#: src/routes/Dados.tsx:122
 msgid "Apagar todos os dados deste aparelho?"
 msgstr "Apagar todos os dados deste aparelho?"
 
@@ -262,11 +279,11 @@ msgstr "Aprovada"
 msgid "Aproveitada"
 msgstr "Aproveitada"
 
-#: src/layout/AppShell.tsx:144
+#: src/layout/AppShell.tsx:151
 msgid "Armazenamento indisponível: nada será guardado"
 msgstr "Armazenamento indisponível: nada será guardado"
 
-#: src/routes/importar/ImportarPdf.tsx:87
+#: src/routes/importar/ImportarPdf.tsx:77
 msgid "Arquivo PDF"
 msgstr "Arquivo PDF"
 
@@ -286,11 +303,15 @@ msgstr "Ativo: sua conta sincroniza os dados cifrados."
 msgid "Atualizar"
 msgstr "Atualizar"
 
-#: src/routes/Dados.tsx:79
+#: src/conectores/ConectorDesktop.tsx:193
+msgid "Atualizar oferta de {proximo}"
+msgstr "Atualizar oferta de {proximo}"
+
+#: src/routes/Dados.tsx:86
 msgid "Baixar tudo (JSON)"
 msgstr "Baixar tudo (JSON)"
 
-#: src/routes/importar/ImportarPdf.tsx:80
+#: src/routes/importar/ImportarPdf.tsx:70
 msgid "Baixe o histórico escolar no sistema da sua universidade e escolha o arquivo. A leitura acontece neste aparelho; o PDF não é enviado."
 msgstr "Baixe o histórico escolar no sistema da sua universidade e escolha o arquivo. A leitura acontece neste aparelho; o PDF não é enviado."
 
@@ -302,7 +323,7 @@ msgstr "Baixo"
 #. placeholder {1}: dados.cursadas.length
 #. placeholder {2}: dados.ofertas.length
 #. placeholder {3}: dados.planos.length
-#: src/routes/Dados.tsx:58
+#: src/routes/Dados.tsx:59
 msgid "Banco SQLite local em {0}. {1} cursadas, {2} turmas, {3} planos."
 msgstr "Banco SQLite local em {0}. {1} cursadas, {2} turmas, {3} planos."
 
@@ -334,12 +355,16 @@ msgstr "Bom dia, {primeiro}."
 msgid "Botões"
 msgstr "Botões"
 
+#: src/routes/Sobre.tsx:68
+msgid "Cada matriz e cada conector são mantidos por estudantes daquela universidade."
+msgstr "Cada matriz e cada conector são mantidos por estudantes daquela universidade."
+
 #: src/routes/Insights.tsx:30
 msgid "Calculados no seu aparelho. Comparações com a comunidade usam só históricos anônimos de quem optou por compartilhar."
 msgstr "Calculados no seu aparelho. Comparações com a comunidade usam só históricos anônimos de quem optou por compartilhar."
 
 #: src/routes/carreira/EditorObjetivo.tsx:147
-#: src/routes/Dados.tsx:117
+#: src/routes/Dados.tsx:124
 #: src/routes/dados/CartaoConta.tsx:88
 #: src/routes/planejar/NovaTurma.tsx:137
 msgid "Cancelar"
@@ -350,7 +375,7 @@ msgstr "Cancelar"
 msgid "Carga"
 msgstr "Carga"
 
-#: src/layout/AppShell.tsx:187
+#: src/layout/AppShell.tsx:194
 #: src/routes/Carreira.tsx:58
 #: src/routes/Carreira.tsx:71
 #: src/routes/Insights.tsx:21
@@ -361,13 +386,17 @@ msgstr "Carreira"
 msgid "Chave de acesso"
 msgstr "Chave de acesso"
 
-#: src/layout/AppShell.tsx:231
+#: src/layout/AppShell.tsx:238
 msgid "Cifrado · aguardando"
 msgstr "Cifrado · aguardando"
 
-#: src/layout/AppShell.tsx:229
+#: src/layout/AppShell.tsx:236
 msgid "Cifrado · sincronizado {quando}"
 msgstr "Cifrado · sincronizado {quando}"
+
+#: src/routes/Sobre.tsx:37
+msgid "Código aberto · licença MIT"
+msgstr "Código aberto · licença MIT"
 
 #: src/routes/Entrar.tsx:182
 msgid "Código aberto · qualquer universidade"
@@ -377,11 +406,19 @@ msgstr "Código aberto · qualquer universidade"
 msgid "Código-fonte"
 msgstr "Código-fonte"
 
+#: src/routes/Sobre.tsx:174
+msgid "Com conta, os dados são cifrados no aparelho (XChaCha20-Poly1305) com uma chave derivada da sua frase de recuperação. O servidor guarda só blobs ilegíveis."
+msgstr "Com conta, os dados são cifrados no aparelho (XChaCha20-Poly1305) com uma chave derivada da sua frase de recuperação. O servidor guarda só blobs ilegíveis."
+
 #. placeholder {0}: resumo.formatura
 #. placeholder {1}: resumo.formaturaIdeal
 #: src/routes/Planejar.tsx:301
 msgid "Com este plano, a formatura fica em {0}; o melhor possível é {1}."
 msgstr "Com este plano, a formatura fica em {0}; o melhor possível é {1}."
+
+#: src/routes/Sobre.tsx:50
+msgid "Começar com meu curso"
+msgstr "Começar com meu curso"
 
 #: src/routes/Importar.tsx:37
 msgid "Comece pelo seu curso"
@@ -396,11 +433,15 @@ msgstr "Como importar"
 msgid "Como quer ser chamada(o)"
 msgstr "Como quer ser chamada(o)"
 
+#: src/routes/Sobre.tsx:185
+msgid "Compartilhar com a comunidade é opcional (consentimento, LGPD art. 7º, I). Agregados só são publicados com pelo menos 10 históricos por célula e com ruído estatístico."
+msgstr "Compartilhar com a comunidade é opcional (consentimento, LGPD art. 7º, I). Agregados só são publicados com pelo menos 10 históricos por célula e com ruído estatístico."
+
 #: src/routes/Kit.tsx:210
 msgid "Compartilhar históricos anônimos"
 msgstr "Compartilhar históricos anônimos"
 
-#: src/routes/importar/PassoPrivacidade.tsx:40
+#: src/comunidade/InterruptorComunidade.tsx:24
 msgid "Compartilhar meu histórico anonimamente com a comunidade"
 msgstr "Compartilhar meu histórico anonimamente com a comunidade"
 
@@ -413,7 +454,15 @@ msgstr "Competência {0}"
 msgid "Computação"
 msgstr "Computação"
 
-#: src/routes/importar/PassoPrivacidade.tsx:50
+#: src/routes/Dados.tsx:70
+msgid "Comunidade"
+msgstr "Comunidade"
+
+#: src/routes/Sobre.tsx:107
+msgid "Comunidade, de forma anônima"
+msgstr "Comunidade, de forma anônima"
+
+#: src/routes/importar/PassoPrivacidade.tsx:40
 msgid "Concluir"
 msgstr "Concluir"
 
@@ -466,8 +515,8 @@ msgstr "Conta e sincronização"
 
 #: src/routes/Entrar.tsx:428
 #: src/routes/Entrar.tsx:536
-#: src/routes/importar/ImportarPdf.tsx:280
 #: src/routes/importar/PassoCurso.tsx:103
+#: src/routes/importar/RevisaoHistorico.tsx:200
 msgid "Continuar"
 msgstr "Continuar"
 
@@ -487,17 +536,29 @@ msgstr "Cores"
 msgid "Correlação"
 msgstr "Correlação"
 
+#: src/routes/Sobre.tsx:110
+msgid "Correlações e previsões só existem porque alunos optam por compartilhar históricos sem identificação."
+msgstr "Correlações e previsões só existem porque alunos optam por compartilhar históricos sem identificação."
+
 #: src/routes/Desempenho.tsx:237
 msgid "Correlações na sua matriz"
 msgstr "Correlações na sua matriz"
 
-#: src/routes/importar/ImportarPdf.tsx:187
+#: src/routes/importar/RevisaoHistorico.tsx:107
 msgid "Correspondência na matriz"
 msgstr "Correspondência na matriz"
+
+#: src/routes/Sobre.tsx:180
+msgid "Credenciais da universidade nunca saem do aparelho; conectores rodam nele."
+msgstr "Credenciais da universidade nunca saem do aparelho; conectores rodam nele."
 
 #: src/routes/Planejar.tsx:143
 msgid "Créditos"
 msgstr "Créditos"
+
+#: src/routes/Sobre.tsx:121
+msgid "Créditos, faixas, séries ou semestres, regras de aprovação: tudo vem dos dados, nada do código."
+msgstr "Créditos, faixas, séries ou semestres, regras de aprovação: tudo vem dos dados, nada do código."
 
 #: src/routes/Entrar.tsx:197
 #: src/routes/Entrar.tsx:202
@@ -528,7 +589,7 @@ msgstr "Cursando"
 msgid "Dados de demonstração."
 msgstr "Dados de demonstração."
 
-#: src/layout/AppShell.tsx:140
+#: src/layout/AppShell.tsx:147
 msgid "Dados neste aparelho"
 msgstr "Dados neste aparelho"
 
@@ -548,7 +609,7 @@ msgstr "Definir objetivo"
 msgid "Desativado"
 msgstr "Desativado"
 
-#: src/layout/AppShell.tsx:186
+#: src/layout/AppShell.tsx:193
 #: src/routes/Desempenho.tsx:83
 msgid "Desempenho"
 msgstr "Desempenho"
@@ -593,7 +654,7 @@ msgstr "Digite as palavras pedidas para mostrar que você anotou."
 
 #: src/routes/Desempenho.tsx:188
 #: src/routes/importar/ImportarManual.tsx:131
-#: src/routes/importar/ImportarPdf.tsx:178
+#: src/routes/importar/RevisaoHistorico.tsx:98
 #: src/routes/planejar/NovaTurma.tsx:69
 msgid "Disciplina"
 msgstr "Disciplina"
@@ -612,7 +673,7 @@ msgstr "Disponível"
 
 #. placeholder {0}: l.correspondencia.sugestao.codigo
 #. placeholder {1}: l.correspondencia.sugestao.nome
-#: src/routes/importar/ImportarPdf.tsx:244
+#: src/routes/importar/RevisaoHistorico.tsx:164
 msgid "É {0} · {1}"
 msgstr "É {0} · {1}"
 
@@ -648,7 +709,11 @@ msgstr "eletiva {0}"
 msgid "Entrada manual"
 msgstr "Entrada manual"
 
-#: src/layout/AppShell.tsx:90
+#: src/conectores/ConectorDesktop.tsx:91
+msgid "Entrando…"
+msgstr "Entrando…"
+
+#: src/layout/AppShell.tsx:97
 #: src/routes/Entrar.tsx:196
 #: src/routes/Entrar.tsx:291
 #: src/routes/Kit.tsx:196
@@ -659,6 +724,11 @@ msgstr "Entrar"
 msgid "Entrar ou criar conta"
 msgstr "Entrar ou criar conta"
 
+#. placeholder {0}: dados.instituicao.sistema.toUpperCase()
+#: src/conectores/ConectorDesktop.tsx:178
+msgid "Entrar pelo {0}"
+msgstr "Entrar pelo {0}"
+
 #: src/routes/importar/PainelConector.tsx:59
 msgid "Entrar pelo {sistema}"
 msgstr "Entrar pelo {sistema}"
@@ -667,9 +737,13 @@ msgstr "Entrar pelo {sistema}"
 msgid "Entre para sincronizar seu percurso entre aparelhos."
 msgstr "Entre para sincronizar seu percurso entre aparelhos."
 
+#: src/comunidade/InterruptorComunidade.tsx:27
+msgid "Envia só notas por disciplina desta matriz (0–10, arredondadas a 0,5), sem nome, matrícula, conta ou semestre. Os agregados só são publicados com pelo menos 10 históricos por célula. Desligar apaga a contribuição."
+msgstr "Envia só notas por disciplina desta matriz (0–10, arredondadas a 0,5), sem nome, matrícula, conta ou semestre. Os agregados só são publicados com pelo menos 10 históricos por célula. Desligar apaga a contribuição."
+
 #: src/routes/importar/PassoPrivacidade.tsx:43
-msgid "Envia só notas por disciplina desta matriz, sem nome, matrícula ou conta. Os agregados só são publicados com pelo menos 10 históricos por célula."
-msgstr "Envia só notas por disciplina desta matriz, sem nome, matrícula ou conta. Os agregados só são publicados com pelo menos 10 históricos por célula."
+#~ msgid "Envia só notas por disciplina desta matriz, sem nome, matrícula ou conta. Os agregados só são publicados com pelo menos 10 históricos por célula."
+#~ msgstr "Envia só notas por disciplina desta matriz, sem nome, matrícula ou conta. Os agregados só são publicados com pelo menos 10 históricos por célula."
 
 #. placeholder {0}: etapa.email
 #: src/routes/Entrar.tsx:337
@@ -696,6 +770,10 @@ msgstr "Escolha uma turma reserva."
 msgid "Escreva o que você espera a cada semestre. O Akademos mostra como isso mudou."
 msgstr "Escreva o que você espera a cada semestre. O Akademos mostra como isso mudou."
 
+#: src/conectores/ConectorDesktop.tsx:184
+msgid "Esquecer credencial guardada"
+msgstr "Esquecer credencial guardada"
+
 #: src/routes/Entrar.tsx:285
 msgid "Esqueci"
 msgstr "Esqueci"
@@ -708,11 +786,15 @@ msgstr "Esta conta já sincroniza dados. Digite as 12 palavras para decifrá-los
 msgid "Esta publicação não tem servidor de sincronização. Você pode usar tudo sem conta; os dados ficam neste aparelho."
 msgstr "Esta publicação não tem servidor de sincronização. Você pode usar tudo sem conta; os dados ficam neste aparelho."
 
+#: src/comunidade/InterruptorComunidade.tsx:35
+msgid "Esta publicação não tem servidor: nada será enviado."
+msgstr "Esta publicação não tem servidor: nada será enviado."
+
 #: src/routes/Inicio.tsx:64
 msgid "Esta semana"
 msgstr "Esta semana"
 
-#: src/routes/importar/ImportarPdf.tsx:49
+#: src/routes/importar/ImportarPdf.tsx:40
 msgid "Este PDF é uma imagem digitalizada, sem texto. Baixe o histórico direto do sistema da universidade (PDF com texto) ou use a entrada manual."
 msgstr "Este PDF é uma imagem digitalizada, sem texto. Baixe o histórico direto do sistema da universidade (PDF com texto) ou use a entrada manual."
 
@@ -754,7 +836,7 @@ msgstr "Explorar com a aluna de exemplo (dados fictícios) →"
 #~ msgid "Explorar com dados de exemplo"
 #~ msgstr "Explorar com dados de exemplo"
 
-#: src/routes/Dados.tsx:69
+#: src/routes/Dados.tsx:76
 msgid "Exportar"
 msgstr "Exportar"
 
@@ -771,11 +853,12 @@ msgstr "Falta: {0}"
 msgid "Fechar"
 msgstr "Fechar"
 
-#: src/layout/AppShell.tsx:57
+#: src/layout/AppShell.tsx:77
 msgid "Feche a outra aba e recarregue esta página. Os dados ficam num só arquivo neste navegador."
 msgstr "Feche a outra aba e recarregue esta página. Os dados ficam num só arquivo neste navegador."
 
 #: src/routes/importar/PassoCurso.tsx:67
+#: src/routes/Sobre.tsx:24
 msgid "fictícia"
 msgstr "fictícia"
 
@@ -804,6 +887,10 @@ msgstr "geral <0>{0}</0>"
 msgid "Gerando a chave…"
 msgstr "Gerando a chave…"
 
+#: src/conectores/ConectorDesktop.tsx:175
+msgid "Guardar no chaveiro do sistema deste computador"
+msgstr "Guardar no chaveiro do sistema deste computador"
+
 #: src/layout/AvisoAtualizacao.tsx:35
 msgid "Há uma versão nova do Akademos."
 msgstr "Há uma versão nova do Akademos."
@@ -812,15 +899,24 @@ msgstr "Há uma versão nova do Akademos."
 msgid "Histórico"
 msgstr "Histórico"
 
-#: src/routes/Dados.tsx:91
+#: src/routes/Dados.tsx:98
 msgid "Histórico (CSV)"
 msgstr "Histórico (CSV)"
+
+#. placeholder {0}: dados.instituicao.sigla
+#: src/conectores/ConectorDesktop.tsx:143
+msgid "Histórico lido do {0} neste aparelho"
+msgstr "Histórico lido do {0} neste aparelho"
+
+#: src/routes/Sobre.tsx:27
+msgid "Histórico, oferta e lotação"
+msgstr "Histórico, oferta e lotação"
 
 #: src/routes/Entrar.tsx:165
 msgid "Histórico, planejamento de matrícula e previsões calculadas no seu aparelho. Seus dados não saem dele sem você pedir."
 msgstr "Histórico, planejamento de matrícula e previsões calculadas no seu aparelho. Seus dados não saem dele sem você pedir."
 
-#: src/routes/Dados.tsx:122
+#: src/routes/Dados.tsx:129
 msgid "Histórico, planos, objetivos e diário serão removidos deste navegador. Esta ação não pode ser desfeita."
 msgstr "Histórico, planos, objetivos e diário serão removidos deste navegador. Esta ação não pode ser desfeita."
 
@@ -832,13 +928,13 @@ msgstr "Horários"
 msgid "Horas na semana"
 msgstr "Horas na semana"
 
-#: src/layout/AppShell.tsx:160
+#: src/layout/AppShell.tsx:167
 msgid "Importar"
 msgstr "Importar"
 
 #. placeholder {0}: l.correspondencia.disciplina.codigo
 #. placeholder {1}: l.correspondencia.disciplina.nome
-#: src/routes/importar/ImportarPdf.tsx:233
+#: src/routes/importar/RevisaoHistorico.tsx:153
 msgid "Importar como {0} · {1}"
 msgstr "Importar como {0} · {1}"
 
@@ -850,15 +946,19 @@ msgstr "Indicadores"
 msgid "Informe seu e-mail institucional."
 msgstr "Informe seu e-mail institucional."
 
+#: src/conectores/ConectorDesktop.tsx:97
+msgid "Informe usuário e senha."
+msgstr "Informe usuário e senha."
+
 #: src/routes/importar/PassoCurso.tsx:81
 msgid "Ingresso"
 msgstr "Ingresso"
 
-#: src/layout/AppShell.tsx:182
+#: src/layout/AppShell.tsx:189
 msgid "Início"
 msgstr "Início"
 
-#: src/layout/AppShell.tsx:185
+#: src/layout/AppShell.tsx:192
 #: src/routes/Insights.tsx:27
 msgid "Insights"
 msgstr "Insights"
@@ -876,7 +976,7 @@ msgstr "Integralizado"
 msgid "Interessados"
 msgstr "Interessados"
 
-#: src/routes/Dados.tsx:72
+#: src/routes/Dados.tsx:79
 msgid "JSON com todas as tabelas (para levar a outro aparelho ou guardar) e CSV do histórico (para planilhas)."
 msgstr "JSON com todas as tabelas (para levar a outro aparelho ou guardar) e CSV do histórico (para planilhas)."
 
@@ -905,13 +1005,29 @@ msgid "Leitura no aparelho. Reconhece códigos e notas e casa com a matriz."
 msgstr "Leitura no aparelho. Reconhece códigos e notas e casa com a matriz."
 
 #. placeholder {0}: estado.arquivo
-#: src/routes/importar/ImportarPdf.tsx:101
+#: src/routes/importar/ImportarPdf.tsx:91
 msgid "Lendo {0}…"
 msgstr "Lendo {0}…"
+
+#: src/conectores/ConectorDesktop.tsx:113
+msgid "Lendo a oferta de {proximo}…"
+msgstr "Lendo a oferta de {proximo}…"
+
+#: src/conectores/ConectorDesktop.tsx:107
+msgid "Lendo o histórico…"
+msgstr "Lendo o histórico…"
+
+#: src/conectores/ConectorDesktop.tsx:190
+msgid "Ler histórico"
+msgstr "Ler histórico"
 
 #: src/routes/Planejar.tsx:262
 msgid "livre"
 msgstr "livre"
+
+#: src/routes/Sobre.tsx:97
+msgid "Local primeiro"
+msgstr "Local primeiro"
 
 #: src/routes/Entrar.tsx:174
 msgid "Local primeiro — funciona offline"
@@ -940,6 +1056,10 @@ msgstr "Mantém histórico, oferta e lotação de turmas sempre atualizados."
 #: src/routes/Inicio.tsx:59
 msgid "mantida se {0} entrar em {1}"
 msgstr "mantida se {0} entrar em {1}"
+
+#: src/routes/Sobre.tsx:133
+msgid "Mantido por quem usa"
+msgstr "Mantido por quem usa"
 
 #: src/routes/importar/PainelConector.tsx:29
 msgid "Mantido por voluntários da comunidade. Você entra com o seu usuário da universidade; o Akademos só lê histórico, oferta de turmas e pré-matrícula, e nunca guarda sua senha."
@@ -984,6 +1104,14 @@ msgstr "matriz {0}"
 msgid "Matriz {0} · {1} créditos · clique numa disciplina para ver o que ela exige e o que destrava"
 msgstr "Matriz {0} · {1} créditos · clique numa disciplina para ver o que ela exige e o que destrava"
 
+#: src/routes/Sobre.tsx:30
+msgid "Matriz pronta · entrada manual"
+msgstr "Matriz pronta · entrada manual"
+
+#: src/routes/Sobre.tsx:43
+msgid "Matriz, horário, notas, turmas e carreira, conectados entre si e com o sistema da sua universidade. Funciona com qualquer curso. Seus dados ficam no seu aparelho."
+msgstr "Matriz, horário, notas, turmas e carreira, conectados entre si e com o sistema da sua universidade. Funciona com qualquer curso. Seus dados ficam no seu aparelho."
+
 #: src/routes/Kit.tsx:160
 msgid "Média"
 msgstr "Média"
@@ -1009,6 +1137,11 @@ msgstr "Média por semestre"
 msgid "Menor chance de vaga no plano: {0}%."
 msgstr "Menor chance de vaga no plano: {0}%."
 
+#. placeholder {0}: m.alvo
+#: src/routes/Sobre.tsx:148
+msgid "meta: {0}"
+msgstr "meta: {0}"
+
 #: src/componentes/risco.ts:15
 msgid "Moderado"
 msgstr "Moderado"
@@ -1017,7 +1150,7 @@ msgstr "Moderado"
 msgid "Modo"
 msgstr "Modo"
 
-#: src/layout/AppShell.tsx:156
+#: src/layout/AppShell.tsx:163
 msgid "Mostrar notas"
 msgstr "Mostrar notas"
 
@@ -1042,7 +1175,7 @@ msgstr "Não destrava nenhuma."
 msgid "Não é exigida por nenhuma outra disciplina."
 msgstr "Não é exigida por nenhuma outra disciplina."
 
-#: src/layout/AppShell.tsx:53
+#: src/layout/AppShell.tsx:73
 msgid "Não foi possível abrir os dados locais"
 msgstr "Não foi possível abrir os dados locais"
 
@@ -1050,25 +1183,25 @@ msgstr "Não foi possível abrir os dados locais"
 msgid "Não foi possível entrar."
 msgstr "Não foi possível entrar."
 
-#: src/routes/importar/ImportarPdf.tsx:230
+#: src/routes/importar/RevisaoHistorico.tsx:150
 msgid "Não importar"
 msgstr "Não importar"
 
 #. placeholder {0}: modelo.sistema.toUpperCase()
 #. placeholder {1}: dados.instituicao.sigla
-#: src/routes/importar/ImportarPdf.tsx:57
+#: src/routes/importar/ImportarPdf.tsx:48
 msgid "Não reconhecemos nenhuma disciplina neste PDF. Confira se é o histórico do {0} da {1}."
 msgstr "Não reconhecemos nenhuma disciplina neste PDF. Confira se é o histórico do {0} da {1}."
 
-#: src/layout/AppShell.tsx:83
+#: src/layout/AppShell.tsx:90
 msgid "Navegação"
 msgstr "Navegação"
 
-#: src/layout/AppShell.tsx:118
+#: src/layout/AppShell.tsx:125
 msgid "Navegação principal"
 msgstr "Navegação principal"
 
-#: src/routes/Insights.tsx:50
+#: src/routes/Insights.tsx:59
 msgid "Nenhum insight deste tipo agora."
 msgstr "Nenhum insight deste tipo agora."
 
@@ -1084,11 +1217,11 @@ msgstr "Nenhuma disciplina em curso neste semestre."
 msgid "Nenhuma disciplina em curso."
 msgstr "Nenhuma disciplina em curso."
 
-#: src/routes/Insights.tsx:37
+#: src/routes/Insights.tsx:46
 msgid "Nesta matriz fictícia, os dados da comunidade são de demonstração."
 msgstr "Nesta matriz fictícia, os dados da comunidade são de demonstração."
 
-#: src/routes/importar/ImportarPdf.tsx:175
+#: src/routes/importar/RevisaoHistorico.tsx:95
 msgid "No PDF"
 msgstr "No PDF"
 
@@ -1107,7 +1240,7 @@ msgid "Nome"
 msgstr "Nome"
 
 #: src/routes/importar/ImportarManual.tsx:134
-#: src/routes/importar/ImportarPdf.tsx:184
+#: src/routes/importar/RevisaoHistorico.tsx:104
 msgid "Nota"
 msgstr "Nota"
 
@@ -1132,6 +1265,10 @@ msgstr "Nota inválida em {0}: use de {1} a {2}."
 msgid "Nota prevista"
 msgstr "Nota prevista"
 
+#: src/routes/Sobre.tsx:100
+msgid "Notas e histórico ficam no aparelho. Sincronizar é opcional e criptografado."
+msgstr "Notas e histórico ficam no aparelho. Sincronizar é opcional e criptografado."
+
 #: src/routes/Carreira.tsx:291
 msgid "Nova entrada"
 msgstr "Nova entrada"
@@ -1148,7 +1285,11 @@ msgstr "Novo marco"
 msgid "Novo objetivo"
 msgstr "Novo objetivo"
 
-#: src/layout/AppShell.tsx:52
+#: src/routes/Sobre.tsx:204
+msgid "O Akademos é software livre (licença MIT), oferecido sem garantia. Previsões e insights são estimativas para ajudar a decidir, não substituem as regras oficiais do seu curso. Conectores acessam o sistema da universidade com a sua credencial e em seu nome: use-os de acordo com as regras da sua instituição."
+msgstr "O Akademos é software livre (licença MIT), oferecido sem garantia. Previsões e insights são estimativas para ajudar a decidir, não substituem as regras oficiais do seu curso. Conectores acessam o sistema da universidade com a sua credencial e em seu nome: use-os de acordo com as regras da sua instituição."
+
+#: src/layout/AppShell.tsx:72
 msgid "O Akademos está aberto em outra aba"
 msgstr "O Akademos está aberto em outra aba"
 
@@ -1157,7 +1298,7 @@ msgid "O endereço não corresponde a nenhuma tela do Akademos."
 msgstr "O endereço não corresponde a nenhuma tela do Akademos."
 
 #. placeholder {0}: l.bruta.nome
-#: src/routes/importar/ImportarPdf.tsx:215
+#: src/routes/importar/RevisaoHistorico.tsx:135
 msgid "O que fazer com {0}"
 msgstr "O que fazer com {0}"
 
@@ -1186,7 +1327,7 @@ msgstr "Objetivo"
 msgid "Objetivo principal"
 msgstr "Objetivo principal"
 
-#: src/layout/AppShell.tsx:156
+#: src/layout/AppShell.tsx:163
 msgid "Ocultar notas"
 msgstr "Ocultar notas"
 
@@ -1201,7 +1342,7 @@ msgstr "Oferta de turmas"
 msgid "Oferta e pré-matrícula lidas do {sistema} {0}{1} · sua prioridade: {FAIXA_PRIORIDADE}ª faixa (regular, {2}% integralizado)"
 msgstr "Oferta e pré-matrícula lidas do {sistema} {0}{1} · sua prioridade: {FAIXA_PRIORIDADE}ª faixa (regular, {2}% integralizado)"
 
-#: src/routes/Dados.tsx:54
+#: src/routes/Dados.tsx:55
 msgid "Onde estão"
 msgstr "Onde estão"
 
@@ -1209,7 +1350,7 @@ msgstr "Onde estão"
 msgid "ou com e-mail"
 msgstr "ou com e-mail"
 
-#: src/routes/importar/ImportarPdf.tsx:277
+#: src/routes/importar/ImportarPdf.tsx:118
 msgid "Outro arquivo"
 msgstr "Outro arquivo"
 
@@ -1238,12 +1379,16 @@ msgstr "Passo 3 de 3"
 msgid "Patrocinar"
 msgstr "Patrocinar"
 
+#: src/routes/Sobre.tsx:140
+msgid "Patrocinar no GitHub"
+msgstr "Patrocinar no GitHub"
+
 #: src/routes/Importar.tsx:87
-#: src/routes/importar/ImportarPdf.tsx:77
+#: src/routes/importar/ImportarPdf.tsx:67
 msgid "PDF do histórico"
 msgstr "PDF do histórico"
 
-#: src/layout/AppShell.tsx:183
+#: src/layout/AppShell.tsx:190
 #: src/routes/Percurso.tsx:96
 msgid "Percurso"
 msgstr "Percurso"
@@ -1257,7 +1402,7 @@ msgstr "Percurso"
 msgid "Planejar {0}"
 msgstr "Planejar {0}"
 
-#: src/layout/AppShell.tsx:184
+#: src/layout/AppShell.tsx:191
 msgid "Planejar {proximo}"
 msgstr "Planejar {proximo}"
 
@@ -1309,6 +1454,7 @@ msgstr "Primário"
 
 #: src/routes/Entrar.tsx:319
 #: src/routes/importar/PassoPrivacidade.tsx:13
+#: src/routes/Sobre.tsx:165
 msgid "Privacidade"
 msgstr "Privacidade"
 
@@ -1328,7 +1474,7 @@ msgstr "Pronto para funcionar offline."
 msgid "Próximo passo: privacidade. Por padrão, tudo fica neste aparelho. Sincronizar entre aparelhos e compartilhar históricos anônimos com a comunidade são opcionais e você pode desligar quando quiser."
 msgstr "Próximo passo: privacidade. Por padrão, tudo fica neste aparelho. Sincronizar entre aparelhos e compartilhar históricos anônimos com a comunidade são opcionais e você pode desligar quando quiser."
 
-#: src/layout/AppShell.tsx:68
+#: src/layout/AppShell.tsx:52
 msgid "Pular para o conteúdo"
 msgstr "Pular para o conteúdo"
 
@@ -1339,6 +1485,10 @@ msgstr "Pular para privacidade"
 #: src/routes/Carreira.tsx:134
 msgid "Qual é o seu objetivo?"
 msgstr "Qual é o seu objetivo?"
+
+#: src/routes/Sobre.tsx:118
+msgid "Qualquer matriz"
+msgstr "Qualquer matriz"
 
 #. placeholder {0}: curso.nome
 #. placeholder {1}: instituicao.sigla
@@ -1358,7 +1508,7 @@ msgstr "quinta"
 msgid "Registrar"
 msgstr "Registrar"
 
-#: src/routes/Dados.tsx:100
+#: src/routes/Dados.tsx:107
 msgid "Remove o banco local deste navegador. Se você não tem conta com sincronização, não há outra cópia: exporte antes."
 msgstr "Remove o banco local deste navegador. Se você não tem conta com sincronização, não há outra cópia: exporte antes."
 
@@ -1375,12 +1525,12 @@ msgstr "Remover competência"
 msgid "Reprovada"
 msgstr "Reprovada"
 
-#: src/layout/AppShell.tsx:197
+#: src/layout/AppShell.tsx:204
 msgid "requer atenção"
 msgstr "requer atenção"
 
 #. placeholder {0}: paraRevisar.length
-#: src/routes/importar/ImportarPdf.tsx:273
+#: src/routes/importar/RevisaoHistorico.tsx:193
 msgid "Revisar {0}"
 msgstr "Revisar {0}"
 
@@ -1406,7 +1556,7 @@ msgstr "Rótulo de seção"
 msgid "sábado"
 msgstr "sábado"
 
-#: src/layout/AppShell.tsx:163
+#: src/layout/AppShell.tsx:170
 msgid "Sair"
 msgstr "Sair"
 
@@ -1441,11 +1591,19 @@ msgstr "Sem {0}, {1} fica para depois e a formatura passa para {2}."
 msgid "Sem a frase, os dados sincronizados não podem ser recuperados em outro aparelho — nem por nós."
 msgstr "Sem a frase, os dados sincronizados não podem ser recuperados em outro aparelho — nem por nós."
 
-#: src/layout/AppShell.tsx:216
+#: src/routes/Sobre.tsx:136
+msgid "Sem anúncios e sem venda de dados. O projeto vive de patrocínio."
+msgstr "Sem anúncios e sem venda de dados. O projeto vive de patrocínio."
+
+#: src/layout/AppShell.tsx:223
 msgid "Sem conta · nada sai daqui"
 msgstr "Sem conta · nada sai daqui"
 
-#: src/routes/importar/ImportarPdf.tsx:123
+#: src/routes/Sobre.tsx:169
+msgid "Sem conta, nada sai do seu aparelho: o banco é um SQLite no próprio navegador ou app."
+msgstr "Sem conta, nada sai do seu aparelho: o banco é um SQLite no próprio navegador ou app."
+
+#: src/routes/importar/RevisaoHistorico.tsx:50
 msgid "Sem equivalente: usar como eletiva?"
 msgstr "Sem equivalente: usar como eletiva?"
 
@@ -1462,7 +1620,7 @@ msgid "sem previsão"
 msgstr "sem previsão"
 
 #. placeholder {0}: sync.mensagem
-#: src/layout/AppShell.tsx:225
+#: src/layout/AppShell.tsx:232
 msgid "Sem sincronizar · {0}"
 msgstr "Sem sincronizar · {0}"
 
@@ -1480,7 +1638,7 @@ msgstr "semana sem folga"
 
 #: src/routes/Carreira.tsx:229
 #: src/routes/importar/ImportarManual.tsx:137
-#: src/routes/importar/ImportarPdf.tsx:181
+#: src/routes/importar/RevisaoHistorico.tsx:101
 msgid "Semestre"
 msgstr "Semestre"
 
@@ -1493,6 +1651,7 @@ msgstr "Semestre da matriz"
 msgid "Semestre em que cursou {0}"
 msgstr "Semestre em que cursou {0}"
 
+#: src/conectores/ConectorDesktop.tsx:168
 #: src/routes/Entrar.tsx:271
 msgid "Senha"
 msgstr "Senha"
@@ -1509,7 +1668,11 @@ msgstr "Seu curso não está na lista? A matriz é um arquivo YAML no registro; 
 msgid "Seu percurso acadêmico, do primeiro semestre à formatura."
 msgstr "Seu percurso acadêmico, do primeiro semestre à formatura."
 
-#: src/routes/Dados.tsx:44
+#: src/routes/Sobre.tsx:40
+msgid "Seu percurso na graduação, num só lugar que é seu."
+msgstr "Seu percurso na graduação, num só lugar que é seu."
+
+#: src/routes/Dados.tsx:45
 msgid "Seus dados"
 msgstr "Seus dados"
 
@@ -1530,11 +1693,11 @@ msgid "Sincronização opcional e criptografada"
 msgstr "Sincronização opcional e criptografada"
 
 #. placeholder {0}: sync.mensagem
-#: src/layout/AppShell.tsx:221
+#: src/layout/AppShell.tsx:228
 msgid "Sincronizado {quando} · {0}"
 msgstr "Sincronizado {quando} · {0}"
 
-#: src/layout/AppShell.tsx:217
+#: src/layout/AppShell.tsx:224
 #: src/routes/dados/CartaoConta.tsx:63
 msgid "Sincronizando…"
 msgstr "Sincronizando…"
@@ -1551,18 +1714,25 @@ msgstr "Sincronizar entre aparelhos"
 msgid "Sincronizar entre aparelhos, com criptografia de ponta a ponta"
 msgstr "Sincronizar entre aparelhos, com criptografia de ponta a ponta"
 
+#: src/routes/Sobre.tsx:21
+msgid "Sistema próprio"
+msgstr "Sistema próprio"
+
 #. placeholder {0}: l.bruta.situacaoOriginal
-#: src/routes/importar/ImportarPdf.tsx:127
+#: src/routes/importar/RevisaoHistorico.tsx:54
 msgid "Situação \"{0}\" desconhecida"
 msgstr "Situação \"{0}\" desconhecida"
+
+#: src/routes/Sobre.tsx:29
+msgid "Só histórico (PDF)"
+msgstr "Só histórico (PDF)"
 
 #: src/routes/importar/PassoCurso.tsx:107
 msgid "Só quero explorar: carregar a aluna de exemplo (fictícia) →"
 msgstr "Só quero explorar: carregar a aluna de exemplo (fictícia) →"
 
-#: src/layout/AppShell.tsx:93
-#: src/layout/AppShell.tsx:166
-#: src/routes/Sobre.tsx:5
+#: src/layout/AppShell.tsx:100
+#: src/layout/AppShell.tsx:173
 msgid "Sobre e apoio"
 msgstr "Sobre e apoio"
 
@@ -1580,6 +1750,10 @@ msgstr "Sua nota {0} → prevista <0>{1}</0>"
 msgid "Sua semana"
 msgstr "Sua semana"
 
+#: src/routes/Sobre.tsx:84
+msgid "Sua universidade"
+msgstr "Sua universidade"
+
 #. placeholder {0}: sel.semestreSugerido
 #: src/routes/Percurso.tsx:197
 msgid "sugerida no {0}º semestre"
@@ -1590,6 +1764,10 @@ msgstr "sugerida no {0}º semestre"
 msgid "Sugestão: {rotulo} em {0}"
 msgstr "Sugestão: {rotulo} em {0}"
 
+#: src/routes/Sobre.tsx:157
+msgid "Também por <0>PIX</0>."
+msgstr "Também por <0>PIX</0>."
+
 #: src/layout/ErroDeTela.tsx:16
 msgid "Tentar de novo"
 msgstr "Tentar de novo"
@@ -1599,6 +1777,7 @@ msgid "terça"
 msgstr "terça"
 
 #: src/routes/Entrar.tsx:322
+#: src/routes/Sobre.tsx:201
 msgid "Termos"
 msgstr "Termos"
 
@@ -1606,7 +1785,7 @@ msgstr "Termos"
 msgid "Tipo"
 msgstr "Tipo"
 
-#: src/routes/Insights.tsx:43
+#: src/routes/Insights.tsx:52
 msgid "Tipo de insight"
 msgstr "Tipo de insight"
 
@@ -1648,7 +1827,7 @@ msgstr "Trocar de curso"
 msgid "Tudo funciona offline. Você pode criar uma conta depois para sincronizar."
 msgstr "Tudo funciona offline. Você pode criar uma conta depois para sincronizar."
 
-#: src/routes/Dados.tsx:46
+#: src/routes/Dados.tsx:47
 msgid "Tudo o que o Akademos sabe sobre você está neste aparelho. Leve com você ou apague quando quiser."
 msgstr "Tudo o que o Akademos sabe sobre você está neste aparelho. Leve com você ou apague quando quiser."
 
@@ -1660,15 +1839,23 @@ msgstr "Turma"
 msgid "Última sincronização {ultima}."
 msgstr "Última sincronização {ultima}."
 
+#: src/routes/Sobre.tsx:65
+msgid "Universidades conectadas"
+msgstr "Universidades conectadas"
+
 #. placeholder {0}: e.codigo
 #. placeholder {1}: e.nome
-#: src/routes/importar/ImportarPdf.tsx:239
+#: src/routes/importar/RevisaoHistorico.tsx:159
 msgid "Usar como {0} · {1}"
 msgstr "Usar como {0} · {1}"
 
 #: src/routes/Entrar.tsx:301
 msgid "Usar sem conta, só neste aparelho →"
 msgstr "Usar sem conta, só neste aparelho →"
+
+#: src/conectores/ConectorDesktop.tsx:162
+msgid "Usuário do sistema"
+msgstr "Usuário do sistema"
 
 #: src/routes/planejar/NovaTurma.tsx:86
 msgid "Vagas"
@@ -1677,6 +1864,14 @@ msgstr "Vagas"
 #: src/routes/Entrar.tsx:485
 msgid "Ver a frase de novo"
 msgstr "Ver a frase de novo"
+
+#: src/comunidade/InterruptorComunidade.tsx:42
+msgid "Ver exatamente o que seria enviado"
+msgstr "Ver exatamente o que seria enviado"
+
+#: src/routes/Sobre.tsx:53
+msgid "Ver no GitHub"
+msgstr "Ver no GitHub"
 
 #. placeholder {0}: a.proximoSemestre
 #: src/routes/Percurso.tsx:190
@@ -1699,6 +1894,10 @@ msgstr "Você está no começo do curso."
 msgid "Você já passou do primeiro terço do curso."
 msgstr "Você já passou do primeiro terço do curso."
 
+#: src/routes/Sobre.tsx:191
+msgid "Você pode exportar tudo (JSON e CSV) e apagar os dados do aparelho ou a conta a qualquer momento, em Seus dados."
+msgstr "Você pode exportar tudo (JSON e CSV) e apagar os dados do aparelho ou a conta a qualquer momento, em Seus dados."
+
 #. placeholder {0}: import { desnormalizarNota, disciplinaQueCruzaAreas, formatarInteiro, formatarNota, normalizarNota, } from '@akademos/core'; import { Card, PageHeader, ProgressBar } from '@akademos/ui'; import { plural } from '@lingui/core/macro'; import { Trans, useLingui } from '@lingui/react/macro'; import { COR_RISCO, rotuloRisco } from '../componentes/risco'; import { useAnalise } from '../dados/analise'; import { useFormatoNota } from '../dados/formato'; import s from './Desempenho.module.css'; function corDaMedia(m10: number): string { return m10 >= 8 ? 'var(--olive-ink)' : m10 >= 7 ? 'var(--primary)' : 'var(--amber-ink)'; } export function Desempenho() { const { t } = useLingui(); const a = useAnalise(); const fmt = useFormatoNota(); const { escala, matriz, cursadas, curso, instituicao } = a.dados; const n10 = (n: number) => normalizarNota(n, escala); // Barra projetada do semestre em curso: centro das faixas previstas. const previstas = [...a.previsoes.values()]; const projecao = previstas.length ? previstas.reduce((s, p) => s + (p.intervalo.min + p.intervalo.max) / 2, 0) / previstas.length : null; const barras = [ ...a.mediasSemestre.map((m) => ({ rotulo: m.semestre, valor: n10(m.media), exibido: m.media, projetada: false, })), ...(projecao !== null ? [ { rotulo: a.semestreAtual, valor: projecao, exibido: desnormalizarNota(projecao, escala), projetada: true, }, ] : []), ]; const areas = [...a.mediasArea].map((m) => ({ ...m, m10: n10(m.media) })); // Comparação só entre áreas com notas suficientes para dizer algo. const notasPorArea = (area: string) => cursadas.filter( (c) => c.nota !== null && matriz.disciplinas.find((d) => d.codigo === c.disciplinaCodigo)?.area === area, ).length; const comparaveis = areas.filter((m) => notasPorArea(m.area) >= 3); const melhor = [...comparaveis].sort((x, y) => y.m10 - x.m10)[0]; const pior = [...comparaveis].sort((x, y) => x.m10 - y.m10)[0]; const diferenca = melhor && pior ? Math.round(melhor.m10 - pior.m10) : 0; const cruza = melhor && pior && diferenca >= 1 ? disciplinaQueCruzaAreas(matriz, cursadas, melhor.area, pior.area) : null; const cursando = cursadas.filter( (c) => c.situacao === 'cursando' && c.semestre === a.semestreAtual, ); const nome = (codigo: string) => matriz.disciplinas.find((d) => d.codigo === codigo)?.nome ?? codigo; const stats = a.comunidade; const correlacoes = stats ? stats.correlacoes .filter((c) => c.n >= stats.k && a.ctx.nota10(c.de) !== null) .sort((x, y) => Math.abs(y.r) - Math.abs(x.r)) : []; return ( <div className={s.pagina}> <PageHeader title={<Trans>Desempenho</Trans>} subtitle={ <Trans> Média ponderada por créditos · escala {escala.min}–{escala.max} · aprovação ≥{' '} {formatarNota(escala.aprovacao)} </Trans> } /> <div className={s.duas}> <Card padding="lg" as="section"> <div className={s.topo}> <h2 className="ak-h2 ak-h2--sm"> <Trans>Média por semestre</Trans> </h2> <span className="ak-small ak-muted"> <Trans> geral <strong style={{ color: 'var(--ink)' }}>{fmt.nota(a.media)}</strong> </Trans> </span> </div> <div className={s.barras} aria-hidden> {barras.map((b) => ( <div key={b.rotulo} className={s.barra}> <div className={s.barraValor}> {b.projetada && !fmt.ocultar ? '~' : ''} {fmt.nota(b.exibido)} </div> <div className={s.barraCorpo} style={{ height: fmt.ocultar ? '50%' : `${b.valor * 10}%`, background: b.projetada ? 'var(--primary-tint)' : 'var(--primary)', borderStyle: b.projetada ? 'dashed' : 'solid', }} /> </div> ))} </div> <div className={s.rotulos} aria-hidden> {barras.map((b) => ( <span key={b.rotulo}>{b.rotulo}</span> ))} </div> <table className="ak-sr-only"> <caption>{t`Média por semestre`}</caption> <tbody> {barras.map((b) => ( <tr key={b.rotulo}> <th>{b.rotulo}</th> <td> {b.projetada ? t`projeção ` : ''} {fmt.nota(b.exibido)} </td> </tr> ))} </tbody> </table> </Card> <Card padding="lg" as="section" style={{ display: 'flex', flexDirection: 'column', gap: 12 }} > <h2 className="ak-h2 ak-h2--sm"> <Trans>Por área</Trans> </h2> {areas.map((m) => ( <div key={m.area} className={s.area}> <span>{m.area}</span> <ProgressBar size="lg" label={m.area} value={fmt.ocultar ? 0 : m.m10 * 10} color={corDaMedia(m.m10)} /> <span className={s.areaValor}>{fmt.nota(m.media)}</span> </div> ))} {melhor && pior && diferenca >= 1 && ( <div className={s.comentario}> <Trans> Você rende cerca de {plural(diferenca, { one: '# ponto', other: '# pontos' })} a mais em {melhor.area} do que em {pior.area}. </Trans>{' '} {cruza && <Trans>{cruza.nome} exige as duas.</Trans>} </div> )} {!areas.length && ( <div className={s.comentario}> <Trans>Lance notas para ver a média por área.</Trans> </div> )} </Card> </div> <section className={s.secao} aria-labelledby="risco"> <h2 id="risco" className="ak-h2"> <Trans>Risco neste semestre</Trans> </h2> <Card padding="none" className={s.tabela}> <table> <thead> <tr> <th> <Trans>Disciplina</Trans> </th> <th> <Trans>Nota prevista</Trans> </th> <th> <Trans>Risco</Trans> </th> <th> <Trans>Por quê</Trans> </th> </tr> </thead> <tbody> {cursando.map((c) => { const p = a.previsoes.get(c.disciplinaCodigo); return ( <tr key={c.id}> <td style={{ fontWeight: 500 }}>{nome(c.disciplinaCodigo)}</td> <td className="ak-mono" style={{ fontSize: 12.5 }}> {p ? fmt.intervalo(p.intervalo) : '—'} </td> <td style={{ color: p ? COR_RISCO[p.nivel] : undefined, fontWeight: 600 }}> {p ? rotuloRisco(p.nivel) : '—'} </td> <td style={{ color: 'var(--ink-body)', fontSize: 13 }}> {p ? fmt.ocultar ? p.motivo : p.porque : t`Sem notas suficientes para prever.`} </td> </tr> ); })} {!cursando.length && ( <tr> <td colSpan={4} className="ak-muted"> <Trans>Nenhuma disciplina em curso.</Trans> </td> </tr> )} </tbody> </table> </Card> </section> <section className={s.secao} aria-labelledby="correlacoes"> <h2 id="correlacoes" className="ak-h2"> <Trans>Correlações na sua matriz</Trans> </h2> <div className="ak-small ak-muted"> {stats ? ( <Trans> Quanto a nota numa disciplina antecipa a nota em outra, em históricos anônimos de{' '} {curso.nome} · {instituicao.sigla}. </Trans> ) : ( <Trans> Ainda não há históricos anônimos suficientes desta matriz (mínimo de 10 por par de disciplinas). </Trans> )} {stats?.demonstracao && ( <> {' '} <Trans>Dados de demonstração.</Trans> </> )} </div> <div className={s.correlacoes}> {correlacoes.map((c) => { const x = a.ctx.nota10(c.de)!; const centro = c.intercepto + c.inclinacao * x; const meia = Math.max(0.4, c.residuo * 0.5); const prev = { min: Math.round(Math.max(0, centro - meia) * 10) / 10, max: Math.round(Math.min(10, centro + meia) * 10) / 10, }; return ( <Card key={`${c.de}-${c.para}`} className={s.correlacao} padding="none"> <div className={s.par}> {nome(c.de)} <span style={{ color: 'var(--ink-3)' }}>→</span> {nome(c.para)} </div> <div className={s.numeros}> <span> r ={' '} <strong style={{ color: 'var(--ink)' }}> {formatarNota(c.r, { casas: 2 })} </strong> </span> <span> <Trans>{formatarInteiro(c.n)} históricos</Trans> </span> </div> <div className={s.previsto}> <Trans> Sua nota {fmt.nota(x)} → prevista <strong>{fmt.intervalo(prev)}</strong> </Trans> </div> </Card> ); })} </div> </section> </div> ); } 
 #. placeholder {1}: melhor.area
 #. placeholder {2}: pior.area
@@ -1709,6 +1908,10 @@ msgstr "Você rende cerca de {0} a mais em {1} do que em {2}."
 #: src/routes/Entrar.tsx:342
 msgid "Voltar"
 msgstr "Voltar"
+
+#: src/conectores/ConectorDesktop.tsx:147
+msgid "Voltar ao conector"
+msgstr "Voltar ao conector"
 
 #: src/routes/NotFound.tsx:13
 msgid "Voltar ao início"
