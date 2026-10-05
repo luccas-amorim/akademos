@@ -207,3 +207,64 @@ describe('link mágico', () => {
     expect(linkParaOApp(api, 'abc', ['https://outro.app'])).toBe(api);
   });
 });
+
+describe('agregados alimentam os insights da comunidade', () => {
+  it('com 12 contribuições, publica correlação e reprovação condicional', async () => {
+    const { prepararContexto, regraCorrelacao } = await import('@akademos/core');
+    for (let i = 0; i < 12; i++) {
+      const calculo3 = 4 + (i % 6);
+      await app.request(
+        '/stats/contribuicao',
+        json({
+          id: `10000000-0000-4000-8000-${String(i).padStart(12, '0')}`,
+          segredo: `segredo-forte-${i}-abcdef`,
+          matrizId: 'ufx/eng-computacao/2019',
+          notas: { EX301: calculo3, EX404: Math.min(10, calculo3 * 0.9 + 0.8) },
+        }),
+      );
+    }
+    const stats = (await (await app.request('/stats/ufx/eng-computacao/2019')).json()) as never as {
+      correlacoes: Array<{ de: string; para: string; r: number }>;
+      disciplinas: Record<string, { n: number }>;
+    };
+    expect(stats.disciplinas.EX301?.n).toBe(20); // 9 anteriores + 12, arredondado à dezena
+    const corr = stats.correlacoes.find((c) => c.de === 'EX301' && c.para === 'EX404');
+    expect(corr?.r).toBeGreaterThan(0.8);
+
+    // O mesmo objeto, recebido pelo app, vira insight com fonte "comunidade".
+    const { montarPacotes } = await import('@akademos/registry');
+    const { lerInstituicoes } = await import('@akademos/registry/node');
+    const [ufx] = montarPacotes(lerInstituicoes().find((x) => x.pasta === 'ufx')!).entradas;
+    const p = ufx!.pacote;
+    const ctx = prepararContexto({
+      ...p,
+      aluno: {
+        id: 'a',
+        nome: 'A',
+        matricula: null,
+        cursoId: p.curso.id,
+        matrizId: p.matriz.id,
+        ingresso: '2024/2',
+      },
+      cursadas: [
+        {
+          id: 'c',
+          alunoId: 'a',
+          disciplinaCodigo: 'EX301',
+          semestre: '2025/2',
+          nota: 6.1,
+          frequencia: 1,
+          situacao: 'aprovada',
+        },
+      ],
+      ofertas: [],
+      planos: [],
+      objetivos: [],
+      semestreAtual: '2026/2',
+      agora: new Date(),
+      comunidade: stats as never,
+    });
+    const ins = regraCorrelacao(ctx);
+    expect(ins[0]).toMatchObject({ alvo: 'EX404', fonte: 'comunidade' });
+  });
+});

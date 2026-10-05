@@ -31,6 +31,15 @@ export function Insights() {
               Calculados no seu aparelho. Comparações com a comunidade usam só históricos anônimos
               de quem optou por compartilhar.
             </Trans>
+            {!comunidade && (
+              <>
+                {' '}
+                <Trans>
+                  Ainda não há históricos anônimos suficientes desta matriz (mínimo de 10 por
+                  célula): por enquanto, só regras e os seus dados.
+                </Trans>
+              </>
+            )}
             {comunidade?.demonstracao && (
               <>
                 {' '}
