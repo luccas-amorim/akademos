@@ -2,6 +2,7 @@ import { deslocarSemestre, semestreDaData, type DadosLocais, type Oferta } from 
 import {
   clienteHttpDeFetch,
   corresponder,
+  criarConectorJupiter,
   criarConectorSigaa,
   ErroConector,
   extrairLinhas,
@@ -32,14 +33,17 @@ async function criarConector(dados: DadosLocais): Promise<Connector> {
   if (!entrada?.conector || !entrada.modeloHistorico) {
     throw new ErroConector('nao-suportado', 'Esta instituição ainda não tem conector configurado.');
   }
-  if (entrada.conector.sistema !== 'sigaa') {
-    throw new ErroConector(
-      'nao-suportado',
-      'Conector desta instituição ainda não disponível no app.',
-    );
-  }
   // fetch do Tauri: sai do aparelho, sem CORS e sem passar por servidor nosso.
   const { fetch } = await import('@tauri-apps/plugin-http');
+  if (entrada.conector.sistema === 'jupiter') {
+    return criarConectorJupiter({
+      base: entrada.conector.base,
+      instituicoes: [dados.instituicao.id],
+      http: clienteHttpDeFetch(fetch as typeof globalThis.fetch),
+      faixas: dados.instituicao.grade.faixas,
+      disciplinas: () => dados.matriz.disciplinas.map((d) => d.codigo),
+    });
+  }
   return criarConectorSigaa({
     base: entrada.conector.base,
     instituicoes: [dados.instituicao.id],

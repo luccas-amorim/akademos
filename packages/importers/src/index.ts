@@ -1,3 +1,4 @@
+export * from './conectores/jupiter/jupiter';
 export * from './conectores/sigaa/horarios';
 export * from './conectores/sigaa/sigaa';
 export * from './connector';
