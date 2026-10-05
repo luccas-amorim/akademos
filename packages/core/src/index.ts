@@ -7,3 +7,4 @@ export * from './formato';
 export * from './planner/planejador';
 export * from './carreira';
 export * from './insights';
+export * from './planner/horarios';

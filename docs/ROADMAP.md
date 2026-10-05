@@ -14,7 +14,7 @@ Execute em ordem. Cada item = um PR. Critério de aceite entre colchetes.
 ## Fase 1 — MVP local (semana 3–6)
 
 - [x] 1.1 `core`: situação efetiva, integralização, média ponderada, áreas. [testes]
-- [ ] 1.2 Tela **Início** (KPIs, "O que merece atenção", "Este semestre", "Por área").
+- [x] 1.2 Tela **Início** (KPIs, "O que merece atenção", "Este semestre", "Por área").
 - [ ] 1.3 Tela **Percurso**: matriz por semestre, seleção destaca pré-requisitos (verde-oliva) e o que destrava (âmbar); painel lateral.
 - [ ] 1.4 Tela **Desempenho**: média por semestre, por área, risco, correlações.
 - [ ] 1.5 Tela **Importar** — entrada manual + parser de PDF com tela de revisão. [importa um histórico SIGAA real anonimizado em `__fixtures__`]

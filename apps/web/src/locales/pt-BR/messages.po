@@ -7,113 +7,199 @@ msgstr ""
 "X-Generator: @lingui/cli\n"
 "Language: pt-BR\n"
 
-#: src/routes/Kit.tsx:203
+#. placeholder {0}: integ.creditosCumpridos
+#. placeholder {1}: integ.creditosTotal
+#: src/routes/Inicio.tsx:41
+msgid "{0} de {1} créditos"
+msgstr "{0} de {1} créditos"
+
+#. placeholder {0}: ordinalDoSemestre(dados.aluno.ingresso, atual)
+#: src/layout/AppShell.tsx:126
+msgid "{0}º semestre · {atual}"
+msgstr "{0}º semestre · {atual}"
+
+#: src/routes/inicio-textos.ts:64
+msgid "{dia} livre"
+msgstr "{dia} livre"
+
+#: src/routes/inicio-textos.ts:47
+msgid "{n} decisão de {prox} define se a formatura fica em {formatura}."
+msgstr "{n} decisão de {prox} define se a formatura fica em {formatura}."
+
+#: src/routes/inicio-textos.ts:48
+msgid "{n} decisões de {prox} definem se a formatura fica em {formatura}."
+msgstr "{n} decisões de {prox} definem se a formatura fica em {formatura}."
+
+#: src/routes/Kit.tsx:215
 msgid "1 faixa com choque de horário. Troque de turma ao lado."
 msgstr "1 faixa com choque de horário. Troque de turma ao lado."
 
-#: src/routes/Kit.tsx:209
+#: src/routes/Kit.tsx:221
 msgid "2 linhas para revisar."
 msgstr "2 linhas para revisar."
 
-#: src/routes/Kit.tsx:146
+#: src/routes/Kit.tsx:154
 msgid "62 de 128 créditos"
 msgstr "62 de 128 créditos"
 
-#: src/routes/Kit.tsx:118
+#: src/layout/AppShell.tsx:34
+#: src/layout/AppShell.tsx:52
+msgid "Abrindo seus dados…"
+msgstr "Abrindo seus dados…"
+
+#: src/routes/Kit.tsx:126
 msgid "Adicionar"
 msgstr "Adicionar"
 
-#: src/routes/Kit.tsx:104
+#: src/componentes/risco.ts:17
+msgid "Alto"
+msgstr "Alto"
+
+#. placeholder {0}: fmt.nota(aprov)
+#. placeholder {1}: a.notasLancadas
+#: src/routes/Inicio.tsx:49
+msgid "aprovação ≥ {0} · {1, plural, one {# nota} other {# notas}}"
+msgstr "aprovação ≥ {0} · {1, plural, one {# nota} other {# notas}}"
+
+#: src/layout/AppShell.tsx:153
+msgid "Armazenamento indisponível: nada será guardado"
+msgstr "Armazenamento indisponível: nada será guardado"
+
+#: src/componentes/risco.ts:13
+msgid "Baixo"
+msgstr "Baixo"
+
+#: src/routes/inicio-textos.ts:9
+msgid "Boa noite, {primeiro}."
+msgstr "Boa noite, {primeiro}."
+
+#: src/routes/inicio-textos.ts:8
+msgid "Boa tarde, {primeiro}."
+msgstr "Boa tarde, {primeiro}."
+
+#: src/routes/inicio-textos.ts:7
+msgid "Bom dia, {primeiro}."
+msgstr "Bom dia, {primeiro}."
+
+#: src/routes/Kit.tsx:112
 msgid "Botões"
 msgstr "Botões"
 
-#: src/routes/Kit.tsx:179
+#: src/routes/Kit.tsx:187
 msgid "Carga"
 msgstr "Carga"
 
-#: src/layout/AppShell.tsx:20
+#: src/layout/AppShell.tsx:104
 #: src/routes/Carreira.tsx:5
 msgid "Carreira"
 msgstr "Carreira"
 
-#: src/routes/Kit.tsx:111
+#: src/routes/Kit.tsx:119
 msgid "Chave de acesso"
 msgstr "Chave de acesso"
 
-#: src/routes/Kit.tsx:198
+#: src/routes/Kit.tsx:210
 msgid "Compartilhar históricos anônimos"
 msgstr "Compartilhar históricos anônimos"
 
-#: src/routes/Kit.tsx:150
+#: src/routes/Kit.tsx:158
 msgid "Computação"
 msgstr "Computação"
 
-#: src/routes/Kit.tsx:147
+#: src/routes/Kit.tsx:155
 msgid "Conflitos"
 msgstr "Conflitos"
 
-#: src/routes/Kit.tsx:170
+#: src/routes/Kit.tsx:178
 msgid "Controles"
 msgstr "Controles"
 
-#: src/routes/Kit.tsx:51
+#: src/routes/Kit.tsx:53
 msgid "Cores"
 msgstr "Cores"
 
-#: src/routes/Kit.tsx:189
+#: src/routes/Kit.tsx:197
 msgid "Criar conta"
 msgstr "Criar conta"
 
-#: src/routes/Kit.tsx:195
+#: src/routes/Kit.tsx:207
 msgid "Cursada"
 msgstr "Cursada"
 
-#: src/routes/Kit.tsx:130
+#: src/layout/AppShell.tsx:149
+msgid "Dados neste aparelho"
+msgstr "Dados neste aparelho"
+
+#: src/routes/Kit.tsx:138
 msgid "Desativado"
 msgstr "Desativado"
 
-#: src/layout/AppShell.tsx:19
+#: src/layout/AppShell.tsx:103
 #: src/routes/Desempenho.tsx:5
 msgid "Desempenho"
 msgstr "Desempenho"
 
-#: src/routes/Kit.tsx:193
+#: src/routes/Kit.tsx:202
 msgid "Diário"
 msgstr "Diário"
 
-#: src/routes/Kit.tsx:206
+#: src/routes/Kit.tsx:218
 msgid "Dias livres: Sex. Menor chance de vaga no plano: 83%."
 msgstr "Dias livres: Sex. Menor chance de vaga no plano: 83%."
 
-#: src/routes/Kit.tsx:192
+#: src/routes/Kit.tsx:200
 msgid "E-mail"
 msgstr "E-mail"
 
-#: src/routes/Entrar.tsx:5
-#: src/routes/Kit.tsx:188
+#: src/layout/AppShell.tsx:79
+#: src/routes/Entrar.tsx:10
+#: src/routes/Kit.tsx:196
 msgid "Entrar"
 msgstr "Entrar"
 
-#: src/layout/AppShell.tsx:49
-#: src/routes/Importar.tsx:5
+#: src/routes/Inicio.tsx:64
+msgid "Esta semana"
+msgstr "Esta semana"
+
+#: src/routes/Inicio.tsx:95
+msgid "Este semestre"
+msgstr "Este semestre"
+
+#: src/routes/Importar.tsx:17
+msgid "Explorar com dados de exemplo"
+msgstr "Explorar com dados de exemplo"
+
+#: src/routes/inicio-textos.ts:35
+msgid "Falta pouco para a formatura."
+msgstr "Falta pouco para a formatura."
+
+#: src/layout/AppShell.tsx:46
+msgid "Feche a outra aba e recarregue esta página. Os dados ficam num só arquivo neste navegador."
+msgstr "Feche a outra aba e recarregue esta página. Os dados ficam num só arquivo neste navegador."
+
+#: src/routes/Inicio.tsx:52
+msgid "Formatura prevista"
+msgstr "Formatura prevista"
+
+#: src/layout/AppShell.tsx:169
 msgid "Importar"
 msgstr "Importar"
 
-#: src/routes/Kit.tsx:137
+#: src/routes/Kit.tsx:145
 msgid "Indicadores"
 msgstr "Indicadores"
 
-#: src/layout/AppShell.tsx:15
-#: src/routes/Inicio.tsx:5
+#: src/layout/AppShell.tsx:99
 msgid "Início"
 msgstr "Início"
 
-#: src/layout/AppShell.tsx:18
+#: src/layout/AppShell.tsx:102
 #: src/routes/Insights.tsx:5
 msgid "Insights"
 msgstr "Insights"
 
-#: src/routes/Kit.tsx:146
+#: src/routes/Inicio.tsx:38
+#: src/routes/Kit.tsx:154
 msgid "Integralizado"
 msgstr "Integralizado"
 
@@ -121,100 +207,244 @@ msgstr "Integralizado"
 msgid "Kit de design"
 msgstr "Kit de design"
 
-#: src/routes/Kit.tsx:91
+#: src/routes/Kit.tsx:99
 msgid "Legenda 12–13px em --ink-2."
 msgstr "Legenda 12–13px em --ink-2."
 
-#: src/routes/Kit.tsx:151
+#: src/routes/Kit.tsx:159
 msgid "Lotação"
 msgstr "Lotação"
 
-#: src/routes/Kit.tsx:152
+#. placeholder {0}: dados.matriz.disciplinas.find((d) => d.codigo === insightFormatura.alvo)?.nome
+#. placeholder {1}: a.proximoSemestre
+#: src/routes/Inicio.tsx:59
+msgid "mantida se {0} entrar em {1}"
+msgstr "mantida se {0} entrar em {1}"
+
+#: src/routes/Kit.tsx:160
 msgid "Média"
 msgstr "Média"
 
-#: src/routes/Kit.tsx:184
+#: src/routes/Inicio.tsx:44
+msgid "Média ponderada"
+msgstr "Média ponderada"
+
+#: src/componentes/risco.ts:15
+msgid "Moderado"
+msgstr "Moderado"
+
+#: src/routes/Kit.tsx:192
 msgid "Modo"
 msgstr "Modo"
 
-#: src/routes/Kit.tsx:121
+#: src/layout/AppShell.tsx:165
+msgid "Mostrar notas"
+msgstr "Mostrar notas"
+
+#: src/routes/Kit.tsx:129
 msgid "Na grade ✓"
 msgstr "Na grade ✓"
 
-#: src/layout/AppShell.tsx:28
+#: src/routes/Inicio.tsx:87
+msgid "Nada pedindo atenção agora."
+msgstr "Nada pedindo atenção agora."
+
+#: src/layout/AppShell.tsx:42
+msgid "Não foi possível abrir os dados locais"
+msgstr "Não foi possível abrir os dados locais"
+
+#: src/layout/AppShell.tsx:72
+msgid "Navegação"
+msgstr "Navegação"
+
+#: src/layout/AppShell.tsx:114
 msgid "Navegação principal"
 msgstr "Navegação principal"
+
+#: src/routes/Inicio.tsx:131
+msgid "Nenhuma disciplina em curso neste semestre."
+msgstr "Nenhuma disciplina em curso neste semestre."
+
+#: src/routes/Inicio.tsx:60
+msgid "no ritmo do seu plano"
+msgstr "no ritmo do seu plano"
+
+#: src/routes/inicio-textos.ts:68
+msgid "noites livres"
+msgstr "noites livres"
+
+#: src/layout/AppShell.tsx:41
+msgid "O Akademos está aberto em outra aba"
+msgstr "O Akademos está aberto em outra aba"
 
 #: src/routes/NotFound.tsx:10
 msgid "O endereço não corresponde a nenhuma tela do Akademos."
 msgstr "O endereço não corresponde a nenhuma tela do Akademos."
 
-#: src/routes/Kit.tsx:193
+#: src/routes/Inicio.tsx:75
+msgid "O que merece atenção"
+msgstr "O que merece atenção"
+
+#: src/routes/Kit.tsx:204
 msgid "O que você espera do próximo semestre?"
 msgstr "O que você espera do próximo semestre?"
+
+#: src/layout/AppShell.tsx:165
+msgid "Ocultar notas"
+msgstr "Ocultar notas"
 
 #: src/routes/NotFound.tsx:9
 msgid "Página não encontrada"
 msgstr "Página não encontrada"
 
-#: src/routes/Kit.tsx:114
+#: src/routes/Kit.tsx:122
 msgid "Patrocinar"
 msgstr "Patrocinar"
 
-#: src/layout/AppShell.tsx:16
+#: src/layout/AppShell.tsx:100
 #: src/routes/Percurso.tsx:5
 msgid "Percurso"
 msgstr "Percurso"
 
-#: src/layout/AppShell.tsx:17
 #: src/routes/Planejar.tsx:5
 msgid "Planejar"
 msgstr "Planejar"
 
-#: src/routes/Kit.tsx:108
+#: src/layout/AppShell.tsx:101
+msgid "Planejar {proximo}"
+msgstr "Planejar {proximo}"
+
+#: src/routes/Inicio.tsx:137
+msgid "Por área"
+msgstr "Por área"
+
+#: src/routes/Inicio.tsx:121
+msgid "Previsão a partir das suas notas e de históricos anônimos da comunidade desta matriz."
+msgstr "Previsão a partir das suas notas e de históricos anônimos da comunidade desta matriz."
+
+#: src/routes/Inicio.tsx:126
+msgid "Previsão a partir das suas notas."
+msgstr "Previsão a partir das suas notas."
+
+#. placeholder {0}: fmt.intervalo(p.intervalo)
+#: src/routes/Inicio.tsx:113
+msgid "prevista {0}"
+msgstr "prevista {0}"
+
+#: src/routes/Kit.tsx:116
 msgid "Primário"
 msgstr "Primário"
 
-#: src/layout/AppShell.tsx:26
+#: src/layout/AppShell.tsx:57
 msgid "Pular para o conteúdo"
 msgstr "Pular para o conteúdo"
 
-#: src/routes/Kit.tsx:124
+#: src/routes/inicio-textos.ts:57
+msgid "quarta"
+msgstr "quarta"
+
+#: src/routes/inicio-textos.ts:58
+msgid "quinta"
+msgstr "quinta"
+
+#: src/routes/Kit.tsx:132
 msgid "Revisar 2"
 msgstr "Revisar 2"
 
-#: src/routes/Kit.tsx:178
+#: src/routes/Kit.tsx:186
 msgid "Risco"
 msgstr "Risco"
 
-#: src/routes/Kit.tsx:94
+#: src/routes/Kit.tsx:102
 msgid "Rótulo de seção"
 msgstr "Rótulo de seção"
 
-#: src/layout/AppShell.tsx:52
+#: src/routes/inicio-textos.ts:60
+msgid "sábado"
+msgstr "sábado"
+
+#: src/layout/AppShell.tsx:172
+msgid "Sair"
+msgstr "Sair"
+
+#: src/routes/inicio-textos.ts:55
+msgid "segunda"
+msgstr "segunda"
+
+#: src/layout/AppShell.tsx:155
+msgid "Sem conta · nada sai daqui"
+msgstr "Sem conta · nada sai daqui"
+
+#: src/routes/Inicio.tsx:57
+msgid "sem previsão"
+msgstr "sem previsão"
+
+#: src/routes/Inicio.tsx:67
+msgid "sem turmas registradas"
+msgstr "sem turmas registradas"
+
+#: src/routes/inicio-textos.ts:69
+msgid "semana sem folga"
+msgstr "semana sem folga"
+
+#: src/routes/inicio-textos.ts:59
+msgid "sexta"
+msgstr "sexta"
+
+#: src/layout/AppShell.tsx:82
+#: src/layout/AppShell.tsx:175
 #: src/routes/Sobre.tsx:5
 msgid "Sobre e apoio"
 msgstr "Sobre e apoio"
 
-#: src/routes/Kit.tsx:173
+#: src/routes/inicio-textos.ts:56
+msgid "terça"
+msgstr "terça"
+
+#: src/routes/Kit.tsx:181
 msgid "Tipo"
 msgstr "Tipo"
 
-#: src/routes/Kit.tsx:78
+#: src/routes/Kit.tsx:86
 msgid "Tipografia"
 msgstr "Tipografia"
 
-#: src/routes/Kit.tsx:177
+#: src/routes/Kit.tsx:185
 msgid "Todos"
 msgstr "Todos"
 
-#: src/routes/Kit.tsx:127
+#: src/routes/Inicio.tsx:78
+#: src/routes/Kit.tsx:135
 msgid "Todos os insights"
 msgstr "Todos os insights"
 
-#: src/routes/Kit.tsx:46
+#: src/routes/Kit.tsx:47
 msgid "Tokens de docs/DESIGN.md e componentes base, construídos com React Aria."
 msgstr "Tokens de docs/DESIGN.md e componentes base, construídos com React Aria."
+
+#: src/routes/Importar.tsx:10
+msgid "Traga seu histórico"
+msgstr "Traga seu histórico"
+
+#: src/routes/Entrar.tsx:18
+msgid "Usar sem conta, só neste aparelho →"
+msgstr "Usar sem conta, só neste aparelho →"
+
+#: src/routes/inicio-textos.ts:32
+msgid "Você está na metade do curso."
+msgstr "Você está na metade do curso."
+
+#: src/routes/inicio-textos.ts:34
+msgid "Você está na reta final do curso."
+msgstr "Você está na reta final do curso."
+
+#: src/routes/inicio-textos.ts:28
+msgid "Você está no começo do curso."
+msgstr "Você está no começo do curso."
+
+#: src/routes/inicio-textos.ts:30
+msgid "Você já passou do primeiro terço do curso."
+msgstr "Você já passou do primeiro terço do curso."
 
 #: src/routes/NotFound.tsx:13
 msgid "Voltar ao início"
