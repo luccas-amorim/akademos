@@ -1,0 +1,31 @@
+[package]
+name = "akademos-desktop"
+version = "0.1.0"
+description = "Akademos — seu percurso acadêmico, local primeiro"
+authors = ["Contribuidores do Akademos"]
+license = "MIT"
+repository = "https://github.com/luccas-amorim/akademos"
+edition = "2021"
+rust-version = "1.80"
+
+[lib]
+name = "akademos_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+# fetch sem CORS para os conectores (SIGAA, JúpiterWeb), com cookies de sessão.
+tauri-plugin-http = { version = "2", features = ["cookies"] }
+# Chaveiro do sistema (Windows Credential Manager, Keychain, Secret Service).
+keyring = { version = "3", features = ["apple-native", "windows-native", "sync-secret-service"] }
+serde = { version = "1", features = ["derive"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

@@ -1,0 +1,19 @@
+{
+  "name": "@akademos/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Domínio do Akademos: percurso, planejador e motor de insights. TypeScript puro.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.3"
+  }
+}

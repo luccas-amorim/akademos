@@ -1,0 +1,16 @@
+{
+  "name": "@akademos/desktop",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "App de desktop (Tauri 2) que empacota apps/web e roda os conectores sem CORS.",
+  "scripts": {
+    "tauri": "tauri",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build",
+    "icones": "tauri icon ../web/public/pwa-512x512.png"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.1"
+  }
+}

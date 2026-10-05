@@ -1,0 +1,8 @@
+packages:
+  - apps/*
+  - packages/*
+  - registry
+
+allowBuilds:
+  esbuild: true
+  react-native-libsodium: true

@@ -1,0 +1,17 @@
+pnpm-lock.yaml
+dist
+coverage
+design
+*.po
+apps/desktop/src-tauri/target
+apps/desktop/src-tauri/gen
+packages/db/drizzle
+apps/server/drizzle
+registry/schema/*.json
+*.md
+.github/FUNDING.yml
+registry/instituicoes
+apps/web/test-results
+apps/web/playwright-report
+**/__fixtures__
+apps/mobile/src/dados/catalogo.generated.json

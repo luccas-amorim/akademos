@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "escalas": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "min": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "aprovacao": {
+            "type": "number"
+          },
+          "frequencia_minima": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "id",
+          "nome",
+          "min",
+          "max",
+          "aprovacao",
+          "frequencia_minima"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "escalas"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,591 @@
+/* Fontes auto-hospedadas (empacotadas pelo Vite a partir do @fontsource). */
+@import '@fontsource-variable/source-serif-4/opsz.css';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+/* Tokens — espelham src/tokens.ts (há teste que confere). */
+:root {
+  --bg: #f6f5f1;
+  --surface: #fffefb;
+  --border: #e4e1d8;
+  --border-soft: #ecebe5;
+  --border-strong: #c9c5b9;
+  --input-border: #d6d3c8;
+  --ink: #1b1d22;
+  --ink-2: #5d6068;
+  --ink-3: #8a8c92;
+  --ink-body: #41444b;
+  --primary: #1e3a8a;
+  --primary-hover: #13265e;
+  --primary-tint: #e7ebf6;
+  --primary-tint-soft: #f3f5fb;
+  --primary-line: #c5cfe8;
+  --primary-on-dark: #dfe5f3;
+  --olive: #5a6e2e;
+  --olive-ink: #4f6428;
+  --olive-deep: #3f5120;
+  --olive-tint: #eef1e2;
+  --olive-on-dark: #c9d38f;
+  --amber: #c98a2b;
+  --amber-ink: #8f5309;
+  --amber-tint: #f7ecd9;
+  --amber-tint-soft: #fbf4e8;
+  --danger: #a33a2a;
+  --danger-tint: #f8e3df;
+  --danger-ink: #7d2a1d;
+  --neutral-tint: #f1f0eb;
+
+  --font-serif: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius-card: 10px;
+  --radius-control: 8px;
+  --radius-chip: 7px;
+  --radius-chip-sm: 6px;
+  --radius-pill: 10px;
+  --radius-panel: 12px;
+
+  --sidebar-width: 232px;
+  --content-max: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.ak-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ——— Tipografia ——— */
+.ak-h1 {
+  font-size: 30px;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+.ak-h1--hero {
+  font-size: 34px;
+}
+.ak-h2 {
+  font-size: 21px;
+  line-height: 1.25;
+}
+.ak-h2--sm {
+  font-size: 19px;
+}
+.ak-eyebrow {
+  font-size: 12px;
+  color: var(--ink-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.ak-mono {
+  font-family: var(--font-mono);
+}
+.ak-muted {
+  color: var(--ink-2);
+}
+.ak-small {
+  font-size: 13px;
+}
+.ak-caption {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+/* ——— Cabeçalho de página ——— */
+.ak-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ak-page-header__sub {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin-top: 4px;
+  text-wrap: pretty;
+}
+
+/* ——— Cartão ——— */
+.ak-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+}
+.ak-card--pad {
+  padding: 16px 18px;
+}
+.ak-card--pad-lg {
+  padding: 20px;
+}
+
+/* ——— Botões ——— */
+.ak-button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 9px 14px;
+  border-radius: var(--radius-chip);
+  border: 1px solid transparent;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+.ak-button[data-focus-visible] {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.ak-button[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.ak-button--lg {
+  padding: 12px;
+  border-radius: var(--radius-control);
+  font-size: 14.5px;
+}
+.ak-button--sm {
+  padding: 6px 10px;
+  font-size: 12.5px;
+  border-radius: var(--radius-chip-sm);
+}
+.ak-button--block {
+  display: flex;
+  width: 100%;
+}
+.ak-button--primary {
+  background: var(--primary);
+  color: #fff;
+}
+.ak-button--primary[data-hovered] {
+  background: var(--primary-hover);
+}
+.ak-button--dark {
+  background: var(--ink);
+  color: #fff;
+}
+.ak-button--dark[data-hovered] {
+  background: #000;
+}
+.ak-button--olive {
+  background: var(--olive);
+  color: #fff;
+}
+.ak-button--outline {
+  background: var(--surface);
+  border-color: var(--input-border);
+  color: var(--ink);
+  font-weight: 400;
+}
+.ak-button--outline[data-hovered] {
+  border-color: var(--ink-3);
+}
+.ak-button--outline-primary {
+  background: var(--surface);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.ak-button--subtle {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--ink);
+  font-weight: 400;
+}
+.ak-button--link {
+  padding: 0;
+  color: var(--primary);
+  font-size: 13px;
+}
+.ak-button--link[data-hovered] {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* ——— Barra de progresso ——— */
+.ak-bar {
+  height: 4px;
+  background: var(--border-soft);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.ak-bar--md {
+  height: 6px;
+  border-radius: 3px;
+}
+.ak-bar--lg {
+  height: 8px;
+  border-radius: 4px;
+}
+.ak-bar__fill {
+  height: 100%;
+  background: var(--primary);
+  transition: width 200ms ease;
+}
+
+/* ——— KPI ——— */
+.ak-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ak-kpi__value {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.ak-kpi--compact {
+  padding: 12px 14px;
+  gap: 0;
+}
+.ak-kpi--compact .ak-kpi__label {
+  font-size: 12px;
+  color: var(--ink-2);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.ak-kpi--compact .ak-kpi__value {
+  font-size: 24px;
+}
+
+/* ——— Pílulas e chips ——— */
+.ak-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  border: 1px solid transparent;
+}
+.ak-pill--outline {
+  border-color: var(--border);
+}
+.ak-pill--strong {
+  font-weight: 600;
+}
+
+.ak-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.ak-filter {
+  all: unset;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+}
+.ak-filter[data-selected] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.ak-filter[data-focus-visible] {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ——— Abas segmentadas ——— */
+.ak-segmented {
+  display: flex;
+  background: var(--border-soft);
+  border-radius: var(--radius-control);
+  padding: 3px;
+}
+.ak-segmented__item {
+  all: unset;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.ak-segmented__item[data-selected] {
+  background: var(--surface);
+  color: var(--ink);
+}
+.ak-segmented__item[data-focus-visible] {
+  outline: 2px solid var(--primary);
+}
+
+/* ——— Campos ——— */
+.ak-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.ak-field__label-row {
+  display: flex;
+  justify-content: space-between;
+}
+.ak-input,
+.ak-textarea,
+.ak-select {
+  font: inherit;
+  font-weight: 400;
+  font-size: 14.5px;
+  padding: 11px 12px;
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--ink);
+  width: 100%;
+}
+.ak-input[data-focused],
+.ak-textarea[data-focused],
+.ak-input:focus,
+.ak-select:focus,
+.ak-textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+}
+.ak-input--sm,
+.ak-select--sm {
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: var(--radius-chip-sm);
+}
+.ak-textarea {
+  font-size: 14px;
+  padding: 10px;
+  border-color: var(--border);
+  border-radius: var(--radius-chip);
+  min-height: 64px;
+  resize: vertical;
+  background: var(--bg);
+}
+.ak-field__error {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--danger);
+}
+
+/* ——— Avisos ——— */
+.ak-note {
+  padding: 10px 12px;
+  border-radius: var(--radius-control);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.ak-note--positive {
+  background: var(--olive-tint);
+  color: var(--olive-deep);
+}
+.ak-note--danger {
+  background: var(--danger-tint);
+  color: var(--danger-ink);
+}
+.ak-note--warning {
+  background: var(--amber-tint-soft);
+  color: var(--amber-ink);
+}
+.ak-note--neutral {
+  background: var(--bg);
+  color: var(--ink);
+}
+.ak-note--info {
+  background: var(--primary-tint);
+  color: var(--primary);
+}
+
+/* ——— Divisor com texto ——— */
+.ak-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.ak-divider::before,
+.ak-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ——— Lista com linhas ——— */
+.ak-rows > * + * {
+  border-top: 1px solid var(--border-soft);
+}
+
+/* ——— Checkbox ——— */
+.ak-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+.ak-checkbox__box {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 11px;
+  flex: none;
+}
+.ak-checkbox[data-selected] .ak-checkbox__box {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.ak-checkbox[data-focus-visible] .ak-checkbox__box {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ——— Switch ——— */
+.ak-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.ak-switch__track {
+  width: 32px;
+  height: 18px;
+  border-radius: 9px;
+  background: var(--input-border);
+  position: relative;
+  flex: none;
+  transition: background-color 120ms ease;
+}
+.ak-switch__track::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--surface);
+  transition: transform 120ms ease;
+}
+.ak-switch[data-selected] .ak-switch__track {
+  background: var(--olive);
+}
+.ak-switch[data-selected] .ak-switch__track::after {
+  transform: translateX(14px);
+}
+.ak-switch[data-focus-visible] .ak-switch__track {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ——— Diálogo ——— */
+.ak-modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgb(27 29 34 / 0.35);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  z-index: 100;
+}
+.ak-modal {
+  width: min(440px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+}
+.ak-dialogo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  outline: none;
+}
+.ak-dialogo__corpo {
+  font-size: 14px;
+  color: var(--ink-body);
+  line-height: 1.5;
+}
+.ak-dialogo__acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}

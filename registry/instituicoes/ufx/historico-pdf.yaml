@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema/historico-pdf.schema.json
+# Como ler uma linha de disciplina no histórico emitido pelo SIGAA da UFX.
+# Ex.: "2024.2  MAT0101  CÁLCULO DIFERENCIAL I  60  T01  92,0  7,8  APR"
+sistema: sigaa
+descricao: Histórico escolar do SIGAA (Ano.Período, código, nome, CH, turma, frequência, nota, situação)
+linha: '^(?<semestre>\d{4}\.[12])\s+(?<codigo>[A-Z]{3}\d{4})\s+(?<nome>.+?)\s+(?<ch>\d+)\s+(?<turma>\S+)\s+(?<frequencia>\d{1,3},\d|--)\s+(?<nota>\d{1,2},\d|--)\s+(?<situacao>[A-Z]+)$'
+separador_decimal: ','
+situacoes:
+  APR: aprovada
+  APRN: aprovada
+  REP: reprovada
+  REPF: reprovada
+  REPMF: reprovada
+  MATR: cursando
+  TRANC: trancada
+  CUMP: aproveitada
+  DISP: aproveitada

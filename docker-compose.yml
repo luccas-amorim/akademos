@@ -1,0 +1,37 @@
+# Servidor do Akademos (opcional): autenticação, relay cego e agregados.
+#   cp apps/server/.env.example .env && docker compose up --build
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: akademos
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-akademos}
+      POSTGRES_DB: akademos
+    volumes:
+      - dados:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U akademos']
+      interval: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://akademos:${POSTGRES_PASSWORD:-akademos}@db:5432/akademos
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:8787}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:?defina BETTER_AUTH_SECRET no .env}
+      ORIGENS: ${ORIGENS:-http://localhost:5173}
+      PASSKEY_RP_ID: ${PASSKEY_RP_ID:-localhost}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+    ports:
+      - '8787:8787'
+
+volumes:
+  dados:

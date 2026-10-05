@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=../../../../schema/matriz.schema.json
+# Matriz FICTÍCIA, noturna, de 6 semestres.
+curso:
+  id: curso-exemplo
+  nome: Curso de Exemplo
+  grau: bacharelado
+ano: 2025
+versao: '1.0.0'
+creditos_total: 80
+horas_por_credito: 20
+disciplinas:
+  - { codigo: EX101, nome: Introdução aos Estudos do Curso, creditos: 4, semestre: 1, area: Fundamentos }
+  - { codigo: EX102, nome: Leitura e Produção de Textos, creditos: 4, semestre: 1, area: Linguagens }
+  - { codigo: EX103, nome: Lógica e Argumentação, creditos: 4, semestre: 1, area: Métodos }
+  - { codigo: EX104, nome: Matemática Básica, creditos: 2, semestre: 1, area: Métodos }
+  - { codigo: EX201, nome: Teoria Geral I, creditos: 4, semestre: 2, area: Fundamentos, requer: [EX101] }
+  - { codigo: EX202, nome: Estatística Aplicada, creditos: 4, semestre: 2, area: Métodos, requer: [EX104] }
+  - { codigo: EX203, nome: Metodologia da Pesquisa, creditos: 2, semestre: 2, area: Pesquisa, requer: [EX102] }
+  - { codigo: EX204, nome: Ética Profissional, creditos: 2, semestre: 2, area: Fundamentos }
+  - { codigo: EX301, nome: Teoria Geral II, creditos: 4, semestre: 3, area: Fundamentos, requer: [EX201] }
+  - { codigo: EX302, nome: Análise de Dados, creditos: 4, semestre: 3, area: Métodos, requer: [EX202] }
+  - { codigo: EX303, nome: Comunicação Oral, creditos: 2, semestre: 3, area: Linguagens, requer: [EX102] }
+  - { codigo: EX304, nome: Seminário Temático I, creditos: 2, semestre: 3, area: Pesquisa, requer: [EX203] }
+  - { codigo: EX401, nome: Tópicos Avançados I, creditos: 4, semestre: 4, area: Fundamentos, requer: [EX301] }
+  - { codigo: EX402, nome: Modelagem e Simulação, creditos: 4, semestre: 4, area: Métodos, requer: [EX302] }
+  - { codigo: EX403, nome: Projeto Integrador I, creditos: 2, semestre: 4, area: Prática Profissional, requer: [EX303] }
+  - { codigo: EX404, nome: Seminário Temático II, creditos: 2, semestre: 4, area: Pesquisa, requer: [EX304], oferta: par }
+  - { codigo: EX501, nome: Tópicos Avançados II, creditos: 4, semestre: 5, area: Fundamentos, requer: [EX401] }
+  - { codigo: EX502, nome: Gestão de Projetos, creditos: 4, semestre: 5, area: Prática Profissional }
+  - { codigo: EX503, nome: Trabalho de Conclusão I, creditos: 2, semestre: 5, area: Pesquisa, requer: [EX404] }
+  - { codigo: EX504, nome: Estágio Supervisionado I, creditos: 4, semestre: 5, area: Prática Profissional, requer: [EX403] }
+  - { codigo: EX505, nome: Eletiva, creditos: 2, semestre: 5, area: Eletiva, tipo: eletiva }
+  - { codigo: EX601, nome: Tópicos Avançados III, creditos: 4, semestre: 6, area: Fundamentos, requer: [EX501] }
+  - { codigo: EX602, nome: Projeto Integrador II, creditos: 4, semestre: 6, area: Prática Profissional, requer: [EX403] }
+  - { codigo: EX603, nome: Trabalho de Conclusão II, creditos: 2, semestre: 6, area: Pesquisa, requer: [EX503] }
+  - { codigo: EX604, nome: Estágio Supervisionado II, creditos: 4, semestre: 6, area: Prática Profissional, requer: [EX504] }

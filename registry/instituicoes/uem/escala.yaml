@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=../../schema/escala.schema.json
+escalas:
+  - id: uem-0-10
+    nome: Nota de 0 a 10
+    min: 0
+    max: 10
+    aprovacao: 7
+    frequencia_minima: 0.75

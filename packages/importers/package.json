@@ -1,0 +1,33 @@
+{
+  "name": "@akademos/importers",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Importação de histórico: parser de PDF, correspondência com a matriz e conectores.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "fixtures": "tsx scripts/gerar-fixtures.ts"
+  },
+  "dependencies": {
+    "@akademos/core": "workspace:*",
+    "node-html-parser": "^9.0.4"
+  },
+  "devDependencies": {
+    "@akademos/registry": "workspace:*",
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@types/node": "^26.6.4",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.4.299",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.3"
+  },
+  "peerDependencies": {
+    "pdfjs-dist": "^6.4.299"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "sistema": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "linha": {
+      "type": "string",
+      "description": "regex com grupos nomeados: semestre, codigo, nome, nota, frequencia, situacao"
+    },
+    "situacoes": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "enum": [
+          "aprovada",
+          "reprovada",
+          "cursando",
+          "trancada",
+          "aproveitada"
+        ]
+      }
+    },
+    "separador_decimal": {
+      "default": ",",
+      "type": "string",
+      "enum": [
+        ",",
+        "."
+      ]
+    }
+  },
+  "required": [
+    "sistema",
+    "linha",
+    "situacoes"
+  ],
+  "additionalProperties": false
+}

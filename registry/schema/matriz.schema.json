@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "curso": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "grau": {
+          "type": "string",
+          "enum": [
+            "bacharelado",
+            "licenciatura",
+            "tecnologo",
+            "outro"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "nome",
+        "grau"
+      ]
+    },
+    "ano": {
+      "type": "integer",
+      "minimum": 1950,
+      "maximum": 2100
+    },
+    "versao": {
+      "type": "string",
+      "description": "versão do pacote; mude ao corrigir dados"
+    },
+    "creditos_total": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "horas_por_credito": {
+      "default": 15,
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "vigente_desde": {
+      "type": "string",
+      "pattern": "^\\d{4}\\/[12]$"
+    },
+    "disciplinas": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "type": "string",
+            "pattern": "^[A-Z0-9][A-Z0-9._-]*$"
+          },
+          "nome": {
+            "type": "string",
+            "minLength": 2
+          },
+          "creditos": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "carga_horaria": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "semestre": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "description": "semestre sugerido na matriz"
+          },
+          "area": {
+            "type": "string",
+            "minLength": 2
+          },
+          "tipo": {
+            "default": "obrigatoria",
+            "type": "string",
+            "enum": [
+              "obrigatoria",
+              "eletiva",
+              "optativa"
+            ]
+          },
+          "oferta": {
+            "default": "ambos",
+            "type": "string",
+            "enum": [
+              "impar",
+              "par",
+              "ambos"
+            ]
+          },
+          "requer": {
+            "default": [],
+            "description": "pré-requisitos",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z0-9][A-Z0-9._-]*$"
+            }
+          },
+          "correquisitos": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z0-9][A-Z0-9._-]*$"
+            }
+          },
+          "codigos_alternativos": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "codigo",
+          "nome",
+          "creditos",
+          "semestre",
+          "area"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "curso",
+    "ano",
+    "versao",
+    "creditos_total",
+    "disciplinas"
+  ],
+  "additionalProperties": false
+}
