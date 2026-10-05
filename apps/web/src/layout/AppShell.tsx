@@ -3,6 +3,7 @@ import { LogoMark } from '@akademos/ui';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { Link, Outlet, useLocation, useNavigate } from '@tanstack/react-router';
 import { useEffect } from 'react';
+import { useAnalise } from '../dados/analise';
 import { gravarPreferencia, useOcultarNotas, useSessao } from '../dados/preferencias';
 import { store, useEstadoDados } from '../dados/store';
 import { TelaDeEstado } from './TelaDeEstado';
@@ -95,14 +96,6 @@ function BarraLateral() {
 
   const atual = semestreDaData(new Date());
   const proximo = deslocarSemestre(atual, 1);
-  const nav = [
-    { to: '/', label: t`Início` },
-    { to: '/percurso', label: t`Percurso` },
-    { to: '/planejar', label: t`Planejar ${proximo}` },
-    { to: '/insights', label: t`Insights` },
-    { to: '/desempenho', label: t`Desempenho` },
-    { to: '/carreira', label: t`Carreira` },
-  ] as const;
 
   const sair = () => {
     // Sair não apaga dados locais (docs/DESIGN.md › Interações).
@@ -129,20 +122,7 @@ function BarraLateral() {
           </div>
         </div>
       )}
-      {dados && (
-        <nav className={s.nav}>
-          {nav.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className={s.navItem}
-              activeOptions={{ exact: n.to === '/' }}
-            >
-              <span>{n.label}</span>
-            </Link>
-          ))}
-        </nav>
-      )}
+      {dados && <Navegacao proximo={proximo} />}
       <div className={s.footer}>
         <Link to="/dados" className={s.dataBox}>
           <div className={s.dataBoxTitle}>
@@ -177,5 +157,39 @@ function BarraLateral() {
         </div>
       </div>
     </aside>
+  );
+}
+
+/** Itens da navegação com os selos do protótipo: "!" no Planejar e o total de insights. */
+function Navegacao({ proximo }: { proximo: string }) {
+  const { t } = useLingui();
+  const { insights } = useAnalise();
+  const urgentePlanejar = insights.some(
+    (i) => i.severidade === 'alta' && i.acao?.destino === 'planejar',
+  );
+  const nav = [
+    { to: '/', label: t`Início`, selo: '' },
+    { to: '/percurso', label: t`Percurso`, selo: '' },
+    { to: '/planejar', label: t`Planejar ${proximo}`, selo: urgentePlanejar ? '!' : '' },
+    { to: '/insights', label: t`Insights`, selo: insights.length ? String(insights.length) : '' },
+    { to: '/desempenho', label: t`Desempenho`, selo: '' },
+    { to: '/carreira', label: t`Carreira`, selo: '' },
+  ] as const;
+  return (
+    <nav className={s.nav}>
+      {nav.map((n) => (
+        <Link key={n.to} to={n.to} className={s.navItem} activeOptions={{ exact: n.to === '/' }}>
+          <span>{n.label}</span>
+          {n.selo && (
+            <span
+              className={s.badge}
+              aria-label={n.selo === '!' ? t`requer atenção` : t`${n.selo} insights`}
+            >
+              {n.selo}
+            </span>
+          )}
+        </Link>
+      ))}
+    </nav>
   );
 }
