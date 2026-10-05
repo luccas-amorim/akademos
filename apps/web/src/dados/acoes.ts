@@ -1,4 +1,4 @@
-import type { Aluno, Cursada, PacoteInstituicao } from '@akademos/core';
+import type { Aluno, Cursada, Oferta, PacoteInstituicao, Plano } from '@akademos/core';
 import { MATRIZ_DA_ANA, semearAna } from '@akademos/db/seed';
 import { mesclarCursadas } from '@akademos/importers';
 import { entradaDaMatriz } from './catalogo';
@@ -51,4 +51,33 @@ export async function importarCursadas(
 
 export async function apagarCursada(id: string): Promise<void> {
   await store.escrever((repos) => repos.cursadas.apagar(id));
+}
+
+/** Grava as turmas escolhidas para um semestre (um plano por semestre). */
+export async function salvarPlano(
+  alunoId: string,
+  semestre: string,
+  turmas: string[],
+  existente: Plano | undefined,
+): Promise<void> {
+  await store.escrever((repos) =>
+    repos.planos.salvar({
+      id: existente?.id ?? novoId(),
+      alunoId,
+      semestre,
+      turmas,
+      criadoEm: existente?.criadoEm ?? new Date().toISOString(),
+    }),
+  );
+}
+
+/** Turma lançada à mão (quando não há conector para a instituição). */
+export async function salvarOferta(oferta: Omit<Oferta, 'id'> & { id?: string }): Promise<string> {
+  const id = oferta.id ?? novoId();
+  await store.escrever((repos) => repos.ofertas.salvar({ ...oferta, id }));
+  return id;
+}
+
+export async function apagarOferta(id: string): Promise<void> {
+  await store.escrever((repos) => repos.ofertas.apagar(id));
 }
